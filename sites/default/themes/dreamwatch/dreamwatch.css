@@ -858,7 +858,6 @@ ul.links li
 }
 
 #block-views-product_categories-block_1, #sidebar-left .block-menu {
-	padding: 0 0 0 15px;
 }
 
 #sidebar-left .block-menu {
@@ -1066,4 +1065,12 @@ form thead th
 
 #sb-loading {
 	display: none !important;
+}
+
+/* Admin */
+
+
+div.view div.views-hide,
+div.view:hover div.views-hide {
+  display: none !important;
 }
