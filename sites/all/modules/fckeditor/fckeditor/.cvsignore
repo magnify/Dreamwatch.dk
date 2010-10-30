@@ -1,5 +1,4 @@
-.project
-.buildpath
-.cache
-.settings
-nbproject
+_*
+editor
+fck*
+license.txt
