@@ -1,25 +1,19 @@
 <?php
-// $Id: views.inc,v 1.11 2009/05/12 00:17:27 merlinofchaos Exp $
+// $Id: views.inc,v 1.11.2.11 2010/07/23 06:08:39 merlinofchaos Exp $
 
 /**
  * @file
  * Content type plugin to expose all views as content.
  */
 
-/**
- * Implementation of hook_ctools_content_types()
- */
-function views_content_views_ctools_content_types() {
-  if (!variable_get('ctools_content_all_views', TRUE)) {
-    return;
-  }
-
-  return array(
+if (variable_get('ctools_content_all_views', TRUE)) {
+  $plugin = array(
     'title' => t('All views'),
     'defaults' => array(
-      'nodes_per_page' => 10,
-      'pager_id' => 1,
+      'override_pager_settings' => FALSE,
       'use_pager' => FALSE,
+      'nodes_per_page' => 10,
+      'pager_id' => 0,
       'offset' => 0,
       'more_link' => FALSE,
       'feed_icons' => FALSE,
@@ -95,7 +89,6 @@ function _views_content_views_content_type($view) {
     'title' => $title,
     'icon' => $icon,
     'description' => filter_xss_admin($view->description),
-//    'required context' => $contexts,
     'category' => t('Views'),
   );
 
@@ -107,26 +100,16 @@ function _views_content_views_content_type($view) {
  * Outputs a view based on the module and delta supplied in the configuration.
  */
 function views_content_views_content_type_render($subtype, $conf, $panel_args, $contexts) {
-  _views_content_views_update_conf($conf, views_content_views_ctools_content_types());
-
   if (!is_array($contexts)) {
     $contexts = array($contexts);
   }
 
-  if (strpos($subtype, '-')) {
-    list($name, $display) = explode('-', $subtype);
-    $view = views_get_view($name);
-  }
-  else {
-    $view = views_get_view($subtype);
-    $display = isset($conf['display']) ? $conf['display'] : 'default';
-  }
+  $view = _views_content_views_update_conf($conf, $subtype);
 
-  if (empty($view)) {
+  if (empty($view) || !is_object($view) || empty($view->display_handler)) {
     return;
   }
 
-  $view->set_display($display);
   if (!$view->display_handler->access($GLOBALS['user'])) {
     return;
   }
@@ -139,7 +122,9 @@ function views_content_views_content_type_render($subtype, $conf, $panel_args, $
   }
 
   foreach ($panel_args as $id => $arg) {
-    $args = str_replace("@$id", $arg, $args);
+    if (is_string($arg)) {
+      $args = str_replace("@$id", $arg, $args);
+    }
   }
 
   $args = preg_replace(',/?(%\d|@\d),', '', $args);
@@ -174,7 +159,7 @@ function views_content_views_content_type_render($subtype, $conf, $panel_args, $
 
   $block = new stdClass();
   $block->module = 'views';
-  $block->delta  = $view->name .'-'.  $display;
+  $block->delta  = $view->name .'-'.  $view->current_display;
 
   if (!empty($conf['link_to_view'])) {
     $block->title_link = $view->get_url();
@@ -187,12 +172,37 @@ function views_content_views_content_type_render($subtype, $conf, $panel_args, $
 
   // Only set use_pager if they differ, this way we can avoid overwriting the
   // pager type that Views uses.
-  if (!$view->display_handler->get_option('use_pager') || empty($conf['use_pager'])) {
-    $view->display_handler->set_option('use_pager', $conf['use_pager']);
+  if ($conf['override_pager_settings']) {
+    if (method_exists($view, 'init_pager')) {
+      // Views 3 version
+      $view->set_items_per_page($conf['nodes_per_page']);
+      $view->set_offset($conf['offset']);
+
+      $pager = $view->display_handler->get_option('pager');
+      if ($conf['use_pager'] && ($pager['type'] == 'none' || $pager['type'] == 'some')) {
+        $pager['type'] = 'full';
+      }
+      elseif (!$conf['use_pager'] && $pager['type'] != 'none' && $pager['type'] != 'some') {
+        $pager['type'] = $view->get_items_per_page() ? 'some' : 'none';
+      }
+
+      if ($conf['use_pager']) {
+        if (!isset($pager['options']['id']) || $pager['options']['id'] != $conf['pager_id']) {
+          $pager['options']['id'] = $conf['pager_id'];
+        }
+      }
+
+      $view->display_handler->set_option('pager', $pager);
+    }
+    else {
+      if (!$view->display_handler->get_option('use_pager') || empty($conf['use_pager'])) {
+        $view->display_handler->set_option('use_pager', $conf['use_pager']);
+      }
+      $view->display_handler->set_option('pager_element', $conf['pager_id']);
+      $view->display_handler->set_option('items_per_page', $conf['nodes_per_page']);
+      $view->display_handler->set_option('offset', $conf['offset']);
+    }
   }
-  $view->display_handler->set_option('pager_element', $conf['pager_id']);
-  $view->display_handler->set_option('items_per_page', $conf['nodes_per_page']);
-  $view->display_handler->set_option('offset', $conf['offset']);
 
   $stored_feeds = drupal_add_feed();
   $block->content = $view->preview();
@@ -226,7 +236,10 @@ function views_content_views_select_display(&$form, &$form_state) {
 
   $displays = array();
   foreach ($view->display as $id => $display) {
-    $displays[$id] = $display->display_title;
+    // Content pane views should never be used this way.
+    if ($display->display_plugin != 'panel_pane') {
+      $displays[$id] = $display->display_title;
+    }
   }
 
   $form['display'] = array(
@@ -251,23 +264,12 @@ function views_content_views_select_display_submit(&$form, &$form_state) {
  */
 function views_content_views_content_type_edit_form(&$form, &$form_state) {
   $conf = $form_state['conf'];
-  _views_content_views_update_conf($conf, views_content_views_ctools_content_types());
-  // This allows older content to continue to work, where we used to embed
-  // the display directly.
-  if (strpos($form_state['subtype_name'], '-')) {
-    list($name, $conf['display']) = explode('-', $form_state['subtype_name']);
-    $view = views_get_view($name);
-  }
-  else {
-    $view = views_get_view($form_state['subtype_name']);
-  }
+  $view = _views_content_views_update_conf($conf, $form_state['subtype_name']);
 
-  if (empty($view)) {
+  if (empty($view) || !is_object($view)) {
     $form['markup'] = array('#value' => t('Broken/missing/deleted view.'));
     return;
   }
-
-  $view->set_display($conf['display']);
 
   $form_state['title'] = t('Configure view @view (@display)', array('@view' => $view->name, '@display' => $view->display[$conf['display']]->display_title));
 
@@ -292,7 +294,6 @@ function views_content_views_content_type_edit_form(&$form, &$form_state) {
     '#type' => 'checkbox',
     '#default_value' => $conf['link_to_view'],
     '#title' => t('Link title to view'),
-    '#description' => t('If checked, the title will be a link to the view.'),
   );
 
   $form['more_link'] = array(
@@ -306,52 +307,72 @@ function views_content_views_content_type_edit_form(&$form, &$form_state) {
     '#type' => 'checkbox',
     '#default_value' => $conf['feed_icons'],
     '#title' => t('Display feed icons'),
-    '#description' => t('If checked, any feed icons provided by this view will be displayed.'),
   );
 
-  $form['pager_aligner_start'] = array(
-    '#value' => '<div class="option-text-aligner">',
+  $form['pager_settings'] = array(
+    '#type' => 'fieldset',
+    '#collapsible' => FALSE,
+    '#title' => t('Custom pager settings'),
   );
-  $form['use_pager'] = array(
+
+  $form['pager_settings']['override_pager_settings'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Use different pager settings from view settings'),
+    '#default_value' => $conf['override_pager_settings'],
+    '#id' => 'override-pager-checkbox',
+  );
+
+  if ($view->display_handler->get_option('use_ajax')) {
+    $form['pager_settings']['warning'] = array(
+      '#value' => '<div>' . t('<strong>Warning: </strong> This view has AJAX enabled. Overriding the pager settings will work initially, but when the view is updated via AJAX, the original settings will be used. You should not override pager settings on Views with the AJAX setting enabled.') . '</div>',
+    );
+  }
+
+  $form['pager_settings']['use_pager'] = array(
+    '#prefix' => '<div class="container-inline">',
     '#type' => 'checkbox',
     '#title' => t('Use pager'),
     '#default_value' => $conf['use_pager'],
     '#id' => 'use-pager-checkbox',
+    '#process' => array('ctools_dependent_process'),
+    '#dependency' => array('override-pager-checkbox' => array(1)),
   );
-  $form['pager_id'] = array(
+  $form['pager_settings']['pager_id'] = array(
     '#type' => 'textfield',
     '#default_value' => $conf['pager_id'],
     '#title' => t('Pager ID'),
     '#size' => 4,
     '#id' => 'use-pager-textfield',
     '#process' => array('ctools_dependent_process'),
-    '#dependency' => array('use-pager-checkbox' => array(1)),
-  );
-  $form['pager_aligner_stop'] = array(
-    '#value' => '</div><div style="clear: both; padding: 0; margin: 0"></div>',
+    '#dependency' => array('override-pager-checkbox' => array(1), 'use-pager-checkbox' => array(1)),
+    '#dependency_count' => 2,
+    '#suffix' => '</div>',
   );
 
-  $form['nodes_per_page'] = array(
+  $form['pager_settings']['nodes_per_page'] = array(
     '#type' => 'textfield',
     '#default_value' => $conf['nodes_per_page'],
-    '#title' => t('Num posts'),
     '#size' => 4,
-    '#description' => t('Select the number of posts to display, or 0 to display all results.'),
+    '#title' => t('Num posts'),
+    '#process' => array('ctools_dependent_process'),
+    '#dependency' => array('override-pager-checkbox' => array(1)),
   );
 
-  $form['offset'] = array(
+  $form['pager_settings']['offset'] = array(
     '#type' => 'textfield',
     '#default_value' => $conf['offset'],
     '#title' => t('Offset'),
     '#size' => 4,
-    '#description' => t('Offset in the node list or 0 to start at 1st item.'),
+    '#description' => t('The number of items to skip and not display.'),
+    '#process' => array('ctools_dependent_process'),
+    '#dependency' => array('override-pager-checkbox' => array(1)),
   );
 
   $form['panel_args'] = array(
     '#type' => 'checkbox',
     '#title' => t('Send arguments'),
     '#default_value' => $conf['panel_args'],
-    '#description' => t('Select this to send all arguments from the panel directly to the view. If checked, the panel arguments will come after any context arguments above and precede any additional arguments passed in through the Arguments field below.'),
+    '#description' => t('Select this to send all arguments from the panel directly to the view. If checked, the panel arguments will come after any context arguments above and precede any additional arguments passed in through the Arguments field below. Note that arguments do not include the base URL; only values after the URL or set as placeholders are considered arguments.'),
   );
 
   $form['args'] = array(
@@ -359,7 +380,7 @@ function views_content_views_content_type_edit_form(&$form, &$form_state) {
     '#default_value' => $conf['args'],
     '#title' => t('Arguments'),
     '#size' => 30,
-    '#description' => t('Additional arguments to send to the view as if they were part of the URL in the form of arg1/arg2/arg3. You may use %0, %1, ..., %N to grab arguments from the URL. Or use @0, @1, @2, ..., @N to use arguments passed into the panel.'),
+    '#description' => t('Additional arguments to send to the view as if they were part of the URL in the form of arg1/arg2/arg3. You may use %0, %1, ..., %N to grab arguments from the URL. Or use @0, @1, @2, ..., @N to use arguments passed into the panel. Note: use these values only as a last resort. In future versions of Panels these may go away.'),
   );
 
   $form['url'] = array(
@@ -388,45 +409,31 @@ function views_content_views_content_type_edit_form_submit(&$form, &$form_state)
  * Returns the administrative title for a type.
  */
 function views_content_views_content_type_admin_title($subtype, $conf) {
-  _views_content_views_update_conf($conf, views_content_views_ctools_content_types());
-  if (strpos($subtype, '-')) {
-    list($name, $display) = explode('-', $subtype);
-    $view = views_get_view($name);
-  }
-  else {
-    $name = $subtype;
-    $view = views_get_view($subtype);
+  $view = _views_content_views_update_conf($conf, $subtype);
+
+  if (!is_object($view)) {
+    return t('Deleted/missing view @view', array('@view' => $view));
   }
 
-  if (empty($view)) {
-    return t('Deleted/missing view @view', array('@view' => $name));
-  }
-  return t('View: @name', array('@name' => $view->name));
+  $title = $view->display[$view->current_display]->display_title;
+  return t('View: @name', array('@name' => $view->name . '-' . $title));
 }
 
 /**
  * Returns the administrative title for a type.
  */
 function views_content_views_content_type_admin_info($subtype, $conf, $contexts) {
-  _views_content_views_update_conf($conf, views_content_views_ctools_content_types());
-  if (strpos($subtype, '-')) {
-    list($name, $conf['display']) = explode('-', $subtype);
-    $view = views_get_view($name);
-  }
-  else {
-    $view = views_get_view($subtype);
-    $name = $subtype;
+  $view = _views_content_views_update_conf($conf, $subtype);
+
+  if (!is_object($view)) {
+    return t('Deleted/missing view @view', array('@view' => $view));
   }
 
-  if (empty($view)) {
-    return t('Deleted/missing view @view', array('@view' => $name));
-  }
-
-  $view->set_display($conf['display']);
+  $display = empty($conf['display']) ? $view->current_display : $conf['display'];
   $block->title = t('View information');
 
   $block->content = '<ul>';
-  $block->content .= '<li>' . t('Using display @display.', array('@display' => $view->display[$conf['display']]->display_title)) . '</li>';
+  $block->content .= '<li>' . t('Using display @display.', array('@display' => $view->display[$display]->display_title)) . '</li>';
 
   if (!empty($conf['context']) && $arguments = $view->display_handler->get_handlers('argument')) {
     $argument = reset($arguments);
@@ -488,15 +495,71 @@ function views_content_views_content_type_admin_info($subtype, $conf, $contexts)
 
 /**
  * Update the $conf to deal with updates from Drupal 5.
+ *
+ * @param &$conf
+ *   The $conf array to modify.
+ * @param $subtype
+ *   The subtype in use. This should just be the view name, but in older
+ *   versions it was the view name with a dash and the display ID.
+ *   If this is the case, we can use it to correct the 'display' setting
+ *   in the $conf.
+ * @return
+ *   The $view with the initialized display. If the $view could not be
+ *   loaded, the name attempted will be loaded for use in errors.
+ *   Correct error checking on this function checks against is_object().
  */
-function _views_content_views_update_conf(&$conf, $task) {
-  if (isset($conf['display'])) {
-    return;
+function _views_content_views_update_conf(&$conf, $subtype) {
+  $plugin = ctools_get_content_type('views');
+
+  // Special: Existing content types get a different default than new ones:
+  if (!empty($conf) && !isset($conf['override_pager_settings'])) {
+    $conf['override_pager_settings'] = TRUE;
   }
-  $conf['display'] = 'default';
-  foreach ($task['defaults'] as $key => $value) {
+
+  // Make sure that our defaults are always set if there is no
+  // previous setting. This helps updates go more smoothly.
+  foreach ($plugin['defaults'] as $key => $value) {
     if (!isset($conf[$key])) {
       $conf[$key] = $value;
     }
   }
+
+  if (strpos($subtype, '-')) {
+    list($name, $display) = explode('-', $subtype);
+    $view = views_get_view($name);
+    if (!isset($conf['display'])) {
+      $conf['display'] = $display;
+    }
+  }
+  else {
+    $name = $subtype;
+    $view = views_get_view($subtype);
+    $display = isset($conf['display']) ? $conf['display'] : 'default';
+  }
+
+  if (empty($view)) {
+    return $name;
+  }
+
+  $view->set_display($display);
+  // $view->current_display will now reflect this value.
+
+  // If set NOT to override, go ahead and refresh from the view.
+  if (empty($conf['override_pager_settings'])) {
+    if (method_exists($view, 'init_pager')) {
+      $pager = $view->display_handler->get_option('pager');
+      $conf['use_pager'] = $pager['type'] != 'none' && $pager['type'] != 'some';
+      $conf['pager_id'] = isset($pager['options']['id']) ? $pager['options']['id'] : 0;
+      $conf['offset'] = isset($pager['options']['offset']) ? $pager['options']['offset'] : 0;
+      $conf['nodes_per_page'] = isset($pager['options']['items_per_page']) ? $pager['options']['items_per_page'] : 0;
+    }
+    else {
+      $conf['use_pager'] = $view->display_handler->get_option('use_pager');
+      $conf['pager_id'] = $view->display_handler->get_option('element_id');
+      $conf['nodes_per_page'] = $view->display_handler->get_option('items_per_page');
+      $conf['offset'] = $view->display_handler->get_option('offset');
+    }
+  }
+
+  return $view;
 }

@@ -1,5 +1,5 @@
 <?php
-// $Id: object-cache.inc,v 1.8 2009/08/17 18:41:04 merlinofchaos Exp $
+// $Id: object-cache.inc,v 1.8.2.3 2010/07/22 22:33:34 merlinofchaos Exp $
 
 /**
  * @file
@@ -28,7 +28,7 @@
  *   The data that was cached.
  */
 function ctools_object_cache_get($obj, $name, $skip_cache = FALSE) {
-  static $cache = array();
+  $cache = &ctools_static(__FUNCTION__, array());
   $key = "$obj:$name";
   if ($skip_cache) {
     unset($cache[$key]);
@@ -55,6 +55,13 @@ function ctools_object_cache_get($obj, $name, $skip_cache = FALSE) {
  *   The object to be cached. This will be serialized prior to writing.
  */
 function ctools_object_cache_set($obj, $name, $cache) {
+  // Store the CTools session id in the user session to force a
+  // session for anonymous users in Drupal 7 and Drupal 6 Pressflow.
+  // see http://drupal.org/node/562374, http://drupal.org/node/861778
+  if (empty($GLOBALS['user']->uid) && empty($_SESSION['ctools_session_id'])) {
+    $_SESSION['ctools_hold_session'] = TRUE;
+  }
+
   ctools_object_cache_clear($obj, $name);
   db_query("INSERT INTO {ctools_object_cache} (sid, obj, name, data, updated) VALUES ('%s', '%s', '%s', %b, %d)", session_id(), $obj, $name, serialize($cache), time());
 }
@@ -70,6 +77,9 @@ function ctools_object_cache_set($obj, $name, $cache) {
  */
 function ctools_object_cache_clear($obj, $name) {
   db_query("DELETE FROM {ctools_object_cache} WHERE sid = '%s' AND obj = '%s' AND name = '%s'", session_id(), $obj, $name);
+  // Ensure the static cache is emptied of this obj:name set.
+  $cache = &ctools_static('ctools_object_cache_get', array());
+  unset($cache["$obj:$name"]);
 }
 
 
@@ -93,6 +103,34 @@ function ctools_object_cache_test($obj, $name) {
 }
 
 /**
+ * Get the cache status of a group of objects.
+ *
+ * This is useful for displaying lock status when listing a number of objects
+ * an an administration UI.
+ *
+ * @param $obj
+ *   A 32 character or less string to define what kind of object is being
+ *   stored; primarily this is used to prevent collisions.
+ * @param $names
+ *   An array of names of objects
+ *
+ * @return
+ *   An array of objects containing the UID and updated date for each name found.
+ */
+function ctools_object_cache_test_objects($obj, $names) {
+  $placeholders = db_placeholders($names, 'varchar');
+  $args = array_merge(array($obj), $names);
+  $result = db_query("SELECT c.name, s.uid, c.updated FROM {ctools_object_cache} c INNER JOIN {sessions}  s ON c.sid = s.sid WHERE c.obj = '%s' AND c.name IN ($placeholders) ORDER BY c.updated ASC", $args);
+
+  $return = array();
+  while ($test = db_fetch_object($result)) {
+    $return[$test->name] = $test;
+  }
+
+  return $return;
+}
+
+/**
  * Remove an object from the non-volatile ctools cache for all session IDs.
  *
  * This is useful for clearing a lock.
@@ -105,6 +143,9 @@ function ctools_object_cache_test($obj, $name) {
  */
 function ctools_object_cache_clear_all($obj, $name) {
   db_query("DELETE FROM {ctools_object_cache} WHERE obj = '%s' AND name = '%s'", $obj, $name);
+  // Ensure the static cache is emptied of this obj:name set.
+  $cache = &ctools_static('ctools_object_cache_get', array());
+  unset($cache["$obj:$name"]);
 }
 
 /**
