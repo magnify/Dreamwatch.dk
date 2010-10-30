@@ -1,0 +1,27 @@
+#mainmenu-region .block-region {
+	display: block;
+	left: 25%;
+	margin: 10px;
+	position: absolute;
+	top: 85px;
+	width: 960px
+}
+
+#mainmenu-region {
+	float: left;
+	margin: 25px 0 0 250px;
+	width: 710px;
+}
+
+#mainmenu-region ul {
+}
+
+#mainmenu-region li {
+	background: none;
+	float: left;
+	list-style: none;
+}
+
+#mainmenu-region li a {
+	color: #fff;
+}

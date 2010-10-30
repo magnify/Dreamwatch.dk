@@ -1,0 +1,378 @@
+# Hungarian translation of nodewords (6.x-1.0-rc1)
+# Copyright (c) 2009 by the Hungarian translation team
+# Generated from files:
+#  nodewords.admin.inc,v 1.1.2.2 2008/02/15 14:20:57 robrechtj
+#  description.inc,v 1.1.4.3 2008/01/22 09:31:38 robrechtj
+#  nodewords.module,v 1.57.2.6 2008/02/15 14:16:56 robrechtj
+#  keywords.inc,v 1.1.4.3 2008/01/24 20:49:32 robrechtj
+#  copyright.inc,v 1.1.4.2 2008/01/22 09:14:20 robrechtj
+#  nodewords.info,v 1.3.2.3 2008/01/22 09:31:37 robrechtj
+#  nodewords.install,v 1.10.2.3 2008/01/22 09:31:37 robrechtj
+#  abstract.inc,v 1.1.4.2 2008/01/22 09:14:20 robrechtj
+#  geourl.inc,v 1.1.4.2 2008/01/22 09:14:20 robrechtj
+#  robots.inc,v 1.1.4.2 2008/01/22 09:14:20 robrechtj
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nodewords (6.x-1.0-rc1)\n"
+"POT-Creation-Date: 2009-09-12 22:56+0200\n"
+"PO-Revision-Date: 2009-09-11 12:27+0200\n"
+"Language-Team: Hungarian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: nodewords.admin.inc:125
+msgid "Advanced options"
+msgstr "Haladó beállítások"
+
+#: nodewords.admin.inc:165,174
+msgid "Save"
+msgstr "Mentés"
+
+#: metatags/description.inc:54
+msgid "Description"
+msgstr "Leírás"
+
+#: nodewords.module:60
+msgid "Settings"
+msgstr "Beállítások"
+
+#: metatags/keywords.inc:27
+msgid "Keywords"
+msgstr "Kulcsszavak"
+
+#: metatags/copyright.inc:19
+msgid "Copyright"
+msgstr "Szerzői jog"
+
+#: nodewords.admin.inc:25
+msgid "Global copyright"
+msgstr "Globális szerzői jog"
+
+#: nodewords.admin.inc:29
+msgid ""
+"Enter a short copyright statement (one line) that will be used on all "
+"pages unless specifically set."
+msgstr ""
+"Rövid szerzői jogi nyilatkozat (egy sor), ami felhasználásra "
+"kerül minden olyan oldalon, melyen nincs külön megadva."
+
+#: nodewords.admin.inc:34
+msgid "Global GeoURL"
+msgstr "Globális földrajzi hely"
+
+#: nodewords.admin.inc:38
+msgid ""
+"Enter a GeoURL (latitude, longitude) that will be used on all pages "
+"unless specifically set."
+msgstr ""
+"Meg lehet adni egy földrajzi helyet (szélesség, hosszúság), ami "
+"felhasználásra kerül minden olyan oldalon, melyen nincs külön "
+"megadva."
+
+#: nodewords.admin.inc:43
+msgid "Global keywords"
+msgstr "Globális kulcsszavak"
+
+#: nodewords.admin.inc:47
+msgid ""
+"Enter a comma separated list of global keywords. These global keywords "
+"will be added after the page-specific keywords on all pages."
+msgstr ""
+"Vesszővel elválasztott globális kulcsszavak listája. Ezek a "
+"globális kulcsszavak hozzá lesznek adva minden oldalon az oldal "
+"kulcsszavai után."
+
+#: nodewords.admin.inc:58
+msgid "Auto-keywords vocabularies"
+msgstr "Automata kulcsszó-szótárak"
+
+#: nodewords.admin.inc:61
+msgid ""
+"Select the vocabularies which contain terms you want to add to the "
+"keywords meta tag for nodes. The terms of these vocabularies are added "
+"before the global keywords but after the page-specific keywords."
+msgstr ""
+"Ki lehet választani azokat a szótárakat, melyek kifejezései hozzá "
+"lesznek rendelve a meta jelölőkhőz kulcsszavakként. A "
+"kiválasztott szótárak kifejezései bekerülnek az oldal kulcsszavai "
+"után, de még a globális kulcsszavak előtt."
+
+#: nodewords.admin.inc:69
+msgid "Use the teaser of the page if the meta description is not set."
+msgstr ""
+"A tartalom összefoglalót használja, ha a meta leírás nincs "
+"megadva."
+
+#: nodewords.admin.inc:75
+msgid "Default robots meta tag"
+msgstr "Alapértelmezés szerinti <em>robots</em> meta jelölő"
+
+#: nodewords.admin.inc:84
+msgid ""
+"The ROBOTS meta tag offers a simple mechanism to indicate to web "
+"robots and crawlers wether the page should be indexed (INDEX or "
+"NOINDEX) and whether links on the page should be followed (FOLLOW or "
+"NOFOLLOW). Here you can enter the default robots meta tag to use for "
+"all pages. If unsure, select \"ALL=INDEX,FOLLOW\"."
+msgstr ""
+"A <em>ROBOTS</em> meta jelölő segítségével egyszerűen jelezhető "
+"a kereső robot számára, hogy az oldalt indexelje-e (<em>INDEX</em> "
+"vagy <em>NOINDEX</em>), valamint az, hogy az oldal hivatkozásait "
+"kövesse-e (<em>FOLLOW</em> vagy <em>NOFOLLOW</em>). Az itt "
+"beállított érték fog alapértelmezés szerint szerepelni minden "
+"oldalon. Bizonytalaság esetén értéke "
+"„<em>ALL=INDEX,FOLLOW</em>” legyen."
+
+#: nodewords.admin.inc:89
+msgid "Text length"
+msgstr "Szöveghossz"
+
+#: nodewords.admin.inc:93
+msgid ""
+"The maximum number of characters the content of a meta tag can "
+"contain."
+msgstr "A meta jelölő leírásának maximális hossza."
+
+#: nodewords.admin.inc:98
+msgid "Tags to show on edit form"
+msgstr "Megjelenítendő jelölők a szerkesztési űrlapon"
+
+#: nodewords.admin.inc:102
+msgid ""
+"Select the meta tags you want to be able to edit on the edit page of "
+"nodes, terms and vocabularies."
+msgstr ""
+"A kiválasztott meta jelölők szerkeszthetők a tartalom, a "
+"kifejezés vagy a szótár szerkesztési oldalakon."
+
+#: nodewords.admin.inc:106
+msgid "Tags to output in html head"
+msgstr "Az oldal &lt;<em>head</em>&gt; részébe küldendő jelölők"
+
+#: nodewords.admin.inc:110
+msgid ""
+"Select the meta tags you want to appear in the HEAD section of the "
+"HTML pages."
+msgstr ""
+"A kiválasztott meta jelölők jelennek meg az oldalak <em>HEAD</em> "
+"részében."
+
+#: nodewords.admin.inc:130
+msgid "Repeat meta tags for lists"
+msgstr "A meta jelölők ismétlése a lista oldalakon"
+
+#: nodewords.admin.inc:132
+msgid ""
+"Some search engines punish sites that use the same meta tags on "
+"different pages. Uncheck this option if you want to suppress the "
+"repetition of the same meta tags on pages that use the pager - if "
+"unchecked, Drupal will only display the meta tags for the first page "
+"and not for subsequent pages. If unsure, select this option."
+msgstr ""
+"Néhány kereső oldal bünteti a webhelyet, ha annak több oldala "
+"használja ugyanazokat a meta jelölőket. Ha ez a lehetőség nincs "
+"kiválasztva, akkor a meta jelölők nem fognak a lapozóval "
+"rendelkező oldalakon ismétlődni, és a Drupal csak a listák első "
+"oldalához fogja hozzáadni a meta jelölőket. Bizonytalanság "
+"esetén be kell kapcsolni."
+
+#: nodewords.admin.inc:137
+msgid "Use front page meta tags"
+msgstr "Címlap meta jelölők használata"
+
+#: nodewords.admin.inc:139
+msgid ""
+"Check this option if you want to use the <a href=\"!front-page-url\" "
+"title=\"Meta tags for front page\">meta tags for the front page</a> "
+"even if the <a href=\"!site-settings-url\" title=\"Site "
+"information\">default front page</a> specified is a view, panel or "
+"node - in this case, the meta tags specified for the view, panel or "
+"node will be ignored. If you want to use the meta tags of the view, "
+"panel or node instead, uncheck this option. If unsure, select this "
+"option and specify the meta tags you want on the <a "
+"href=\"!front-page-url\" title=\"Meta tags for front page\">meta tags "
+"for the front page</a>."
+msgstr ""
+"Ennek a lehetőségnek a használatával a <a href=\"!front-page-url\" "
+"title=\"Címlap meta jelölők\">Címlap meta jelölők</a> lesznek "
+"felhasználva a címlapon, még akkor is, ha az <a "
+"href=\"!site-settings-url\" title=\"Webhely "
+"információk\">alapértelmezett címlap</a> egy nézet, egy panel, "
+"vagy egy tartalom. Ebben az esetben a nézet, a panel vagy a tartalom "
+"meta jelölői figyelmen kívül maradnak. Az eredeti nézet, panel "
+"vagy tartalom meta jelölőinek használatához ezt a lehetőséget ki "
+"kell kapcsolni. Bizonytalanság esetén be kell kapcsolni, és a "
+"címlap meta jelölőit a <a href=\"!front-page-url\" title=\"Címlap "
+"meta jelölők beállítása\">Címlap meta jelölők "
+"beállítása</a> oldalon meg kell adni."
+
+#: nodewords.admin.inc:157
+msgid ""
+"Currently no meta tags can be assigned to the front page because you "
+"have disabled all tags to show on the edit forms. <a "
+"href=\"!nodewords-settings-url\" title=\"meta tags settings\">Enable "
+"some meta tags to show on edit forms</a> first."
+msgstr ""
+"Jelenleg nem rendelhető meta jelölő a címlaphoz, mivel a "
+"szerkesztő űrlapokhoz az összes meta jelölő megjelenítése ki "
+"lett kapcsolva. Először <a href=\"!nodewords-settings-url\" "
+"title=\"Meta jelölők beállításai\">engedélyezni kell néhány "
+"meta jelölő megjelenítését</a>, így azok megjelennek a "
+"szerkesztő űrlapokon."
+
+#: nodewords.admin.inc:160
+msgid ""
+"You can not assign meta tags for the front page here because you have "
+"disabled them at the <a href=\"!nodewords-settings-url\" title=\"Meta "
+"tags settings\">meta tags settings page</a>. Instead, the meta tags "
+"for the view, panel or node you have set as front page will be used."
+msgstr ""
+"Nem rendelhető meta jelölő a címlaphoz, mivel ez a lehetőség ki "
+"van kapcsolva a <a href=\"!nodewords-settings-url\" title=\"Meta "
+"jelölők beállításai \">meta jelölők beállításai</a> oldalon. "
+"Ilyenkor egy nézet, egy panel, vagy egy tartalom állítható be "
+"címlapnak, melynek meta jelölői felhasználásra kerülhetnek."
+
+#: nodewords.admin.inc:176
+msgid "The meta tags for the front page have been saved."
+msgstr "A címlap meta jelölői mentve."
+
+#: nodewords.module:16,28,473,51; nodewords.info:0
+msgid "Meta tags"
+msgstr "Meta jelölők"
+
+#: nodewords.module:42
+msgid ""
+"On this page you can enter the meta tags for the front page of your "
+"site."
+msgstr "Ezen az oldalon a honlap címlapjának meta jelölői szerkeszthetők."
+
+#: nodewords.module:126
+msgid "Allow editing of meta tags"
+msgstr "Meta jelölők szerkesztése"
+
+#: nodewords.module:128
+msgid ""
+"Users with the <em>edit meta tags</em> permission will be able to edit "
+"the meta tags for this content type."
+msgstr ""
+"Csak a <em>meta jelölők szerkesztése</em> jogkörrel felruházott "
+"felhasználó szerkesztheti a meta jelölőket ennél a "
+"tartalomtípusnál."
+
+#: nodewords.module:198
+msgid "administer meta tags"
+msgstr "meta jelölők adminisztrációja"
+
+#: nodewords.module:198
+msgid "edit meta tags"
+msgstr "meta jelölők szerkesztése"
+
+#: nodewords.module:54
+msgid "Configure HTML meta tags for all content."
+msgstr "HTML meta jelölők beállítása minden tartalomhoz."
+
+#: nodewords.module:67
+msgid "Front page"
+msgstr "Címlap"
+
+#: nodewords.module:0
+msgid "nodewords"
+msgstr "nodewords"
+
+#: nodewords.install:31
+msgid "Stores nodewords meta tag content."
+msgstr "A nodewords meta jelölőit tárolja."
+
+#: nodewords.install:37
+msgid "Content type name (node, page, panel, view)."
+msgstr "Tartalomtípus neve (tartalom, oldal, panel, nézet)."
+
+#: nodewords.install:43
+msgid "Unique content id within content type or blank for frontpage."
+msgstr ""
+"A tartalomtípuson belül egyedi tartalom azonosító, illetve üres a "
+"címlaphoz."
+
+#: nodewords.install:49
+msgid "Meta tag name."
+msgstr "Meta jelölő neve"
+
+#: nodewords.install:56
+msgid "Content of meta tag value."
+msgstr "A meta jelölő tartalma."
+
+#: nodewords.info:0
+msgid "Allows users to add meta tags, eg keywords or description."
+msgstr "Az oldal meta jelölőinek szerkesztését teszi lehetővé."
+
+#: metatags/abstract.inc:12
+msgid "Abstract"
+msgstr "Összefoglalás"
+
+#: metatags/abstract.inc:16
+msgid "Enter a short abstract for this page. Typically it is one sentence."
+msgstr "Rövid összefoglaló mondat az oldalról. Szokásosan egy mondat."
+
+#: metatags/copyright.inc:23
+msgid "Enter a short copyright statement for this page."
+msgstr "Rövid szerzői jogi nyilatkozat az oldalhoz."
+
+#: metatags/description.inc:58
+msgid ""
+"Enter a description for this page. Limit your description to about 20 "
+"words, with a maximum of %count characters. It should not contain any "
+"HTML tags or other formatting."
+msgstr ""
+"Az oldal leírása. Nagyjából húsz szavas, maximum %count betűt "
+"tartalmazzon. Nem tartalmazhat HTML jelölőket vagy egyéb "
+"formázást."
+
+#: metatags/description.inc:58
+msgid ""
+"When you leave this field empty, the teaser will be used as "
+"description."
+msgstr ""
+"Ha üres ez a mező, akkor a tartalom összefoglalója lesz "
+"leírásként felhasználva."
+
+#: metatags/geourl.inc:19
+msgid "GeoURL"
+msgstr "Földrajzi hely"
+
+#: metatags/geourl.inc:23
+msgid "Enter a GeoURL (latitude, longitude) for this page."
+msgstr "Földrajzi hely (szélesség, hosszúság) az oldalhoz."
+
+#: metatags/keywords.inc:31
+msgid ""
+"Enter a comma separated list of keywords for this page. Avoid "
+"duplication of words as this will lower your search engine ranking."
+msgstr ""
+"Vesszővel elválasztott kulcsszó lista az oldalhoz. A kulcsszavak "
+"ismétlése csökkenti a keresőkben elért helyezést."
+
+#: metatags/robots.inc:18
+msgid "Use default setting"
+msgstr "Alapértelmezés szerinti beállítás használata"
+
+#: metatags/robots.inc:26
+msgid "Robots meta tag"
+msgstr "Robots meta jelölő"
+
+#: metatags/robots.inc:30
+msgid ""
+"The ROBOTS meta tag offers a simple mechanisme to indicate to web "
+"robots and crawlers wether the page should be indexed (INDEX or "
+"NOINDEX) and whether links on the page should be followed (FOLLOW or "
+"NOFOLLOW). The default setting is @default."
+msgstr ""
+"A <em>ROBOTS</em> meta jelölő arra utasítja a kereső robotokat és "
+"motorokat, hogy az oldalt indexeljék-e (<em>INDEX</em> vagy "
+"<em>NOINDEX</em>), valamint, hogy az oldal hivatkozásait kövessék-e "
+"(<em>FOLLOW</em> vagy <em>NOFOLLOW</em>). Alapértelmezés szerinti "
+"értéke: @default."
+
