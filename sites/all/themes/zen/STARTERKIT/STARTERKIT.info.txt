@@ -1,9 +1,9 @@
-; $Id: zen_classic.info,v 1.12 2008/09/21 22:43:32 johnalbin Exp $
+; $Id: STARTERKIT.info.txt,v 1.1.2.3 2009/05/08 15:05:04 johnalbin Exp $
 
 
   ; The name and description of the theme used on the admin/build/themes page.
-name        = Zen Classic
-description = Zen sub-theme based on <a href="http://www.oswd.org/design/preview/id/2634">Deliciously Blue</a>.
+name        = Zen Sub-theme Starter Kit
+description = Read the <a href="http://drupal.org/node/226507">online docs</a> on how to create a sub-theme.
 
   ; The screenshot used on the admin/build/themes page.
 screenshot = screenshot.png
@@ -24,23 +24,25 @@ base theme = zen
   ; You can also override any of Zen's stylesheets or any module's stylesheets,
   ; an /extremely/ useful feature. See the excellent Drupal 6 Theme Guide at
   ; http://drupal.org/node/171209 for more details.
-stylesheets[all][]   = layout-garland.css
+stylesheets[all][]   = layout.css
 stylesheets[all][]   = html-elements.css
-;stylesheets[all][]  = tabs.css
-stylesheets[all][]   = icons.css
-;stylesheets[all][]  = block-editing.css
-stylesheets[all][]   = zen-classic.css
+; stylesheets[all][] = tabs.css
+; stylesheets[all][] = messages.css
+; stylesheets[all][] = block-editing.css
+; stylesheets[all][] = wireframes.css
+stylesheets[all][]   = STARTERKIT.css
 stylesheets[print][] = print.css
   ; To prevent stylesheets of a base theme or of a module from being included in
   ; our sub-theme, we specify it in our .info file (and we don't need to have a
   ; stylesheet in our sub-theme with that name.) For example, we prevent the
   ; zen.css file in the base theme from being included by specifying it here.
-stylesheets[all][]   = messages.css
-stylesheets[all][]   = wireframes.css
 stylesheets[all][]   = zen.css
 
   ; Set the conditional stylesheets that are processed by IE.
-conditional-stylesheets[if IE][all][] = ie.css
+; conditional-stylesheets[if IE][all][] = ie.css
+
+  ; Optionally add some jquery scripts to your theme.
+; scripts[] = script.js
 
   ; The regions defined in Zen's default page.tpl.php file.  The name in
   ; brackets is the name of the variable in the page.tpl.php file, (e.g.
@@ -80,18 +82,9 @@ features[] = secondary_links
   ; Set the default settings to be used in theme-settings.php
 settings[zen_block_editing]        = 1
 settings[zen_breadcrumb]           = yes
-settings[zen_breadcrumb_separator] = ' :&#58; '
+settings[zen_breadcrumb_separator] = ' › '
 settings[zen_breadcrumb_home]      = 1
-settings[zen_breadcrumb_trailing]  = 0
+settings[zen_breadcrumb_trailing]  = 1
 settings[zen_breadcrumb_title]     = 0
-settings[zen_classic_fixed]        = 0
-settings[zen_layout]               = border-politics-liquid
-settings[zen_rebuild_registry]     = 0
+settings[zen_rebuild_registry]     = 1
 settings[zen_wireframes]           = 0
-
-; Information added by drupal.org packaging script on 2009-02-13
-version = "6.x-1.0"
-core = "6.x"
-project = "zen"
-datestamp = "1234555897"
-
