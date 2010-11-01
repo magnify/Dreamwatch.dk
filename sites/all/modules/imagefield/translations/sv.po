@@ -1,131 +1,134 @@
-#
-#
-# German translation of Drupal (imagefield.module)
-# Copyright Gabriel Birke http://www.d-scribe.de
+# Swedish translation of imagefield (6.x-3.1)
+# Copyright (c) 2009 by the Swedish translation team
 # Generated from files:
-# imagefield.module,v 1.30.2.20 2007/10/19 08:03:02 quicksketch
-# imagefield.info,v 1.4.2.1 2007/06/18 23:06:46 dww
+#  imagefield_widget.inc,v 1.39 2009/05/17 02:17:31 quicksketch
+#  imagefield.info,v 1.12 2009/03/01 04:38:48 quicksketch
+#  imagefield.module,v 1.102 2009/07/03 23:35:49 quicksketch
+#  imagefield_file.inc,v 1.18 2009/04/14 01:28:52 quicksketch
+#  imagefield.install,v 1.31 2009/04/15 20:15:03 quicksketch
 #
 msgid ""
-msgstr "Project-Id-Version: \n"
-"POT-Creation-Date: 2009-10-29 13:55+0100\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Thomas Zahreddin <thomas@voicehero.com>\n"
-"Language-Team: \n"
+msgstr ""
+"Project-Id-Version: imagefield (6.x-3.1)\n"
+"POT-Creation-Date: 2010-03-31 11:50+0200\n"
+"PO-Revision-Date: 2010-03-31 11:50+0100\n"
+"Last-Translator: Magnus Gunnarsson <magnus.gunnarsson76@gmail.com>\n"
+"Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: GERMANY\n"
+"X-Poedit-Language: Swedish\n"
+"X-Poedit-Country: SWEDEN\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: imagefield_file.inc:94
 msgid "An image thumbnail was not able to be created."
-msgstr "Eine Miniaturansicht konnte nicht erstellt werden."
+msgstr "En miniatyrbild kunde inte skapas."
 
 #: imagefield_widget.inc:21
 msgid "Maximum resolution for Images"
-msgstr "Maximale Auflösung für Bilder"
+msgstr "Största upplösning för bilder"
 
 #: imagefield_widget.inc:25
 msgid "The maximum allowed image size expressed as WIDTHxHEIGHT (e.g. 640x480). Set to 0 for no restriction. If a larger image is uploaded, it will be resized to reflect the given width and height. Resizing images on upload will cause the loss of <a href=\"http://en.wikipedia.org/wiki/Exchangeable_image_file_format\">EXIF data</a> in the image."
-msgstr "Die minimal zulässige Auflösung für Bilder im Format BREITExHÖHE (z.B. 640x480).  Setzen Sie dies auf 0 für keine Einschränkung. Wenn ein größeres Bild hochgeladen wird, wird es auf die angegebene Breite und Höhe angepasst. Durch die Anpassung gehen die <a href=\"http://en.wikipedia.org/wiki/Exchangeable_image_file_format\">EXIF Daten</a> des Bildes verloren."
+msgstr "Den största tillåtna storleken uttryckt som BREDDxHÖJD (t.ex. 640x480x). Ange 0 för att inte begränsa. Om en större bild laddas upp kommer storleken ändras efter den angivna bredden och höjden. Att ändra storlek vid uppladdning kommer orsaka att <a href=\"http://en.wikipedia.org/wiki/Exchangeable_image_file_format\">EXIF-data</a> i bilden går förlorad."
 
 #: imagefield_widget.inc:30
 msgid "Minimum resolution for Images"
-msgstr "Minimale Auflösung für Bilder"
+msgstr "Minsta upplösning för bilder"
 
 #: imagefield_widget.inc:35
 msgid "The minimum allowed image size expressed as WIDTHxHEIGHT (e.g. 640x480). Set to 0 for no restriction. If an image that is smaller than these dimensions is uploaded it will be rejected."
-msgstr "Die minimal zulässige Größe für Bilder im Format BREITExHÖHE (z.B. 640x480).  Setzen Sie dies auf 0 für keine Einschränkung. Sollte ein kleineres Bild als diese Abmessungen hochgeladen werden, wird dieses zurückgewiesen."
+msgstr "Den minsta tillåtna bildstorlek uttryckt som HÖJDxBREDD (t ex 640x480). Sätt detta fält till 0 för att göra storleken obegränsad. Om en bild som är mindre än angiven storlek laddas upp kommer den att raderas."
 
 #: imagefield_widget.inc:41
 msgid "ALT text settings"
-msgstr "Einstellungen für ALT-Text"
+msgstr "Inställningar för ALT-text"
 
 #: imagefield_widget.inc:48
 msgid "Enable custom alternate text"
-msgstr "Benutzerdefinierter Alternativtext"
+msgstr "Aktivera anpassad alternativ text"
 
 #: imagefield_widget.inc:50
 msgid "Enable user input alternate text for images."
-msgstr "Die Eingabe benutzerdefinierter Alternativtexte für Bilder aktivieren."
+msgstr "Aktivera användardefinierad alternativ text för bilder."
 
 #: imagefield_widget.inc:54
 msgid "Default ALT text"
-msgstr "Standardmäßiger ALT-Text"
+msgstr "Standard ALT-text"
 
 #: imagefield_widget.inc:56
 msgid "This value will be used for alternate text by default."
-msgstr "Dieser Wert wird standardmäßig als der Alternativtext verwendet."
+msgstr "Detta värde kommer att användas för alternativ text som standard."
 
 #: imagefield_widget.inc:62
 msgid "Title text settings"
-msgstr "Einstellungen für den Titeltext"
+msgstr "Inställningar för titeltext"
 
 #: imagefield_widget.inc:69
 msgid "Enable custom title text"
-msgstr "Benutzerdefinierter Titel-Text"
+msgstr "Aktivera anpassad titeltext"
 
 #: imagefield_widget.inc:71
 msgid "Enable user input title text for images."
-msgstr "Die Eingabe benutzerdefinierter Titeltexte für Bilder aktivieren."
+msgstr "Tillåt att användare anger titeltext för bilder."
 
 #: imagefield_widget.inc:75
 msgid "Input type"
-msgstr "Eingabe Type"
+msgstr "Inmatningstyp"
 
 #: imagefield_widget.inc:80
 msgid "Choose type of field to be displayed to the user."
-msgstr "Wählen Sie den Typ des Feldes, das dem Benutzer angezeigt wird."
+msgstr "Välj typ av fält som skall visas för användaren."
 
 #: imagefield_widget.inc:84
 msgid "Default Title text"
-msgstr "Standardmäßiger Titel-Text"
+msgstr "Förvald titeltext"
 
 #: imagefield_widget.inc:86
 msgid "This value will be used as the image title by default."
-msgstr "Dieser Wert wird standardmäßig als der Bildtitel verwendet."
+msgstr "Detta värde kommer att användas som förvald titel för bild."
 
 #: imagefield_widget.inc:93
 msgid "Default image"
-msgstr "Standardmäßiges Bild"
+msgstr "Standardbild"
 
 #: imagefield_widget.inc:103
 msgid "Use default image"
-msgstr "Standardmäßiges Bild verwenden"
+msgstr "Använd standardbild"
 
 #: imagefield_widget.inc:105
 msgid "When an image is not uploaded, show a default image on display."
-msgstr "Wenn ein Bild fehlt, so wird ein Standard-Bild angezeigt."
+msgstr "Välj en standardbild att visa om ingen bild har laddats upp."
 
 #: imagefield_widget.inc:116
 msgid "Upload image"
-msgstr "Bild hochladen"
+msgstr "Ladda upp bild"
 
 #: imagefield_widget.inc:117
 msgid "Choose a image that will be used as default."
-msgstr "Ein Bild auswählen, das standardmäßig verwendet wird."
+msgstr "Välj en bild som skall användas som standard."
 
 #: imagefield_widget.inc:140
 msgid "The default image could not be uploaded. The destination %destination does not exist or is not writable by the server."
-msgstr "Die Standard-Bild konnte nicht hochgeladen werden. Das Ziel %destination ist auf dem Server nicht vorhanden oder beschreibbar."
+msgstr "Standardbilden kunde inte laddas upp. Destinationen %destination finns inte eller är inte skrivbar av servern."
 
 #: imagefield_widget.inc:176
 msgid "Only web-standard images (jpg, gif, and png) are supported through the image widget. If needing to upload other types of images, change the widget to use a standard file upload."
-msgstr "Nur die üblichen Bildformate (jpg, gif und png) werden unterstützt. Gegebenenfalls passen Sie den Dateityp an."
+msgstr "Endast standardbilder för webb (jpg, gif och png) stöds genom gränssnittskomponenten för bild. Om andra typer av bilder skall laddas upp, ändra gränssnittskomponenten till en vanlig filuppladdning."
 
 #: imagefield_widget.inc:182
 msgid "Please specify a resolution in the format WIDTHxHEIGHT (e.g. 640x480)."
-msgstr "Das Größe für Bilder im Format BREITExHÖHE (z.B. 640x480). "
+msgstr "Vänligen specificera en upplösning i formatet BREDDxHÖJD (t.ex. 640x480)."
 
 #: imagefield_widget.inc:230
 msgid "Alternate Text"
-msgstr "Alternativtext"
+msgstr "Alternativ text"
 
 #: imagefield_widget.inc:233
 msgid "This text will be used by screen readers, search engines, or when the image cannot be loaded."
-msgstr "Dieser Text wird von einem Screen Reader, Suchmaschinen, oder wenn das Bild nicht geladen werden kann verwendet werden."
+msgstr "Denna text kommer användas av skärmläsare, sökmotorer, eller när bilden inta kan laddas."
 
 #: imagefield_widget.inc:258
 msgid "Title"
@@ -133,11 +136,11 @@ msgstr "Titel"
 
 #: imagefield_widget.inc:260
 msgid "The title is used as a tool tip when the user hovers the mouse over the image."
-msgstr "Der Titel ist als Tool-Tip verwendet, wenn der Benutzer den Mauszeiger über dem Bild kurz stehen lässt."
+msgstr "Titeln syns i en ruta när användaren för musen över bilden."
 
 #: imagefield.module:21
 msgid "The ImageField module has been disabled. The <a href=\"http://drupal.org/project/filefield\">FileField module</a> needs to be installed for it to work properly."
-msgstr "The ImageField module has been disabled. Die <a href=\\\"http://drupal.org/project/filefield\\\">FileField Modul</a> muss installiert werden, um richtig zu funktionieren."
+msgstr "Modulen ImageField har inaktiverats.  Modulen <a href=\"http://drupal.org/project/filefield\">FileField</a> måste installeras för att den skall fungera ordentligt."
 
 #: imagefield.module:135;221
 msgid "Image"
@@ -145,42 +148,40 @@ msgstr "Bild"
 
 #: imagefield.module:139
 msgid "An edit widget for image files, including a preview of the image."
-msgstr "Ein Steuerelement zur Bearbeitung von Bilddateien, mit einer Vorschau des Bildes."
+msgstr "En gränssnittskomponent för redigering av bildfiler, som innehåller en förhandsvisning av bilden."
 
 #: imagefield.module:223;228;233
 msgid "Displays image files in their original size."
-msgstr "Zeigt Bilddateien in ihrer originalen Größe an."
+msgstr "Visa bildfiler i sin ursprungliga storlek."
 
 #: imagefield.module:226
 msgid "Image linked to node"
-msgstr "Bild als Links zum Beitrags"
+msgstr "Bild länkad till nod"
 
 #: imagefield.module:231
 msgid "Image linked to file"
-msgstr "Bild als Links zur Datei"
+msgstr "Bild länkad till fil"
 
 #: imagefield.install:62
 msgid "FileField must be updated to Drupal 6 before ImageField can be updated."
-msgstr "FileField in einer Version für Drupal 6 installiert sein, ImageField aktualisiert werden kann."
+msgstr "Modulen FileField måste uppdateras till Drupal 6 innan ImageField kan uppdateras."
 
 #: imagefield.install:326
 msgid "Deleted admin thumbnails distributed throughout files directory. All thumbnails are now stored in the \"imagefield_thumbs\" directory."
-msgstr "[fuzzy] Gelöschte Dateien im gesamten Bildes admin-Verzeichnis verteilt. Alle Vorschaubilder werden im Verzeichnis \"imagefield_thumbs\"."
+msgstr "Raderade administrativa miniatyrbilder distribuerade runtom i filkatalogen. Alla miniatyrbilder sparas nu i mappen \"imagefield_thumbs\"."
 
 #: imagefield.info:0
 msgid "ImageField"
-msgstr "Bildfeld"
+msgstr "ImageField"
 
 #: imagefield.info:0
 msgid "Defines an image field type."
-msgstr "Definiert einen „Bild“-Feldtyp."
+msgstr "Anger en fälttyp för bilder."
 
 #: imagefield.info:0
 msgid "CCK"
 msgstr "CCK"
 
-#~ msgid "Check here if you want to use a image as default."
-#~ msgstr "Aktivieren, um ein Bild als Standard zu verwenden."
-#~ msgid "Has Image"
-#~ msgstr "Bild vorhanden"
+#~ msgid "imagefield"
+#~ msgstr "imagefield"
 
