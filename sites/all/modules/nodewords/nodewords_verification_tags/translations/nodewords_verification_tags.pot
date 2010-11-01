@@ -1,4 +1,4 @@
-# $Id: nodewords_verification_tags.pot,v 1.1.2.2 2009/10/05 22:24:18 hass Exp $
+# $Id: nodewords_verification_tags.pot,v 1.1.2.3 2009/10/21 21:42:45 hass Exp $
 #
 # LANGUAGE translation of Drupal (nodewords_verification_tags)
 # Copyright YEAR NAME <EMAIL@ADDRESS>
@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2009-10-06 00:22+0200\n"
+"POT-Creation-Date: 2009-10-21 23:41+0200\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"

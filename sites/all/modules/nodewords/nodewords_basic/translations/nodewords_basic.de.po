@@ -20,8 +20,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: German translation for Nodewords\n"
-"POT-Creation-Date: 2009-10-06 00:22+0200\n"
-"PO-Revision-Date: 2009-10-06 00:28+0100\n"
+"POT-Creation-Date: 2009-10-21 23:41+0200\n"
+"PO-Revision-Date: 2009-10-21 23:50+0100\n"
 "Last-Translator: Alexander Haß <http://drupal.org/user/85918>\n"
 "Language-Team: Alexander Hass\n"
 "MIME-Version: 1.0\n"
@@ -32,168 +32,176 @@ msgstr ""
 "X-Poedit-Country: GERMANY\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: nodewords_basic/nodewords_basic.module:54;132
+#: nodewords_basic/nodewords_basic.module:54;136
 msgid "Abstract"
 msgstr "Zusammenfassung"
 
-#: nodewords_basic/nodewords_basic.module:62;160
+#: nodewords_basic/nodewords_basic.module:63;164
 msgid "Canonical URL"
 msgstr "Canonical URL"
 
-#: nodewords_basic/nodewords_basic.module:69;247
+#: nodewords_basic/nodewords_basic.module:71;251
 msgid "Copyright"
 msgstr "Urheberrecht"
 
-#: nodewords_basic/nodewords_basic.module:77;281
+#: nodewords_basic/nodewords_basic.module:80;285
 msgid "Description"
 msgstr "Beschreibung"
 
-#: nodewords_basic/nodewords_basic.module:85;377
+#: nodewords_basic/nodewords_basic.module:89;381
 msgid "Keywords"
 msgstr "Schlüsselwörter"
 
-#: nodewords_basic/nodewords_basic.module:92;461
+#: nodewords_basic/nodewords_basic.module:96;465
 #, fuzzy
 msgid "Revisit after"
 msgstr "Wiederbesuch nach"
 
-#: nodewords_basic/nodewords_basic.module:99;515
+#: nodewords_basic/nodewords_basic.module:103;519
 msgid "Robots"
 msgstr "Robots"
 
-#: nodewords_basic/nodewords_basic.module:133
+#: nodewords_basic/nodewords_basic.module:137
 msgid "Enter a short abstract. Typically it is one sentence."
 msgstr "Eine kurze Zusammenfassung angeben. Typischerweise ist dies ein Satz."
 
-#: nodewords_basic/nodewords_basic.module:161
+#: nodewords_basic/nodewords_basic.module:165
 msgid "Canonical URLs are used from the search engines, and allow them to not report duplicate titles for HTML pages that are accessible from different URLs. Use a relative URL without the initial slash; canonical URLs that point to a different domain are normally not accepted."
 msgstr ""
 
-#: nodewords_basic/nodewords_basic.module:237
+#: nodewords_basic/nodewords_basic.module:241
 msgid "Canonical URL must be a relative URL."
 msgstr "Die Canonical URL muss eine relative URL sein."
 
-#: nodewords_basic/nodewords_basic.module:248
+#: nodewords_basic/nodewords_basic.module:252
 msgid "Enter a short copyright statement."
 msgstr "Eine kurze Urheberrechtsangabe angeben."
 
-#: nodewords_basic/nodewords_basic.module:282
+#: nodewords_basic/nodewords_basic.module:286
 msgid "Enter a description. Limit your description to about 20 words, with a maximum of %count characters. It should not contain any HTML tags or other formatting."
 msgstr "Eine Beschreibung für diese Seite angeben. Die Beschreibung sollte auf 20 Wörter begrenzt sein und eine maximalen Anzahl von %count Zeichen betragen. Diese sollte keine HTML-Tags oder andere Formatierungen enthalten."
 
-#: nodewords_basic/nodewords_basic.module:348;363
+#: nodewords_basic/nodewords_basic.module:352;367
 msgid "Use the node teaser if the description meta tag is not set"
 msgstr ""
 
-#: nodewords_basic/nodewords_basic.module:349
-msgid "Using the node teaser to populate the description meta tag can cause problems with some content types; rather than enabling this option globally, it would be better to enable it separately for each content type (when it has been verified that enabling it for a specific content type does not create problems). When this option is enabled, the form fields used for the meta tag Description will not appear in the meta tags edit form; this option is overwritten from the similar option for the content type."
+#: nodewords_basic/nodewords_basic.module:353
+msgid "Using the node teaser to populate the meta tag DESCRIPTION can cause problems with some content types; rather than enabling this option globally, it would be better to enable it separately for each content type (when it has been verified that enabling it for a specific content type does not create problems). When this option is enabled, the form fields used for the meta tag DESCRIPTION will not appear in the meta tags edit form; this option is overwritten from the similar option for the content type."
 msgstr ""
 
-#: nodewords_basic/nodewords_basic.module:355
-msgid "Include the ALT attribute of images in the description meta tag created from the node teaser"
+#: nodewords_basic/nodewords_basic.module:359
+msgid "Include the attribute ALT of images in the description meta tag created from the node teaser"
 msgstr ""
 
-#: nodewords_basic/nodewords_basic.module:364
-msgid "Using the node teaser to populate the description meta tag can cause problems with some content types; before to enable the option permanently, verify it does not create problems when used with the content type. When this option is enabled, the form fields used for the meta tag Description will not appear in the meta tags edit form."
+#: nodewords_basic/nodewords_basic.module:368
+msgid "Using the node teaser to populate the meta tag DESCRIPTION can cause problems with some content types; before to enable the option permanently, verify it does not create problems when used with the content type. When this option is enabled, the form fields used for the meta tag DESCRIPTION will not appear in the meta tags edit form."
 msgstr ""
 
-#: nodewords_basic/nodewords_basic.module:378
+#: nodewords_basic/nodewords_basic.module:382
 msgid "Enter a comma separated list of keywords. Avoid duplication of words as this will lower your search engine ranking."
 msgstr "Eine kommagetrennte Liste von Schlüsselwörtern angeben. Doppelte Wörter sollten vermieden werden, da dies das Suchmaschinenranking herabsetzt."
 
-#: nodewords_basic/nodewords_basic.module:437
-msgid "The meta tag Keywords value must be a comma separated list of words."
-msgstr "Die Meta-Tag-Schlüsselwörter müssen eine kommagetrennte Liste von Wörtern sein."
+#: nodewords_basic/nodewords_basic.module:441
+#, fuzzy
+msgid "The meta tag KEYWORDS value must be a comma separated list of words."
+msgstr "Der Meta-Tag KEYWORDS muss eine kommagetrennte Liste von Wörtern sein."
 
-#: nodewords_basic/nodewords_basic.module:445
+#: nodewords_basic/nodewords_basic.module:449
 msgid "Global keywords"
 msgstr "Globale Schlüsselwörter"
 
-#: nodewords_basic/nodewords_basic.module:446
+#: nodewords_basic/nodewords_basic.module:450
 msgid "Enter a comma separated list of keywords. Global keywords will be always added to each page."
 msgstr "Eine kommagetrennte Liste von Schlüsselwörtern angeben. Globale Wörter werden immer zu jeder Seite hinzugefügt."
 
-#: nodewords_basic/nodewords_basic.module:462
+#: nodewords_basic/nodewords_basic.module:466
 msgid "The Revisit-After META tag defines how often a search engine or spider should come to your website for re-indexing. This tag is used for websites that change their content and on a regular basis. This tag can also be beneficial in boosting your rankings if search engines display results based on the most recent submissions."
 msgstr ""
 
-#: nodewords_basic/nodewords_basic.module:474
+#: nodewords_basic/nodewords_basic.module:478
 msgid "day(s)"
 msgstr "Tag(e)"
 
-#: nodewords_basic/nodewords_basic.module:483
-msgid "The meta tag Revisit-After value must be a positive number."
+#: nodewords_basic/nodewords_basic.module:487
+msgid "The meta tag REVISIT-AFTER value must be a positive number."
 msgstr ""
 
-#: nodewords_basic/nodewords_basic.module:500
-msgid "NOINDEX"
-msgstr "NOINDEX"
-
-#: nodewords_basic/nodewords_basic.module:501
-msgid "NOFOLLOW"
-msgstr "NOFOLLOW"
-
-#: nodewords_basic/nodewords_basic.module:502
+#: nodewords_basic/nodewords_basic.module:504
 msgid "NOARCHIVE"
 msgstr "NOARCHIVE"
 
-#: nodewords_basic/nodewords_basic.module:503
+#: nodewords_basic/nodewords_basic.module:505
+msgid "NOFOLLOW"
+msgstr "NOFOLLOW"
+
+#: nodewords_basic/nodewords_basic.module:506
+msgid "NOINDEX"
+msgstr "NOINDEX"
+
+#: nodewords_basic/nodewords_basic.module:507
 msgid "NOODP"
 msgstr "NOODP"
 
-#: nodewords_basic/nodewords_basic.module:504
+#: nodewords_basic/nodewords_basic.module:508
 msgid "NOSNIPPET"
 msgstr "NOSNIPPET"
 
-#: nodewords_basic/nodewords_basic.module:505
+#: nodewords_basic/nodewords_basic.module:509
 msgid "NOYDIR"
 msgstr "NOYDIR"
 
 # English seems to be wrong
-#: nodewords_basic/nodewords_basic.module:516
+#: nodewords_basic/nodewords_basic.module:520
 #, fuzzy
-msgid "The ROBOTS meta tag offers a simple mechanism to indicate to web robots and crawlers whether the page should be indexed (NOINDEX) and whether links on the page should be followed (NOFOLLOW)."
-msgstr "Der ROBOTS-Meta-Tag bietet einen einfachen Mechanismus den Web-Robots und Crawlern mitzuteilen, ob die Seite indiziert werden soll (INDEX) und ob Verweise auf der Seite verfolgt (FOLLOW) werden sollen."
+msgid "The meta tag ROBOTS offers a simple mechanism to indicate to web robots and crawlers whether the page should be indexed (NOINDEX) and whether links on the page should be followed (NOFOLLOW)."
+msgstr "Der ROBOTS-Meta-Tag bietet einen einfachen Mechanismus den Web-Robots und Crawlern mitzuteilen, ob die Seite indiziert (INDEX) werden soll und ob Links auf der Seite verfolgt (FOLLOW) werden sollen."
 
-#: nodewords_basic/nodewords_basic.module:532
+#: nodewords_basic/nodewords_basic.module:536
 msgid "Use the default value"
 msgstr "Den Standardwert verwenden."
 
-#: nodewords_basic/nodewords_basic.module:541
+#: nodewords_basic/nodewords_basic.module:545
 msgid "The default value is currently %default_values."
 msgstr "Der Standardwert ist derzeit %default_values."
 
-#: nodewords_basic/nodewords_basic.module:547
+#: nodewords_basic/nodewords_basic.module:551
 msgid "The default value is currently not set."
 msgstr "Der Standardwert ist derzeit nicht eingestellt."
 
-#: nodewords_basic/nodewords_basic.module:112
-msgid "edit meta tag Abstract"
-msgstr ""
-
-#: nodewords_basic/nodewords_basic.module:113
-msgid "edit canonical URL meta tag"
-msgstr ""
-
-#: nodewords_basic/nodewords_basic.module:114
-msgid "edit meta tag Copyright"
-msgstr ""
-
-#: nodewords_basic/nodewords_basic.module:115
-msgid "edit meta tag Description"
-msgstr ""
-
 #: nodewords_basic/nodewords_basic.module:116
-msgid "edit meta tag Keywords"
-msgstr ""
+#, fuzzy
+msgid "edit meta tag ABSTRACT"
+msgstr "ABSTRACT Meta-Tag bearbeiten"
 
 #: nodewords_basic/nodewords_basic.module:117
-msgid "edit meta tag Revisit-after"
-msgstr ""
+#, fuzzy
+msgid "edit canonical URL meta tag"
+msgstr "Canonical-URL Meta-Tag bearbeiten"
 
 #: nodewords_basic/nodewords_basic.module:118
-msgid "edit meta tag Robots"
-msgstr ""
+#, fuzzy
+msgid "edit meta tag COPYRIGHT"
+msgstr "COPYRIGHT Meta-Tag bearbeiten"
+
+#: nodewords_basic/nodewords_basic.module:119
+#, fuzzy
+msgid "edit meta tag DESCRIPTION"
+msgstr "DESCRIPTION Meta-Tag bearbeiten"
+
+#: nodewords_basic/nodewords_basic.module:120
+#, fuzzy
+msgid "edit meta tag KEYWORDS"
+msgstr "KEYWORDS Meta-Tag bearbeiten"
+
+#: nodewords_basic/nodewords_basic.module:121
+#, fuzzy
+msgid "edit meta tag REVISIT-AFTER"
+msgstr "REVISIT-AFTER Meta-Tag bearbeiten"
+
+#: nodewords_basic/nodewords_basic.module:122
+#, fuzzy
+msgid "edit meta tag ROBOTS"
+msgstr "ROBOTS Meta-Tag bearbeiten"
 
 #: nodewords_basic/nodewords_basic.info:0
 msgid "Nodewords basic"

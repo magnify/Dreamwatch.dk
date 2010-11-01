@@ -1,5 +1,5 @@
 <?php
-// $Id: nodewords_basic.module,v 1.1.2.7 2009/10/11 12:00:51 kiam Exp $
+// $Id: nodewords_basic.module,v 1.1.2.54 2009/12/30 20:02:22 kiam Exp $
 
 /**
  * @file
@@ -11,81 +11,76 @@
  * @{
  */
 
-/*****************************************************************************
- * Drupal hooks.
- ****************************************************************************/
-
 /**
- * Implementation of hook_node_type().
+ * Implements hook_node_type().
  */
-function nodewords_basic_node_type($op) {
-  switch ($op){
-    case 'delete':
-      variable_del('nodewords_basic_user_teaser_' . $info->type);
-      break;
-    case 'update':
-      if (!empty($info->old_type) && $info->old_type != $info->type) {
-        $setting = variable_get('nodewords_basic_user_teaser_' . $info->old_type, FALSE);
-        variable_del('nodewords_basic_user_teaser_' . $info->old_type);
-        variable_set('nodewords_basic_user_teaser_' . $info->type, $setting);
-      }
-      break;
+function nodewords_basic_node_type($op, $info) {
+  if ($op == 'delete') {
+    variable_del('nodewords_basic_use_teaser_' . $info->type);
   }
 }
 
 /**
- * Implementation of hook_nodewords_api().
+ * Implements hook_nodewords_api().
  */
 function nodewords_basic_nodewords_api() {
   return array(
-    'version' => 1.1,
+    'version' => '1.9',
   );
 }
 
 /**
- * Implementation of hook_nodewords_tags_info().
+ * Implements hook_nodewords_tags_info().
  */
 function nodewords_basic_nodewords_tags_info() {
   $tags = array(
     'abstract' => array(
-      'tag:db:type' => 'string',
       'tag:function:prefix' => 'nodewords_basic_abstract',
       'tag:template' => array('abstract' => NODEWORDS_META),
       'widget:label' => t('Abstract'),
       'widget:permission' => 'edit meta tag ABSTRACT',
     ),
     'canonical' => array(
-      'tag:context:denied' => array('default', 'errorpage', 'tracker', 'pager'),
-      'tag:db:type' => 'string',
+      'tag:context:allowed' => array(
+        NODEWORDS_TYPE_FRONTPAGE,
+        NODEWORDS_TYPE_NODE,
+        NODEWORDS_TYPE_PAGE,
+        NODEWORDS_TYPE_PAGER,
+        NODEWORDS_TYPE_TERM,
+        NODEWORDS_TYPE_USER,NODEWORDS_TYPE_VOCABULARY,
+      ),
+      'tag:context:denied' => array(
+        NODEWORDS_TYPE_DEFAULT,
+        NODEWORDS_TYPE_ERRORPAGE,
+        NODEWORDS_TYPE_TRACKER,
+      ),
       'tag:function:prefix' => 'nodewords_basic_canonical',
       'tag:template' => array('canonical' => NODEWORDS_LINK_REL),
-      'tag:weight' => array('schema.dc' => -20),
+      'tag:weight' => array('canonical' => -10),
       'widget:label' => t('Canonical URL'),
       'widget:permission' => 'edit canonical URL meta tag',
     ),
     'copyright' => array(
-      'tag:context:denied' => array('pager'),
-      'tag:db:type' => 'string',
       'tag:function:prefix' => 'nodewords_basic_copyright',
       'tag:template' => array('copyright' => NODEWORDS_META),
+      'tag:template:index' => array('copyright' => '<h3>%content</h3>'),
+      'tag:weight' => array('copyright' => -7),
       'widget:label' => t('Copyright'),
       'widget:permission' => 'edit meta tag COPYRIGHT',
     ),
     'description' => array(
-      'tag:context:denied' => array('pager'),
-      'tag:db:type' => 'string',
       'tag:function:prefix' => 'nodewords_basic_description',
       'tag:template' => array('description' => NODEWORDS_META),
-      'tag:template:index' => '<h3>%content</h3>',
+      'tag:template:index' => array('description' => '<h3>%content</h3>'),
+      'tag:weight' => array('description' => -6),
       'widget:label' => t('Description'),
       'widget:permission' => 'edit meta tag DESCRIPTION',
     ),
     'keywords' => array(
-      'tag:context:denied' => array('pager'),
-      'tag:db:type' => 'string',
       'tag:function:prefix' => 'nodewords_basic_keywords',
       'tag:template' => array('keywords' => NODEWORDS_META),
-      'tag:template:index' => '<h2>%content</h2>',
+      'tag:template:index' => array('keywords' => '<h2>%content</h2>'),
+      'tag:weight' => array('keywords' => -8),
       'widget:label' => t('Keywords'),
       'widget:permission' => 'edit meta tag KEYWORDS',
     ),
@@ -97,6 +92,18 @@ function nodewords_basic_nodewords_tags_info() {
       'widget:permission' => 'edit meta tag REVISIT-AFTER',
     ),
     'robots' => array(
+      'tag:context:allowed' => array(
+        NODEWORDS_TYPE_DEFAULT,
+        NODEWORDS_TYPE_ERRORPAGE,
+        NODEWORDS_TYPE_FRONTPAGE,
+        NODEWORDS_TYPE_NODE,
+        NODEWORDS_TYPE_PAGE,
+        NODEWORDS_TYPE_PAGER,
+        NODEWORDS_TYPE_TERM,
+        NODEWORDS_TYPE_TRACKER,
+        NODEWORDS_TYPE_USER,
+        NODEWORDS_TYPE_VOCABULARY,
+      ),
       'tag:db:type' => 'array',
       'tag:function:prefix' => 'nodewords_basic_robots',
       'tag:template' => array('robots' => NODEWORDS_META),
@@ -109,7 +116,7 @@ function nodewords_basic_nodewords_tags_info() {
 }
 
 /**
- * Implementation of hook_perm().
+ * Implements hook_perm().
  */
 function nodewords_basic_perm() {
   return array(
@@ -123,28 +130,21 @@ function nodewords_basic_perm() {
   );
 }
 
-/*****************************************************************************
- * Meta tags implementation functions.
- ****************************************************************************/
-
 /**
  * Set the form fields used to implement the options for the meta tag.
  */
 function nodewords_basic_abstract_form(&$form, $content, $options) {
   $form['abstract'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Abstract'),
-    '#description' => t('Enter a short abstract. Typically it is one sentence.'),
-    '#collapsible' => TRUE,
-    '#collapsed' => !(empty($content['value']) && empty($options['default']['abstract']['value'])),
     '#tree' => TRUE,
   );
 
   $form['abstract']['value'] = array(
     '#type' => 'textfield',
+    '#title' => t('Abstract'),
+    '#description' => t('Enter a short abstract. Typically it is one sentence.'),
     '#default_value' => empty($content['value']) ? (!empty($options['default']['abstract']['value']) ? $options['default']['abstract']['value'] : '') : $content['value'],
     '#size' => 60,
-    '#maxlength' => variable_get('nodewords_max_size', 255),
+    '#maxlength' => variable_get('nodewords_max_size', 350),
   );
 }
 
@@ -160,57 +160,62 @@ function nodewords_basic_abstract_prepare(&$tags, $content, $options) {
  */
 function nodewords_basic_canonical_form(&$form, $content, $options) {
   $form['canonical'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Canonical URL'),
-    '#description' => t('Canonical URLs are used from the search engines, and allow them to not report duplicate titles for HTML pages that are accessible from different URLs. Use a relative URL without the initial slash; canonical URLs that point to a different domain are normally not accepted.'),
-    '#collapsible' => TRUE,
-    '#collapsed' => !empty($content['value']),
     '#tree' => TRUE,
   );
 
   $form['canonical']['value'] = array(
     '#type' => 'textfield',
+    '#title' => t('Canonical URL'),
+    '#description' => t('Canonical URLs are used from the search engines, and allow them to not report duplicate titles for HTML pages that are accessible from different URLs. Use a relative URL without the initial slash; canonical URLs that point to a different domain are normally not accepted.'),
     '#default_value' => empty($content['value']) ? '' : $content['value'],
     '#element_validate' => array('nodewords_basic_canonical_form_validate'),
     '#size' => 60,
-    '#maxlength' => variable_get('nodewords_max_size', 255),
+    '#maxlength' => variable_get('nodewords_max_size', 350),
   );
+}
+
+function nodewords_basic_canonical_form_validate($element, &$form_state) {
+  if (!empty($element['#value'])) {
+    $canonical_url = trim($element['#value'], '/');
+
+    if (!empty($canonical_url) && !valid_url(drupal_urlencode($canonical_url))) {
+      form_error($element, t('Canonical URL must be a relative URL.'));
+    }
+  }
 }
 
 /**
  * Set the meta tag content.
  */
 function nodewords_basic_canonical_prepare(&$tags, $content, $options) {
+  if (!empty($content['value'])) {
+    $content['value'] = trim($content['value'], '/');
+  }
+
   if (empty($content['value'])) {
     $path = '';
 
     switch ($options['type']) {
-      case 'frontpage':
+      case NODEWORDS_TYPE_FRONTPAGE:
         $content['value'] = '<front>';
         break;
 
-      case 'node':
+      case NODEWORDS_TYPE_NODE:
         if (count($options['ids']) == 1) {
           $path = 'node/' . $options['ids'][0];
         }
         break;
 
-      case 'page':
-        if (count($options['ids']) == 1 && !empty($options['ids'][0])) {
-          $path = $options['ids'][0];
-        }
-        break;
-
-      case 'term':
+      case NODEWORDS_TYPE_TERM:
         if (count($options['ids']) == 1) {
           $path = 'taxonomy/term/' . $options['ids'][0];
         }
         break;
 
-      case 'tracker':
+      case NODEWORDS_TYPE_TRACKER:
         if (count($options['ids']) == 1) {
-          if ($options['ids'][0] = -1) {
-            $path = 'tracker';
+          if ($options['ids'][0] == -1) {
+            $path = NODEWORDS_TYPE_TRACKER;
           }
           elseif (is_numeric($options['ids'][0])) {
             $path = 'user/' . $options['ids'][0] . '/track';
@@ -218,27 +223,52 @@ function nodewords_basic_canonical_prepare(&$tags, $content, $options) {
         }
         break;
 
-      case 'user':
+      case NODEWORDS_TYPE_USER:
         if (count($options['ids']) == 1) {
           $path = 'user/' . $options['ids'][0];
         }
         break;
+
+      default:
+        $path = $_GET['q'];
     }
 
     if ($path) {
-      $content['value'] = drupal_get_path_alias($path);
+      $content['value'] = $path;
     }
   }
   elseif (!empty($content['value']) && strpos($content['value'], '/') === 0) {
     $content['value'] = drupal_substr($content['value'], 1);
   }
 
-  $tags['canonical'] = !empty($content['value']) ? check_url(url($content['value'], array('absolute' => TRUE))) : '';
+  $base_url = rtrim(variable_get('nodewords_base_url', ''), '/');
+  $options = array(
+    'absolute' => TRUE,
+    'base_url' => empty($base_url) ? NULL : $base_url,
+  );
+
+  $tags['canonical'] = !empty($content['value']) ? check_url(url($content['value'], $options)) : '';
 }
 
-function nodewords_basic_canonical_form_validate($element, &$form_state) {
-  if (!empty($element['#value']) && preg_match('%^(http://|https://|ftp://|mailto:|smb://|afp://|file://|gopher://|news://|ssl://|sslv2://|sslv3://|tls://|tcp://|udp://)%', $element['#value'])) {
-    form_error($element, t('Canonical URL must be a relative URL.'));
+function nodewords_basic_canonical_settings_form(&$form, $form_id, $options) {
+  if ($form_id == 'nodewords_settings_form') {
+    $form['metatags_creation']['nodewords_base_url'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Base URL'),
+      '#description' => t('Enter the base URL that will be used for canonical URLs.'),
+      '#default_value' => variable_get('nodewords_base_url', ''),
+      '#element_validate' => array('nodewords_basic_canonical_settings_form_validate'),
+      '#size' => 60,
+    );
+  }
+}
+
+function nodewords_basic_canonical_settings_form_validate($element, &$form_state) {
+  if (!empty($element['#value']) && !($base_url = rtrim($element['#value'], '/'))) {
+    form_error($element, t('Invalid base URL.'));
+  }
+  elseif (!empty($base_url) && !valid_url($base_url, TRUE)) {
+    form_error($element, t('Invalid base URL.'));
   }
 }
 
@@ -247,19 +277,16 @@ function nodewords_basic_canonical_form_validate($element, &$form_state) {
  */
 function nodewords_basic_copyright_form(&$form, $content, $options) {
   $form['copyright'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Copyright'),
-    '#description' => t('Enter a short copyright statement.'),
-    '#collapsible' => TRUE,
-    '#collapsed' => !(empty($content['value']) && empty($options['default']['copyright']['value'])),
     '#tree' => TRUE,
   );
 
   $form['copyright']['value'] = array(
     '#type' => 'textfield',
+    '#title' => t('Copyright'),
+    '#description' => t('Enter a short copyright statement.'),
     '#default_value' => empty($content['value']) ? (!empty($options['default']['copyright']['value']) ? $options['default']['copyright']['value'] : '') : $content['value'],
     '#size' => 60,
-    '#maxlength' => variable_get('nodewords_max_size', 255),
+    '#maxlength' => variable_get('nodewords_max_size', 350),
   );
 }
 
@@ -274,28 +301,18 @@ function nodewords_basic_copyright_prepare(&$tags, $content, $options) {
  * Set the form fields used to implement the options for the meta tag.
  */
 function nodewords_basic_description_form(&$form, $content, $options) {
-  $bool = (
-    isset($options['node_type']) &&
-    variable_get('nodewords_basic_user_teaser_' . $options['node_type'], variable_get('nodewords_basic_use_teaser', FALSE))
+  $form['description'] = array(
+    '#tree' => TRUE,
   );
 
-  if (!$bool) {
-    $form['description'] = array(
-      '#type' => 'fieldset',
-      '#title' => t('Description'),
-      '#description' => t('Enter a description. Limit your description to about 20 words, with a maximum of %count characters. It should not contain any HTML tags or other formatting.', array('%count' => variable_get('nodewords_max_size', 255))),
-      '#collapsible' => TRUE,
-      '#collapsed' => !(empty($content['value']) && empty($options['default']['description']['value'])),
-      '#tree' => TRUE,
-    );
-
-    $form['description']['value'] = array(
-      '#type' => 'textarea',
-      '#default_value' => empty($content['value']) ? (!empty($options['default']['description']['value']) ? $options['default']['description']['value'] : '') : $content['value'],
-      '#cols' => 60,
-      '#rows' => 6,
-    );
-  }
+  $form['description']['value'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Description'),
+    '#description' => t('Enter a description. Limit your description to about 20 words, with a maximum of %count characters. It should not contain any HTML tags or other formatting.', array('%count' => variable_get('nodewords_max_size', 350))),
+    '#default_value' => empty($content['value']) ? (!empty($options['default']['description']['value']) ? $options['default']['description']['value'] : '') : $content['value'],
+    '#cols' => 60,
+    '#rows' => 6,
+  );
 }
 
 /**
@@ -303,31 +320,30 @@ function nodewords_basic_description_form(&$form, $content, $options) {
  */
 function nodewords_basic_description_prepare(&$tags, $content, $options) {
   switch ($options['type']) {
-    case 'node':
+    case NODEWORDS_TYPE_NODE:
       $bool = (
         count($options['ids']) == 1 &&
-        ($node = node_load($options['ids'][0])) &&
-        variable_get('nodewords_basic_user_teaser_' . $node->type, variable_get('nodewords_basic_use_teaser', FALSE))
+        ($node = node_load($options['ids'][0]))
       );
 
       if ($bool) {
-        $content['value'] = nodewords_metatag_from_teaser($node->body,
-          $node->format,
-          variable_get('nodewords_basic_use_alt_attribute', FALSE)
-        );
+        $content['value'] = nodewords_metatag_from_node_content($node, $content['value']);
       }
       break;
 
-    case 'term':
-      if (empty($content['value']) && count($options['ids']) == 1) {
-        $term = nodewords_get_term($options['ids'][0]);
-        if ($term) {
-          $content['value'] = $term->description;
-        }
-      }
-        break;
+    case NODEWORDS_TYPE_TERM:
+      $bool = (
+        empty($content['value']) &&
+        count($options['ids']) == 1 &&
+        ($term = nodewords_get_term($options['ids'][0]))
+      );
 
-    case 'vocabulary':
+      if ($bool) {
+        $content['value'] = $term->description;
+      }
+      break;
+
+    case NODEWORDS_TYPE_VOCABULARY:
       // TODO: probably we have to do a db_rewrite_sql() query here so access is restricted
       $bool = (
         empty($content['value']) &&
@@ -344,54 +360,32 @@ function nodewords_basic_description_prepare(&$tags, $content, $options) {
   $tags['description'] = empty($content['value']) ? (!empty($options['default']['description']['value']) ? $options['default']['description']['value'] : '') : $content['value'];
 }
 
-function nodewords_basic_description_settings_form(&$form, $type, $options) {
-  switch ($type) {
-    case 'advanced_settings':
-      $form['advanced']['nodewords_basic_use_teaser'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('Use the node teaser if the description meta tag is not set'),
-        '#description' => t('Using the node teaser to populate the description meta tag can cause problems with some content types; rather than enabling this option globally, it would be better to enable it separately for each content type (when it has been verified that enabling it for a specific content type does not create problems). When this option is enabled, the form fields used for the meta tag Description will not appear in the meta tags edit form; this option is overwritten from the similar option for the content type.'),
-        '#default_value' => variable_get('nodewords_basic_use_teaser', FALSE),
-      );
-
-      $form['advanced']['nodewords_basic_use_alt_attribute'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('Include the attribute ALT of images in the description meta tag created from the node teaser'),
-        '#default_value' => variable_get('nodewords_basic_use_alt_attribute', TRUE),
-      );
-      break;
-
-    case 'node_type_form':
-      $form['nodewords']['nodewords_basic_use_teaser'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('Use the node teaser if the description meta tag is not set'),
-        '#description' => t('Using the node teaser to populate the description meta tag can cause problems with some content types; before to enable the option permanently, verify it does not create problems when used with the content type. When this option is enabled, the form fields used for the meta tag Description will not appear in the meta tags edit form.'),
-        '#default_value' => variable_get('nodewords_basic_user_teaser_' . $form['#node_type']->type, variable_get('nodewords_basic_use_teaser', FALSE)),
-      );
-      break;
-  }
-}
-
 /**
  * Set the form fields used to implement the options for the meta tag.
  */
 function nodewords_basic_keywords_form(&$form, $content, $options) {
   $form['keywords'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Keywords'),
-    '#description' => t('Enter a comma separated list of keywords. Avoid duplication of words as this will lower your search engine ranking.'),
-    '#collapsible' => TRUE,
-    '#collapsed' => !(empty($content['value']) && empty($options['default']['keywords']['value'])),
     '#tree' => TRUE,
   );
 
   $form['keywords']['value'] = array(
     '#type' => 'textfield',
+    '#title' => t('Keywords'),
+    '#description' => t('Enter a comma separated list of keywords. Avoid duplication of words as this will lower your search engine ranking.'),
     '#default_value' => empty($content['value']) ? (!empty($options['default']['keywords']['value']) ? $options['default']['keywords']['value'] : '') : $content['value'],
     '#size' => 60,
     '#element_validate' => array('nodewords_basic_keywords_form_validate'),
-    '#maxlength' => variable_get('nodewords_max_size', 255),
+    '#maxlength' => variable_get('nodewords_max_size', 350),
   );
+}
+
+/**
+ * Validate the values passed as keywords.
+ */
+function nodewords_basic_keywords_form_validate($element, &$form_state) {
+  if (trim($element['#value']) == ',') {
+    form_error($element, t('The meta tag KEYWORDS value must be a comma separated list of words.'));
+  }
 }
 
 /**
@@ -407,7 +401,7 @@ function nodewords_basic_keywords_prepare(&$tags, $content, $options) {
     $value .= ',' . $content['value'];
   }
 
-  if ($options['type'] == 'node' && module_exists('taxonomy') && count($options['ids']) == 1) {
+  if ($options['type'] == NODEWORDS_TYPE_NODE && module_exists('taxonomy') && count($options['ids']) == 1) {
     $node = node_load($options['ids'][0]);
     foreach (taxonomy_node_get_terms($node) as $term) {
       if (in_array($term->vid, variable_get('nodewords_keyword_vids', array()))) {
@@ -415,7 +409,7 @@ function nodewords_basic_keywords_prepare(&$tags, $content, $options) {
       }
     }
   }
-  elseif ($options['type'] == 'term') {
+  elseif ($options['type'] == NODEWORDS_TYPE_TERM) {
     $terms = array();
 
     foreach ($options['ids'] as $id) {
@@ -433,25 +427,62 @@ function nodewords_basic_keywords_prepare(&$tags, $content, $options) {
   $tags['keywords'] = nodewords_unique($value);
 }
 
-/**
- * Validate the values passed as keywords.
- */
-function nodewords_basic_keywords_form_validate($element, &$form_state) {
-  if (trim($element['#value']) == ',') {
-    form_error($element, t('The meta tag KEYWORDS value must be a comma separated list of words.'));
-  }
-}
-
 function nodewords_basic_keywords_settings_form(&$form, $form_id, $options) {
-  if ($form_id == 'settings_form') {
-    $form['advanced']['nodewords_global_keywords'] = array(
+  if ($form_id == 'nodewords_settings_form') {
+    $form['metatags_creation']['taxonomy'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Taxonomy'),
+      '#collapsible' => TRUE,
+    );
+
+    if (module_exists('taxonomy')) {
+      $options = array();
+
+      foreach (taxonomy_get_vocabularies() as $vocabulary) {
+        $options[$vocabulary->vid] = check_plain($vocabulary->name);
+      }
+
+      if ($count = count($options)) {
+        $form['metatags_creation']['taxonomy']['nodewords_keyword_vids'] = array(
+          '#type' => $count > 10 ? 'select' : 'checkboxes',
+          '#title' => t('Auto-keywords vocabularies'),
+          '#description' => t('Select the vocabularies which contain terms you want to add to the keywords meta tag for nodes. The terms of these vocabularies are added before the global keywords but after the page-specific keywords.'),
+          '#default_value' => variable_get('nodewords_keyword_vids', array()),
+          '#options' => $options,
+          '#multiple' => TRUE,
+        );
+
+        if ($count > 10) {
+          $form['metatags_creation']['taxonomy']['nodewords_keyword_vids']['#multiple'] = TRUE;
+        }
+        elseif ($count > 2) {
+          // Add support for Check All if the checkboxes are more than two.
+          $form['metatags_creation']['nodewords_keyword_vids']['#checkall'] = TRUE;
+        }
+      }
+    }
+
+    if (empty($options)) {
+      $form['metatags_creation']['taxonomy']['nodewords_keyword_vids'] = array(
+        '#type' => 'value',
+        '#default_value' => variable_get('nodewords_keyword_vids', array()),
+      );
+
+      $form['metatags_creation']['taxonomy']['taxonomy_message'] = array(
+        '#value' => module_exists('taxonomy') ? t('There are no vocabularies currently defined.') : t('The module %module is not enabled; if you want to use taxonomy terms to automatically set the content of the meta tag KEYWORDS, you first need to <a href="@modules-page">enable %module</a>', array('%module' => 'taxonomy.module', '@modules-page' => url('admin/build/modules'))),
+        '#prefix' => '<div>',
+        '#suffix' => '</div>',
+      );
+    }
+
+    $form['metatags_creation']['nodewords_global_keywords'] = array(
       '#type' => 'textfield',
       '#title' => t('Global keywords'),
       '#description' => t('Enter a comma separated list of keywords. Global keywords will be always added to each page.'),
       '#default_value' => variable_get('nodewords_global_keywords', ''),
       '#size' => 60,
       '#element_validate' => array('nodewords_basic_keywords_form_validate'),
-      '#maxlength' => variable_get('nodewords_max_size', 255),
+      '#maxlength' => variable_get('nodewords_max_size', 350),
     );
   }
 }
@@ -461,16 +492,13 @@ function nodewords_basic_keywords_settings_form(&$form, $form_id, $options) {
  */
 function nodewords_basic_revisit_after_form(&$form, $content, $options) {
   $form['revisit-after'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Revisit after'),
-    '#description' => t('The Revisit-After META tag defines how often a search engine or spider should come to your website for re-indexing. This tag is used for websites that change their content and on a regular basis. This tag can also be beneficial in boosting your rankings if search engines display results based on the most recent submissions.'),
-    '#collapsible' => TRUE,
-    '#collapsed' => !(empty($content['value']) && empty($options['default']['revisit-after']['value'])),
     '#tree' => TRUE,
   );
 
   $form['revisit-after']['value'] = array(
     '#type' => 'textfield',
+    '#title' => t('Revisit after'),
+    '#description' => t('The meta tag REVISIT-AFTER defines how often a search engine or spider should come to your website for re-indexing. This tag is used for websites that change their content and on a regular basis. This tag can also be beneficial in boosting your rankings if search engines display results based on the most recent submissions.'),
     '#default_value' => empty($content['value']) ? (!empty($options['default']['revisit-after']['value']) ? (integer) $options['default']['revisit-after']['value'] : 1) : (integer) $content['value'],
     '#size' => 3,
     '#element_validate' => array('nodewords_basic_revisit_after_form_validate'),
@@ -515,22 +543,19 @@ function nodewords_basic_robots_form(&$form, $content, $options) {
   }
 
   $form['robots'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Robots'),
-    '#description' => t('The meta tag ROBOTS offers a simple mechanism to indicate to web robots and crawlers whether the page should be indexed (NOINDEX) and whether links on the page should be followed (NOFOLLOW).'),
-    '#collapsible' => TRUE,
-    '#collapsed' => empty($content['value']) ? FALSE : count(array_filter($content['value'])) != 0,
     '#tree' => TRUE,
   );
 
   $form['robots']['value'] = array(
     '#type' => 'checkboxes',
+    '#title' => t('Robots'),
+    '#description' => t('The meta tag ROBOTS offers a simple mechanism to indicate to web robots and crawlers whether the page should be indexed (NOINDEX) and whether links on the page should be followed (NOFOLLOW).'),
     '#default_value' => empty($content['value']) ? array() : $content['value'],
     '#options' => $field_options,
     '#checkall' => TRUE,
   );
 
-  if ($options['type'] != 'default') {
+  if ($options['type'] != NODEWORDS_TYPE_DEFAULT) {
     $form['robots']['use_default'] = array(
       '#type' => 'checkbox',
       '#title' => t('Use the default value'),
@@ -559,14 +584,44 @@ function nodewords_basic_robots_form(&$form, $content, $options) {
  * Set the meta tag content.
  */
 function nodewords_basic_robots_prepare(&$tags, $content, $options) {
-  $value = !empty($content['value']) ? array_keys(array_filter($content['value'])) : array();
-
-  if (empty($value) && !empty($content['use_default'])) {
-    $value = !empty($options['default']['robots']['value']) ? array_keys(array_filter($options['default']['robots']['value'])) : array();
+  if ($options['type'] == NODEWORDS_TYPE_PAGER) {
+    $value = variable_get('nodewords_list_robots', array());
+  }
+  elseif (empty($content['use_default'])) {
+    $value = !empty($content['value']) ? $content['value'] : array();
+  }
+  else {
+    $value = !empty($options['default']['robots']['value']) ? $options['default']['robots']['value'] : array();
   }
 
   if (!empty($value)) {
-    $tags['robots'] = implode(', ', $value);
+    $value = array_keys(array_filter($value));
+    if (!empty($value)) {
+      $tags['robots'] = implode(', ', $value);
+    }
+  }
+}
+
+function nodewords_basic_robots_settings_form(&$form, $form_id, $options) {
+  switch ($form_id) {
+    case 'nodewords_settings_form':
+      $field_options = array(
+        'noarchive' => t('NOARCHIVE'),
+        'nofollow' => t('NOFOLLOW'),
+        'noindex' => t('NOINDEX'),
+        'noodp' => t('NOODP'),
+        'nosnippet' => t('NOSNIPPET'),
+        'noydir' => t('NOYDIR'),
+      );
+
+      $form['metatags_creation']['nodewords_list_robots'] = array(
+        '#type' => 'checkboxes',
+        '#title' => t('Meta tag ROBOTS for lists'),
+        '#description' => t('The value to use for the meta tag ROBOTS for the pages that use a pager; this setting is not used for the first page of the list, or when the option to repeat the meta tags for all the pages in the same list is selected.'),
+        '#default_value' => variable_get('nodewords_list_robots', array()),
+        '#options' => $field_options,
+        '#checkall' => TRUE,
+      );
   }
 }
 
