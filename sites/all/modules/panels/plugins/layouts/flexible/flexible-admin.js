@@ -1,4 +1,4 @@
-// $Id: flexible-admin.js,v 1.1.2.3 2009/05/20 20:20:37 merlinofchaos Exp $
+// $Id: flexible-admin.js,v 1.1.2.5 2010/06/23 00:35:40 merlinofchaos Exp $
 
 Drupal.flexible = Drupal.flexible || {};
 
@@ -49,6 +49,8 @@ Drupal.behaviors.flexibleAdmin = function(context) {
         Drupal.flexible.splitters.push(new Drupal.flexible.splitter($(this)));
       });
   }
+
+  Drupal.flexible.fixHeight();
 };
 
 Drupal.flexible.splitter = function($splitter) {
@@ -122,7 +124,7 @@ Drupal.flexible.splitter = function($splitter) {
         splitter.right_min = 25;
         splitter.right_padding = parseInt(splitter.parent.css('padding-right'));
         splitter.right_parent = parseInt(splitter.right.parent().css('margin-right'));
-        splitter.max = splitter.right.width() + splitter.left.parent().width() - 
+        splitter.max = splitter.right.width() + splitter.left.parent().width() -
           (splitter.left.siblings(':not(.panels-flexible-splitter)').length * 25) - 25;
       }
       else {
@@ -183,7 +185,7 @@ Drupal.flexible.splitter = function($splitter) {
 
     return false;
   };
-  
+
   function splitterMove(event) {
     var diff = splitter.startX - event.pageX;
     var moved = 0;
@@ -329,7 +331,7 @@ Drupal.flexible.splitter = function($splitter) {
 
     splitter.putSizes();
     Drupal.flexible.fixHeight();
-    
+
     $(document)
       .unbind("mousemove", splitterMove)
       .unbind("mouseup", splitterEnd);
@@ -404,3 +406,4 @@ Drupal.CTools.AJAX.commands.flexible_fix_firstlast = function(data) {
   $(data.selector + ' > div > .' + data.base + ':last')
     .addClass(data.base + '-last');
 };
+
