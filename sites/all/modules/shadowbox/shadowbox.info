@@ -3,9 +3,9 @@ name = Shadowbox
 description = Allows content to be displayed in a JavaScript modal media viewer application.
 core = 6.x
 
-; Information added by drupal.org packaging script on 2010-02-25
-version = "6.x-3.9"
+; Information added by drupal.org packaging script on 2010-06-15
+version = "6.x-4.2"
 core = "6.x"
 project = "shadowbox"
-datestamp = "1267096212"
+datestamp = "1276621808"
 

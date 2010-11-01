@@ -1,9 +1,12 @@
-; $Id: shadowbox.make,v 1.1.2.5 2010/02/25 10:41:56 nicholasalipaz Exp $
-; Drush make file for downloading third party Shadowbox library.
-; Syntax: http://bit.ly/7rp6vM
+; $Id: shadowbox.make,v 1.1.2.4.2.3 2010/06/15 15:39:46 nicholasalipaz Exp $
+; Example drush make file for downloading third party Shadowbox library.
+; http://bit.ly/EMVW5
 
 core = 6.x
 
-libraries[shadowbox][download][type] = "get"
-libraries[shadowbox][download][url] = "http://freestylesystems.co.uk/sites/freestylesystems.co.uk/files/shadowbox-build-3.0rc1.tgz"
+libraries[shadowbox][download][type] = "post"
+libraries[shadowbox][download][post_data] = "format=tar&adapter=jquery&players[]=img&players[]=iframe&players[]=html&players[]=swf&players[]=flv&players[]=qt&players[]=wmp&language=en&css_support=on"
+libraries[shadowbox][download][file_type] = "tar.gz"
+libraries[shadowbox][download][url] = "http://www.shadowbox-js.com/download"
 libraries[shadowbox][directory_name] = "shadowbox"
+libraries[shadowbox][destination] = "libraries"
