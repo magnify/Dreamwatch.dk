@@ -1,5 +1,5 @@
 <?php
-// $Id: shadowbox.admin.inc,v 1.1.2.1 2009/08/21 16:27:37 psynaptic Exp $
+// $Id: shadowbox.admin.inc,v 1.1.2.10 2010/02/25 10:41:56 nicholasalipaz Exp $
 
 /**
  * @file
@@ -14,6 +14,7 @@
  * @see shadowbox_global_settings_validate()
  */
 function shadowbox_global_settings() {
+  $shadowbox_path = SHADOWBOX_DEFAULT_PATH;
   $shadowbox_location = variable_get('shadowbox_location', $shadowbox_path);
   $module_path = drupal_get_path('module', 'shadowbox');
 
@@ -21,7 +22,7 @@ function shadowbox_global_settings() {
   $form['shadowbox']['test'] = array(
     '#type' => 'markup',
     '#prefix' => '<div id="shadowbox-settings-test">',
-    '#value' => l('Test Shadowbox with the current settings.', $module_path .'/sample.png', array('attributes' => array('rel' => 'shadowbox'))),
+    '#value' => l('Test Shadowbox with the current settings.', "$module_path/sample.png", array('attributes' => array('rel' => 'shadowbox'))),
     '#suffix' => '</div>',
   );
 
@@ -35,8 +36,8 @@ function shadowbox_global_settings() {
   $form['shadowbox']['shadowbox_location'] = array(
     '#type' => 'textfield',
     '#title' => t('Shadowbox location'),
-    '#default_value' => variable_get('shadowbox_location', $module_path .'/shadowbox'),
-    '#description' => t('Enter the location of the !download. It is recommended to use e.g. sites/all/plugins/shadowbox.', array('!download' => l('third party Shadowbox distribution', 'http://www.shadowbox-js.com/download.html', array('absolute' => TRUE)))),
+    '#default_value' => variable_get('shadowbox_location', $shadowbox_path),
+    '#description' => t('Enter the location of the !download. It is recommended to use e.g. sites/all/libraries/shadowbox.', array('!download' => l('third party Shadowbox distribution', 'http://www.shadowbox-js.com/download.html', array('absolute' => TRUE)))),
   );
   $form['shadowbox']['active'] = array(
     '#type' => 'fieldset',
@@ -354,6 +355,20 @@ function shadowbox_global_settings() {
     '#default_value' => variable_get('shadowbox_handle_unsupported', 'link'),
   );
 
+  // Libraries
+  $form['shadowbox']['shadowbox_options']['libraries'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Libraries'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+  $form['shadowbox']['shadowbox_options']['libraries']['shadowbox_use_sizzle'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Use Sizzle'),
+    '#description' => t('Enable loading the Sizzle.js CSS selector library.'),
+    '#default_value' => variable_get('shadowbox_use_sizzle', FALSE),
+  );
+
   return system_settings_form($form);
 }
 
@@ -363,7 +378,6 @@ function shadowbox_global_settings() {
 function shadowbox_global_settings_validate($form, &$form_state) {
   $color = $form_state['values']['shadowbox_overlay_color'];
   $opacity = $form_state['values']['shadowbox_overlay_opacity'];
-  $flash_background = $form_state['values']['shadowbox_flash_background'];
   $slideshow_delay = $form_state['values']['shadowbox_slideshow_delay'];
   $resize_duration = $form_state['values']['shadowbox_resize_duration'];
   $fade_duration = $form_state['values']['shadowbox_fade_duration'];
@@ -426,7 +440,7 @@ function shadowbox_automatic_settings() {
   $form['shadowbox_auto_gallery'] = array(
     '#type' => 'checkbox',
     '#title' => t('Group images as a shadowbox gallery'),
-    '#description' => t('Enable this options to open all images in a shadowbox gallery rather than individually. <strong>Warning:</strong> If enabled, this overrides the gallery settings for node display setting and views format setting.'),
+    '#description' => t('Enable this options to open all images in a shadowbox gallery rather than individually.'),
     '#default_value' => variable_get('shadowbox_auto_gallery', 0),
   );
 
