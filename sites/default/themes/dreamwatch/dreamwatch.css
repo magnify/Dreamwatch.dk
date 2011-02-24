@@ -1092,42 +1092,43 @@ div.view:hover div.views-hide {
 
 /* Blog */
 
-#sidebar-right .block-blog h2 {
+#sidebar-right .block h2 {
   margin: 0 0 10px;
 }
 
-#sidebar-right .block-blog {
+#sidebar-right .block {
   font-size: 85%;
 }
 
-#sidebar-right .block-blog ul {
+#sidebar-right .block ul {
   margin: 0;
   padding: 0;
 }
 
-#sidebar-right .block-blog ul,
-#sidebar-right .block-blog ul li {
+#sidebar-right .block ul,
+#sidebar-right .block ul li {
   list-style: none;
 }
 
-#sidebar-right .block-blog ul li {
+#sidebar-right .block ul li {
   background: url('gfx/arrow.gif') no-repeat 3px 8px;
+  color: #333;
   padding: 0 0 0 15px;
 }
 
-#sidebar-right .block-blog ul li a,
-#sidebar-right .block-blog ul li a:link,
-#sidebar-right .block-blog ul li a:visited {
+#sidebar-right .block ul li a,
+#sidebar-right .block ul li a:link,
+#sidebar-right .block ul li a:visited {
   color: #fff;
   text-decoration: none;
 }
 
-#sidebar-right .block-blog ul li a:hover,
-#sidebar-right .block-blog ul li a:active {
+#sidebar-right .block ul li a:hover,
+#sidebar-right .block ul li a:active {
   text-decoration: underline;
 }
 
-#sidebar-right .block-blog .more-link {
+#sidebar-right .block .more-link {
   display: none;
 }
 
