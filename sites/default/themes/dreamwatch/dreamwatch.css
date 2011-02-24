@@ -1131,7 +1131,7 @@ div.view:hover div.views-hide {
   display: none;
 }
 
-.node-type-blog h2.title {
+.node-type-blog #content h2.title {
   font-size: 125%;
 }
 
