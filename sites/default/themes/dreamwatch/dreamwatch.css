@@ -1159,15 +1159,12 @@ div.view:hover div.views-hide {
 }
 
 .node-type-blog ul.links li {
-  display: block;
   line-height: 170%;
   overflow: hidden;
   padding: 0 10px 10px 0;
 }
 
-.node-type-blog ul.links li.comment_comments,
-.node-type-blog ul.links li.comment_new_comments,
-.node-type-blog ul.links li.node_read_more last {
+.node-type-blog ul.links li {
   display: inline;
 }
 
@@ -1179,10 +1176,12 @@ div.view:hover div.views-hide {
 
 ul.links li.addthis,
 ul.links li.fb_social_like {
+  display: block;
   float: left;
 }
 
 ul.links li.addthis {
+  display: block;
   padding: 2px 0 0;
 }
 
