@@ -1131,7 +1131,7 @@ div.view:hover div.views-hide {
   display: none;
 }
 
-.node-type-blog {
+#content .node-type-blog {
   border-bottom: 1px solid #333;
   margin: 0 0 20px;
   padding: 0 0 10px;
