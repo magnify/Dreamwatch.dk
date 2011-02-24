@@ -1131,6 +1131,10 @@ div.view:hover div.views-hide {
   display: none;
 }
 
+.node-type-blog h2.title {
+  font-size: 125%;
+}
+
 .node-type-blog .meta {
   border-bottom: 1px solid #333;
   color: #999;
@@ -1140,6 +1144,11 @@ div.view:hover div.views-hide {
 
 .node-type-blog .content {
   padding: 10px 0;
+}
+
+.page-blog #content .feed-icons {
+  float: left;
+  margin: 2px 0 0 5px;
 }
 
 .node-type-blog ul.links {
@@ -1154,6 +1163,12 @@ div.view:hover div.views-hide {
   line-height: 170%;
   overflow: hidden;
   padding: 0 10px 10px 0;
+}
+
+.node-type-blog ul.links li.comment_comments,
+.node-type-blog ul.links li.comment_new_comments,
+.node-type-blog ul.links li.node_read_more last {
+  display: inline;
 }
 
 .node-type-blog ul.links li.blog_usernames_blog {
@@ -1175,6 +1190,11 @@ ul.links li.addthis {
   border-top: 1px solid #333;
   clear: both;
   padding: 10px 0 0;
+}
+
+#comments .box {
+  clear: both;
+  margin: 20px 0 0;
 }
 
 #comments h2.title {
