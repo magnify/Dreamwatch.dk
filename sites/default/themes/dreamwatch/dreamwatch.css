@@ -1174,8 +1174,9 @@ ul.links li.addthis {
 #comments {
   border-top: 1px solid #333;
   clear: both;
+  padding: 10px 0 0;
 }
 
 #comments h2.title {
-  font-size: 85%;
+  font-size: 110%;
 }
