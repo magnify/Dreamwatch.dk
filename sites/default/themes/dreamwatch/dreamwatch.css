@@ -1167,7 +1167,7 @@ div.view:hover div.views-hide {
   border-top: 1px solid #333;
   display: block;
   line-height: 125%;
-  padding: 10px 0 0;
+  padding: 10px 0;
 }
 
 .node-type-blog ul.links li {
