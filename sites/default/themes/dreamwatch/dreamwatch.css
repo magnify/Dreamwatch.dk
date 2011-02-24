@@ -177,8 +177,14 @@ h1#site-name, div#site-name /* The name of the website */
 	margin: 0 0 20px;
 }
 
-#content .view-frontpage .views-field-title h1, #content h2.pane-title, #content .view-frontpage .views-field-body {
+#content .view-frontpage .views-field-title h1,
+#content h2.pane-title, #content .view-frontpage .views-field-body {
 	width: 620px;
+}
+
+.two-sidebars #content .view-frontpage .views-field-title h1,
+.two-sidebars#content h2.pane-title, #content .view-frontpage .views-field-body {
+	width: 560px;
 }
 
 #content h1, #content h2 {
@@ -782,7 +788,8 @@ ul.links li
 }
 
 
-#sidebar-left .block h2.title /* Block title */ {
+#sidebar-left .block h2.title /* Block title */,
+#sidebar-right .block h2.title /* Block title */ {
 	background: url('/sites/default/themes/dreamwatch/gfx/GradientLineHori.png') no-repeat bottom left;
 	padding: 0 0 5px;
 }
@@ -1081,4 +1088,85 @@ form thead th
 div.view div.views-hide,
 div.view:hover div.views-hide {
   display: none !important;
+}
+
+/* Blog */
+
+#sidebar-right .block-blog h2 {
+  margin: 0 0 10px;
+}
+
+#sidebar-right .block-blog {
+  font-size: 85%;
+}
+
+#sidebar-right .block-blog ul {
+  margin: 0;
+  padding: 0;
+}
+
+#sidebar-right .block-blog ul,
+#sidebar-right .block-blog ul li {
+  list-style: none;
+}
+
+#sidebar-right .block-blog ul li {
+  background: url('gfx/arrow.gif') no-repeat 3px 8px;
+  padding: 0 0 0 15px;
+}
+
+#sidebar-right .block-blog ul li a,
+#sidebar-right .block-blog ul li a:link,
+#sidebar-right .block-blog ul li a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+#sidebar-right .block-blog ul li a:hover,
+#sidebar-right .block-blog ul li a:active {
+  text-decoration: underline;
+}
+
+#sidebar-right .block-blog .more-link {
+  display: none;
+}
+
+.node-type-blog .meta {
+  border-bottom: 1px solid #333;
+  color: #999;
+  display: none;
+  padding: 5px 0;
+}
+
+.node-type-blog .content {
+  padding: 10px 0;
+}
+
+.node-type-blog ul.links {
+  border-top: 1px solid #333;
+  display: block;
+  line-height: 125%;
+  padding: 10px 0 0;
+}
+
+.node-type-blog ul.links li {
+  display: block;
+  line-height: 170%;
+  overflow: hidden;
+  padding: 0 10px 10px 0;
+}
+
+.node-type-blog ul.links li.blog_usernames_blog {
+  display: none;
+}
+
+/* Add this */
+
+ul.links li.addthis,
+ul.links li.fb_social_like {
+  float: left;
+}
+
+ul.links li.addthis {
+  padding: 2px 0 0;
 }
