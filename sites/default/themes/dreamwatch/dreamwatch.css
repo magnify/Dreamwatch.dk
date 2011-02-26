@@ -1230,6 +1230,10 @@ ul.links li.addthis {
   font-size: 110%;
 }
 
+.comment .submitted {
+  color: #666;
+}
+
 #comment-form textarea,
 #comment-form input[type=text] {
   border: 0;
