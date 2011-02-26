@@ -1189,6 +1189,17 @@ div.view:hover div.views-hide {
   display: none;
 }
 
+/* Blog gallery */
+
+#content .node-type-blog .field-field-images {
+  clear: both;
+}
+
+#content .node-type-blog .field-field-images .field-item {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
 /* Add this */
 
 ul.links li.addthis,
