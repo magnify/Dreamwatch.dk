@@ -1192,7 +1192,10 @@ div.view:hover div.views-hide {
 /* Blog gallery */
 
 #content .node-type-blog .field-field-images {
+  border-top: 1px solid #333;
   clear: both;
+  margin: 10px 0 0;
+  padding: 15px 0 0;
 }
 
 #content .node-type-blog .field-field-images .field-item {
