@@ -1263,6 +1263,7 @@ ul.links li.addthis {
 #comment-form #edit-notify-type-1-wrapper,
 #comment-form #edit-notify-type-2-wrapper,
 #comment-form #edit-preview,
-#comment-form div p a {
+#comment-form div p a,
+#comment-form .resizable-textarea .grippie {
   display: none !important;
 }
