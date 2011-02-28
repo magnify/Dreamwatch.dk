@@ -331,6 +331,16 @@ h1#site-name, div#site-name /* The name of the website */
   float: right;
 }
 
+views-field-field-product-brand-value,
+views-field-field-product-model-value,
+views-field-field-product-ref-num-value,
+views-field-field-product-year-value,
+views-field-field-product-extras-value,
+views-field-field-product-features-value,
+views-field-field-product-condition-value {
+  font-size: 125%;
+}
+
 #content .view-products .views-field-field-image-fid-2, #content .view-id-products_soldout .views-field-field-image-fid-2 {
 	display: none;
 }
