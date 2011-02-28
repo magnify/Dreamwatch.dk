@@ -314,7 +314,7 @@ h1#site-name, div#site-name /* The name of the website */
 }
 
 #content .view-products .views-field-body .field-content {
-	clear: both;
+	/* clear: both; */
   margin: 0 165px 0 0;
 }
 
