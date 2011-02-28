@@ -324,6 +324,7 @@ h1#site-name, div#site-name /* The name of the website */
 	/* clear: both; */
   margin: 0 165px 0 0;
   overflow: auto;
+  width: 98%;
 }
 
 .node-type-product #content .view-products .views-field-field-image-fid,
