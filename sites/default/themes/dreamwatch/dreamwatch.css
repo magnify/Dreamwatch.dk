@@ -233,12 +233,11 @@ h1#site-name, div#site-name /* The name of the website */
 	clear: both;
 	float: left;
 	padding: 15px 0;
-	width: 85%;
+  width: 98%;
 }
 
 #content .view-products .views-row.views-row-1, #content .view-id-products_soldout .views-row.views-row-1 {
 	background: none;
-  width: 98%;
 }
 
 #content .view-id-products_soldout .views-row {
@@ -297,13 +296,13 @@ h1#site-name, div#site-name /* The name of the website */
 }
 
 #content .view-products .views-field-field-image-fid, #content .view-id-products_soldout .views-field-field-image-fid {
-	float: right;
+	float: left;
 	width: 165px;
 }
 
 #content .view-products .views-field-field-image-fid-1, #content .view-id-products_soldout .views-field-field-image-fid-1 {
 	clear: both;
-	float: right;
+	float: left;
 	margin: 10px 0 0;
 	width: 165px;
 }
@@ -314,12 +313,23 @@ h1#site-name, div#site-name /* The name of the website */
 }
 
 #content .view-products .views-field-body .field-content {
-	/* clear: both; */
-  margin: 0 165px 0 0;
+  margin: 0 0 0 165px;
 }
 
 #content .view-products .views-row div label {
   font-weight: bold;
+}
+
+.node-type-product #content .view-products .views-field-body .field-content {
+	/* clear: both; */
+  margin: 0 165px 0;
+}
+
+#content .view-products .views-field-field-image-fid,
+#content .view-id-products_soldout .views-field-field-image-fid,
+.node-type-product #content .view-products .views-field-field-image-fid-1 .field-item,
+.node-type-product #content .view-id-products_soldout .views-field-field-image-fid-1 .field-item {
+  float: right;
 }
 
 #content .view-products .views-field-field-image-fid-2, #content .view-id-products_soldout .views-field-field-image-fid-2 {
