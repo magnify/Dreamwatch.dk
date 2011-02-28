@@ -237,7 +237,8 @@ h1#site-name, div#site-name /* The name of the website */
 }
 
 #content .view-products .views-row.views-row-1, #content .view-id-products_soldout .views-row.views-row-1 {
-	background: none; 
+	background: none;
+  width: 98%;
 }
 
 #content .view-id-products_soldout .views-row {
@@ -296,13 +297,13 @@ h1#site-name, div#site-name /* The name of the website */
 }
 
 #content .view-products .views-field-field-image-fid, #content .view-id-products_soldout .views-field-field-image-fid {
-	float: left;
+	float: right;
 	width: 165px;
 }
 
 #content .view-products .views-field-field-image-fid-1, #content .view-id-products_soldout .views-field-field-image-fid-1 {
 	clear: both;
-	float: left;
+	float: right;
 	margin: 10px 0 0;
 	width: 165px;
 }
@@ -313,7 +314,11 @@ h1#site-name, div#site-name /* The name of the website */
 }
 
 #content .view-products .views-field-body .field-content {
-	margin:0 0 0 165px;
+	margin: 0 165px 0 0;
+}
+
+#content .view-products .views-row div label {
+  font-weight: bold;
 }
 
 #content .view-products .views-field-field-image-fid-2, #content .view-id-products_soldout .views-field-field-image-fid-2 {
