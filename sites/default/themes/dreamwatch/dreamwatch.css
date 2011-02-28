@@ -323,6 +323,7 @@ h1#site-name, div#site-name /* The name of the website */
 .node-type-product #content .view-products .views-field-body .field-content {
 	/* clear: both; */
   margin: 0 165px 0 0;
+  overflow: auto;
 }
 
 .node-type-product #content .view-products .views-field-field-image-fid,
