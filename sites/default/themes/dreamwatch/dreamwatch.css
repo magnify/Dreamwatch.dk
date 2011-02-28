@@ -1203,7 +1203,7 @@ div.view:hover div.views-hide {
   margin: 0 10px 0 0;
 }
 
-/* Add this */
+/* Add this and Facebook */
 
 ul.links li.addthis,
 ul.links li.fb_social_like {
@@ -1214,6 +1214,23 @@ ul.links li.fb_social_like {
 ul.links li.addthis {
   display: block;
   padding: 2px 10px 0 0;
+}
+
+/* Add this/Facebook on products */
+
+.view-products .views-field-fb-social-like,
+.view-products .views-field-addthis-toolbox {
+  position: absolute;
+}
+
+.view-products .views-field-fb-social-like {
+    right: 25px;
+    top: 4px;
+}
+
+.view-products .views-field-addthis-toolbox {
+    right: 0px;
+    top: 6px;
 }
 
 #comments {
