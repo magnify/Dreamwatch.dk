@@ -338,7 +338,10 @@ h1#site-name, div#site-name /* The name of the website */
 .node-type-product .views-field-field-product-extras-value,
 .node-type-product .views-field-field-product-features-value,
 .node-type-product .views-field-field-product-condition-value {
+  border-bottom: 1px dashed #333333;
   font-size: 125%;
+  padding: 4px 0;
+  width: 250px;
 }
 
 #content .view-products .views-field-field-image-fid-2, #content .view-id-products_soldout .views-field-field-image-fid-2 {
