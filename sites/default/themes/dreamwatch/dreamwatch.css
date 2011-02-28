@@ -331,13 +331,13 @@ h1#site-name, div#site-name /* The name of the website */
   float: right;
 }
 
-views-field-field-product-brand-value,
-views-field-field-product-model-value,
-views-field-field-product-ref-num-value,
-views-field-field-product-year-value,
-views-field-field-product-extras-value,
-views-field-field-product-features-value,
-views-field-field-product-condition-value {
+.node-type-product .views-field-field-product-brand-value,
+.node-type-product .views-field-field-product-model-value,
+.node-type-product .views-field-field-product-ref-num-value,
+.node-type-product .views-field-field-product-year-value,
+.node-type-product .views-field-field-product-extras-value,
+.node-type-product .views-field-field-product-features-value,
+.node-type-product .views-field-field-product-condition-value {
   font-size: 125%;
 }
 
