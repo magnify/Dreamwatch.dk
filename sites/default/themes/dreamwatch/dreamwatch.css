@@ -58,6 +58,7 @@ a:hover, a:active {
 #content p {
 	line-height: 140%;
 	margin: 0 0 10px;
+  text-align: justify;
 }
 
 #page
