@@ -1209,6 +1209,7 @@ ul.links li.addthis,
 ul.links li.fb_social_like {
   display: block;
   float: left;
+  overflow: visible;
 }
 
 ul.links li.addthis {
