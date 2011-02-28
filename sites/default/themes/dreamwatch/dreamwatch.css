@@ -1256,10 +1256,13 @@ ul.links li.addthis {
   height: 300px !important;
 }
 
+#comment-form #edit-homepage-wrapper,
+#comment-form ul.tips,
 #comment-form #switch_edit-comment,
 #comment-form .textarea-identifier.description,
-#comment-form .edit-notify-type-1-wrapper,
-#comment-form .edit-notify-type-2-wrapper,
-#comment-form #edit-preview {
+#comment-form #edit-notify-type-1-wrapper,
+#comment-form #edit-notify-type-2-wrapper,
+#comment-form #edit-preview,
+#comment-form div p a {
   display: none !important;
 }
