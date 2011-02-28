@@ -344,6 +344,10 @@ h1#site-name, div#site-name /* The name of the website */
   width: 250px;
 }
 
+.node-type-product .views-field-body {
+  margin: 10px 0 0;
+}
+
 #content .view-products .views-field-field-image-fid-2, #content .view-id-products_soldout .views-field-field-image-fid-2 {
 	display: none;
 }
