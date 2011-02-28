@@ -1242,7 +1242,23 @@ ul.links li.addthis {
   padding: 5px;
 }
 
+#comment-form .resizable-textarea textarea {
+  height: 150px !important;
+}
+
 #comment-form .resizable-textarea .grippie {
   background-color: #444;
   border-color: #666;
+}
+
+#comment-form #edit-comment-wrapper iframe {
+  height: 300px !important;
+}
+
+#comment-form #switch_edit-comment,
+#comment-form .textarea-identifier.description,
+#comment-form .edit-notify-type-1-wrapper,
+#comment-form .edit-notify-type-2-wrapper,
+#comment-form #edit-preview {
+  display: none !important;
 }
