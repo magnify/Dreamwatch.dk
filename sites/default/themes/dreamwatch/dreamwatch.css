@@ -1306,3 +1306,7 @@ ul.links li.addthis {
 #comment-form .resizable-textarea .grippie {
   display: none !important;
 }
+
+.front .pane-products-frontpage {
+  width: 700px;
+}
