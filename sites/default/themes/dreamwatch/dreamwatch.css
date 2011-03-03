@@ -1152,6 +1152,17 @@ div.view:hover div.views-hide {
   display: none;
 }
 
+#sidebar-right .view-id-blog ul,
+#sidebar-right .view-id-blog ul li {
+  background: none;
+  padding: 0;
+}
+
+#sidebar-right .view-id-blog ul li .views-field-field-image-fid {
+  float: left;
+  margin: 0 5px 0 0;
+}
+
 .section-blog #content h1 {
   display: none;
 }
