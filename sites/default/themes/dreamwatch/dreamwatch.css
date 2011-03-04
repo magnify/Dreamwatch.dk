@@ -1119,11 +1119,8 @@ div.view:hover div.views-hide {
 #sidebar-right .block {
   clear: both;
   font-size: 85%;
-  margin: 10px 0 0;
-}
-
-#sidebar-right #block-views-blog-block_1 {
-  margin: 0;
+  margin: 0 0 10px;
+  overflow: hidden;
 }
 
 #sidebar-right .block ul {
