@@ -315,7 +315,8 @@ h1#site-name, div#site-name /* The name of the website */
   margin: 0 0 0 165px;
 }
 
-#content .view-products .views-row div label {
+#content .view-products .views-row div label,
+#content .view-products-soldout .views-row div label {
   font-weight: bold;
 }
 
@@ -1158,6 +1159,7 @@ div.view:hover div.views-hide {
 #sidebar-right .view-id-blog ul,
 #sidebar-right .view-id-blog ul li {
   background: none;
+  overflow: hidden;
   padding: 0;
 }
 
