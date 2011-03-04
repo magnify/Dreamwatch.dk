@@ -1239,8 +1239,8 @@ div.view:hover div.views-hide {
 
 /* Add this and Facebook */
 
-#sidebar-left .block-fb_social_like-like,
-#sidebar-left .block-addthis-0 {
+#sidebar-left #block-fb_social_like-like,
+#sidebar-left #block-addthis-0 {
   float: left;
 }
 
