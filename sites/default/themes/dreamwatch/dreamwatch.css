@@ -1244,13 +1244,13 @@ div.view:hover div.views-hide {
   float: left;
 }
 
-#sidebar-left .block-fb_social_like-like {
+#sidebar-left #block-fb_social_like-like {
   clear: both;
   margin: 20px 0 0;
 }
 
-#sidebar-left .block-addthis-0 {
-  margin: 20px 0 0;
+#sidebar-left #block-addthis-0 {
+  margin: 22px 0 0;
 }
 
 ul.links li.addthis,
