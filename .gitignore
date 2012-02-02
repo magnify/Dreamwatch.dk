@@ -6,6 +6,7 @@
 .settings
 */_notes
 nbproject
+.buildpath
 .DS_Store
 ._*
 /sites/default/settings.php
