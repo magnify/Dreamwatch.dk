@@ -41,6 +41,10 @@ a {
 	color: #fff;
 }
 
+legend {
+    color: #fff;
+}
+
 a:link, a:visited {
 	color: #bd2d2d;
 	text-decoration: none;
