@@ -55,6 +55,10 @@ a:hover, a:active {
 	text-decoration: underline;
 }
 
+#koeb-trigger, #byt-trigger {
+    display: inline-block;
+}
+
 #content {
 	font-size: 85%;
 }
@@ -359,6 +363,26 @@ h1#site-name, div#site-name /* The name of the website */
 #content .view-products .views-field-field-image-fid-2, #content .view-id-products_soldout .views-field-field-image-fid-2 {
 	display: none;
 }
+
+/* Webform customs */
+#webform-component-brugt-ur-du-oensker-at-saelge--stand .form-radios .form-item {
+    margin-right: 1em;
+    float: left;
+}
+#webform-component-brugt-ur-du-oensker-at-saelge--boks-aeske {
+    clear: left;
+}
+
+#webform-component-brugt-ur-du-oensker-at-saelge--boks-aeske,
+#webform-component-brugt-ur-du-oensker-at-saelge--papirer-certifikat {
+    margin-right: 1em;
+    float: left;
+}
+
+#webform-component-brugt-ur-du-oensker-at-saelge--billede-1 {
+    clear: left;
+}
+
 
 #mission /* The mission statement of the site (displayed on homepage) */
 {
