@@ -55,7 +55,9 @@ a:hover, a:active {
 	text-decoration: underline;
 }
 
-#koeb-trigger, #byt-trigger {
+#koeb-trigger, 
+#byt-trigger {
+    margin: 10px 0;
     display: inline-block;
 }
 
