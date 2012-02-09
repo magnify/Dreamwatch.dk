@@ -368,25 +368,30 @@ h1#site-name, div#site-name /* The name of the website */
 
 /* Webform customs */
 #webform-component-brugt-ur-du-oensker-at-saelge--stand .form-radios .form-item,
-#webform-component-ur-der-oenskes-byttet--stand .form-radios .form-item {
+#webform-component-ur-der-oenskes-byttet--stand .form-radios .form-item,
+#webform-component-dit-ur--stand .form-radios .form-item {
     margin-right: 1em;
     float: left;
 }
 #webform-component-brugt-ur-du-oensker-at-saelge--boks-aeske,
-#webform-component-ur-der-oenskes-byttet--boks-aeske {
+#webform-component-ur-der-oenskes-byttet--boks-aeske,
+#webform-component-dit-ur--boks-aeske {
     clear: left;
 }
 
 #webform-component-brugt-ur-du-oensker-at-saelge--boks-aeske,
 #webform-component-ur-der-oenskes-byttet--boks-aeske,
+#webform-component-dit-ur--boks-aeske,
 #webform-component-brugt-ur-du-oensker-at-saelge--papirer-certifikat,
-#webform-component-ur-der-oenskes-byttet--papirer-certifikat {
+#webform-component-ur-der-oenskes-byttet--papirer-certifikat,
+#webform-component-dit-ur--papirer-certifikat {
     margin-right: 1em;
     float: left;
 }
 
 #webform-component-brugt-ur-du-oensker-at-saelge--billede-1,
-#webform-component-ur-der-oenskes-byttet--billede-1 {
+#webform-component-ur-der-oenskes-byttet--billede-1,
+#webform-component-dit-ur--billede-1 {
     clear: left;
 }
 
