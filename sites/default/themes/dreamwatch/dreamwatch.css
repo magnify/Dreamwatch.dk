@@ -55,12 +55,12 @@ a:hover, a:active {
 	text-decoration: underline;
 }
 
-#koeb-trigger, 
-#byt-trigger {
-    display: block;
-    margin: 0  0 10px 0;
-    white-space:nowrap;
-}
+#cta-triggers {
+    clear: left;
+    margin-bottom: 15px; }
+
+    #cta-triggers a {
+        white-space: nowrap; }
 
 #content {
 	font-size: 85%;
