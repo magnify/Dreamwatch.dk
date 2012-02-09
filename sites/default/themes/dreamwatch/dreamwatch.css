@@ -57,8 +57,9 @@ a:hover, a:active {
 
 #koeb-trigger, 
 #byt-trigger {
-    margin: 0  0 10px 0;
     display: block;
+    margin: 0  0 10px 0;
+    white-space:nowrap;
 }
 
 #content {
