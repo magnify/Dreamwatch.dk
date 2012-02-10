@@ -1397,3 +1397,147 @@ ul.links li.addthis {
 .front .pane-products-frontpage {
   width: 700px;
 }
+
+/* Google CSE */
+.gsc-control-cse {
+    font-family: Arial, sans-serif;
+    border-color: #000000;
+    background-color: #000000;
+}
+  input.gsc-input {
+    border-color: #666666;
+}
+input.gsc-search-button {
+    border-color: #74a911;
+    background-color: #84bf2f;
+}
+.gsc-tabHeader.gsc-tabhInactive {
+    border-color: #E9E9E9;
+    background-color: #E9E9E9;
+}
+.gsc-tabHeader.gsc-tabhActive {
+    border-top-color: #FF9900;
+    border-left-color: #E9E9E9;
+    border-right-color: #E9E9E9;
+    background-color: #FFFFFF;
+}
+.gsc-tabsArea {
+    border-color: #E9E9E9;
+}
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+    border-color: #000000;
+    background-color: #000000;
+}
+.gsc-webResult.gsc-result:hover,
+.gsc-webResult.gsc-result.gsc-promotion:hover,
+.gsc-imageResult:hover {
+    border-color: #000000;
+    background-color: #000000;
+}
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b {
+    color: #BD2D2D;
+}
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b,
+.gs-imageResult a.gs-title:visited,
+.gs-imageResult a.gs-title:visited b {
+    color: #BD2D2D;
+}
+.gs-webResult.gs-result a.gs-title:hover,
+.gs-webResult.gs-result a.gs-title:hover b,
+.gs-imageResult a.gs-title:hover,
+.gs-imageResult a.gs-title:hover b {
+    color: #BD2D2D;
+}
+.gs-webResult.gs-result a.gs-title:active,
+.gs-webResult.gs-result a.gs-title:active b,
+.gs-imageResult a.gs-title:active,
+.gs-imageResult a.gs-title:active b {
+    color: #BD2D2D;
+}
+.gsc-cursor-page {
+    color: #BD2D2D;
+}
+  a.gsc-trailing-more-results:link {
+    color: #BD2D2D;
+}
+.gs-webResult .gs-snippet,
+.gs-imageResult .gs-snippet,
+.gs-fileFormatType {
+    color: #ffffff;
+}
+.gs-webResult div.gs-visibleUrl,
+.gs-imageResult div.gs-visibleUrl {
+    color: #fdc54e;
+}
+.gs-webResult div.gs-visibleUrl-short {
+    color: #fdc54e;
+}
+.gs-webResult div.gs-visibleUrl-short {
+    display: none;
+}
+.gs-webResult div.gs-visibleUrl-long {
+    display: block;
+}
+.gs-promotion div.gs-visibleUrl-short {
+    display: none;
+}
+.gs-promotion div.gs-visibleUrl-long {
+    display: block;
+}
+.gsc-cursor-box {
+    border-color: #000000;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+    border-color: #E9E9E9;
+    background-color: #000000;
+    color: #BD2D2D;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+    border-color: #FF9900;
+    background-color: #FFFFFF;
+    color: #BD2D2D;
+}
+.gsc-webResult.gsc-result.gsc-promotion {
+    border-color: #BD2D2D;
+    background-color: #000000;
+}
+.gsc-completion-title {
+    color: #BD2D2D;
+}
+.gsc-completion-snippet {
+    color: #ffffff;
+}
+.gs-promotion a.gs-title:link,
+.gs-promotion a.gs-title:link *,
+.gs-promotion .gs-snippet a:link {
+    color: #BD2D2D;
+}
+.gs-promotion a.gs-title:visited,
+.gs-promotion a.gs-title:visited *,
+.gs-promotion .gs-snippet a:visited {
+    color: #BD2D2D;
+}
+.gs-promotion a.gs-title:hover,
+.gs-promotion a.gs-title:hover *,
+.gs-promotion .gs-snippet a:hover {
+    color: #BD2D2D;
+}
+.gs-promotion a.gs-title:active,
+.gs-promotion a.gs-title:active *,
+.gs-promotion .gs-snippet a:active {
+    color: #BD2D2D;
+}
+.gs-promotion .gs-snippet,
+.gs-promotion .gs-title .gs-promotion-title-right,
+.gs-promotion .gs-title .gs-promotion-title-right *  {
+    color: #ffffff;
+}
+.gs-promotion .gs-visibleUrl,
+.gs-promotion .gs-visibleUrl-short {
+    color: #fdc54e;
+}
