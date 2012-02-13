@@ -292,7 +292,8 @@ h1#site-name, div#site-name /* The name of the website */
 .node-type-productcategory #content .view-products .views-field-field-price-value,
 .node-type-productcategory #content .view-id-products_soldout .views-field-field-price-value,
 .node-type-product-brand #content .view-products .views-field-field-price-value-1,
-.node-type-products-other #content .view-products .views-field-field-price-value-1 {
+.node-type-products-other #content .view-products .views-field-field-price-value-1,
+.node-type-products-new #content .view-products .views-field-field-price-value-1 {
   font-size: 115%;
   float: right;
   margin: -28px 0 0;
