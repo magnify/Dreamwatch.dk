@@ -254,18 +254,25 @@ h1#site-name, div#site-name /* The name of the website */
 	background: url('/sites/default/themes/dreamwatch/gfx/sold.jpg') no-repeat right 20px !important;
 }
 
-#content .view-products .imagecache-product_large, #content .view-id-products_soldout .imagecache-product_large {
+#content .view-products .imagecache-product_large, 
+#content .view-id-products_soldout .imagecache-product_large {
 	float: left;
 	margin: 0 10px 0 0;
 }
 
-#content .view-products .views-field-title-1, #content .view-id-products_soldout .views-field-title {
+#content .view-products .views-field-title-1, 
+#content .view-id-products_soldout .views-field-title, 
+#content .view-products .views-field-title 
+{
 	font-size: 125%;
 	font-weight: bold;
 	margin: 0 0 10px;
 }
 
-#content .view-products .views-field-title-1 a, #content .view-id-products_soldout .views-field-title a {
+#content .view-products .views-field-title-1 a, 
+#content .view-id-products_soldout .views-field-title a,
+#content .view-products .views-field-title a  
+{
 	color: #fff;
 }
 
@@ -363,8 +370,10 @@ h1#site-name, div#site-name /* The name of the website */
   margin: 10px 0 0;
 }
 
-#content .view-products .views-field-field-image-fid-2, #content .view-id-products_soldout .views-field-field-image-fid-2 {
-	display: none;
+#content .view-products .views-field-field-image-fid-2, 
+#content .view-id-products_soldout .views-field-field-image-fid-2 
+{
+	/*display: none;*/
 }
 
 /* Webform customs */
