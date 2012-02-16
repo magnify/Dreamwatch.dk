@@ -103,7 +103,7 @@
     google.setOnLoadCallback(function() {
         var customSearchOptions = {
         };  var customSearchControl = new google.search.CustomSearchControl(
-          '006854676468351416017:4st217kyzew', customSearchOptions);
+          '003066729041304957848:jykmggaq_qk', customSearchOptions);
         customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
         customSearchControl.draw('cse');
         google.search.Csedr.addOverride("soegning_");
