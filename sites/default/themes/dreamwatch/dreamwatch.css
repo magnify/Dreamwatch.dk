@@ -131,8 +131,8 @@ h1#site-name, div#site-name /* The name of the website */
 #header-blocks /* Wrapper for any blocks placed in the header region */ {
 	clear: none;
 	float: right;
-	/*margin: 55px 0 0;*/ 
-    margin: 19px 0 0;
+	margin: 55px 0 0; 
+    /*margin: 19px 0 0;*/
 	width: 625px;
 }
 
