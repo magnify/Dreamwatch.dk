@@ -115,6 +115,14 @@
   {
     clear: both; /* Clear the logo */
   }
+  
+  #search 
+  {
+    clear: both;
+    float: right;
+    margin: 10px 1em 0 0;
+  }
+  
 
 /** main (container for everything else) **/
   #main

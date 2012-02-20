@@ -101,11 +101,18 @@
     <script type="text/javascript">
     google.load('search', '1');
     google.setOnLoadCallback(function() {
+    	var drawOptions = new google.search.DrawOptions();
+        drawOptions.setSearchFormRoot( jQuery('#search_field') );
         var customSearchOptions = {
         };  var customSearchControl = new google.search.CustomSearchControl(
           '003066729041304957848:jykmggaq_qk', customSearchOptions);
         customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+        <?php if( $_REQUEST['search'] ): ?>
+        customSearchControl.draw('cse', drawOptions);
+        <?php else: ?>
         customSearchControl.draw('cse');
+        <?php endif;?>
+        customSearchControl.execute("<?php print addslashes( $_REQUEST['search'] ); ?>");
         google.search.Csedr.addOverride("soegning_");
     }, true);
     </script>

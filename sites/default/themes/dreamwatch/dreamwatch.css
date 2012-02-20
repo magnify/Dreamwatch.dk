@@ -136,6 +136,18 @@ h1#site-name, div#site-name /* The name of the website */
 	width: 625px;
 }
 
+#search_field {
+    background: #000;
+    border: 1px solid #333;
+    color: #fff;
+    font-size: 90%;
+    padding: 2px;
+    width: 180px; }
+    
+#search_button {
+    vertical-align: -6px;
+}
+
 /* Language selector */
 #header-blocks .block-locale h2.title {
     display: none; }
