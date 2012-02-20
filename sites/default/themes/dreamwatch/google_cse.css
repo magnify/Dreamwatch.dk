@@ -216,3 +216,11 @@ input.gsc-search-button {
     padding: 5px 10px;
     text-decoration: none;
 }
+/* Ingen resultater text */
+.gs-no-results-result .gs-snippet, .gs-error-result .gs-snippet {
+    color: #000 !important;
+}
+
+.gs-spelling a {
+    color: #BD2D2D !important;
+}
