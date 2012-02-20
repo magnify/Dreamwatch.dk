@@ -107,6 +107,7 @@
         };  var customSearchControl = new google.search.CustomSearchControl(
           '003066729041304957848:jykmggaq_qk', customSearchOptions);
         customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+        customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
         <?php if( $_REQUEST['search'] ): ?>
         customSearchControl.draw('cse', drawOptions);
         <?php else: ?>
