@@ -599,7 +599,7 @@ div.tabs /* See also the tabs.css file. */
 #footer {
 	color: #2b2b2b;
 	font-size: 75%;
-	text-align: right;
+	text-align: center;	
 }
 
 #footer-inner
@@ -626,11 +626,11 @@ div.tabs /* See also the tabs.css file. */
 }
 
 #footer #block-block-5 {
-  float: left;
+  /*float: left;*/
 }
 
 #footer #block-block-2 {
-  float: right;
+  /*float: right;*/
 }
 
 /** closure **/
