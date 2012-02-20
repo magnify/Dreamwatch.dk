@@ -87,6 +87,9 @@
   <?php print $head; ?>
   <?php print $styles; ?>
   <?php print $scripts; ?>
+  <?php if ( $node->nid == '832' ): ?>
+  <meta name="robots" content="noindex" />
+  <?php endif; ?>
 </head>
 <body class="<?php print $body_classes; ?>">
 
