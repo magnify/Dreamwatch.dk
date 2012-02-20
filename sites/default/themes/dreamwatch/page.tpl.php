@@ -134,7 +134,7 @@
           <?php print $header; ?>
           <div id="search">
             <form action="/soeg" method="get">
-                <input autocomplete="off" type="text" name="search" id="search_field" value="<?php print $_REQUEST['search']; ?>" />
+                <input autocomplete="off" type="text" name="search" id="search_field" value="<?php print ($_REQUEST['search'] != '' ? $_REQUEST['search'] : t('Search')); ?>" onfocus="if(this.value=='<?php print t('Search'); ?>') this.value='';" onblur="if(this.value=='') this.value='<?php print t('Search'); ?>';" />
                 <input type="image" id="search_button" value="<?php print t('Search'); ?>" title="<?php print t('Search'); ?>" src="/sites/default/themes/dreamwatch/gfx/search_btn.gif" />
             </form>
           </div>
