@@ -194,3 +194,25 @@ input.gsc-search-button {
 .gs-promotion div.gs-visibleUrl-long {
   display: block;
 }
+
+/* Paginering */
+.gsc-cursor-box {
+    border-color: #FFFFFF;
+    margin-top: 20px;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+.gsc-results .gsc-cursor-page {
+    color: #ffffff;
+    border: 1px solid #333333 !important;
+    background-color: #000000;
+    padding: 5px 10px;
+}
+.gsc-results .gsc-cursor-page.gsc-cursor-current-page {
+    background-color: #333333 !important;
+    border: 1px solid #333333 !important;
+    padding: 5px 10px;
+    text-decoration: none;
+}
