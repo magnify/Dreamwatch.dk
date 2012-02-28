@@ -228,7 +228,12 @@ h1#site-name, div#site-name /* The name of the website */
 
 .two-sidebars #content .view-frontpage .views-field-title h1,
 .two-sidebars#content h2.pane-title, #content .view-frontpage .views-field-body {
-	/*width: 560px;*/
+	width: 560px;
+}
+
+.one-sidebar #content .view-frontpage .views-field-title h1,
+.one-sidebar #content .view-frontpage .views-field-body {
+    width: 675px;
 }
 
 #content h1, #content h2 {
