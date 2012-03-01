@@ -1598,3 +1598,229 @@ input.gsc-search-button {
 .gs-promotion .gs-visibleUrl-short {
     color: #fdc54e;
 }
+
+/* TrustPilot block */
+div#trustpilot-rating {
+    clear: both;
+    padding-top: 12px;
+}
+div.rating-s, div.rating-m, div.rating-l {
+    display: inline-block;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+div.rating-s {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_small.png") repeat scroll 0 0 transparent;
+    height: 12px;
+    overflow: hidden;
+    width: 64px;
+}
+div.rating-s .s5, div.rating-s .s4, div.rating-s .s3, div.rating-s .s2, div.rating-s .s1 {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_small.png") repeat scroll 0 0 transparent;
+    display: block;
+    height: 12px;
+}
+div.rating-s .s5 {
+    background-position: 0 12px;
+    width: 64px;
+}
+div.rating-s .s4 {
+    background-position: 0 27px;
+    width: 51px;
+}
+div.rating-s .s3 {
+    background-position: 0 42px;
+    width: 39px;
+}
+div.rating-s .s2 {
+    background-position: 0 57px;
+    width: 25px;
+}
+div.rating-s .s1 {
+    background-position: 0 72px;
+    width: 12px;
+}
+div.rating-m {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_medium.png") repeat scroll 0 0 transparent;
+    height: 17px;
+    overflow: hidden;
+    width: 93px;
+}
+div.rating-m .s5, div.rating-m .s4, div.rating-m .s3, div.rating-m .s2, div.rating-m .s1 {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_medium.png") repeat scroll 0 0 transparent;
+    display: block;
+    height: 17px;
+}
+div.rating-m .s5 {
+    background-position: 0 17px;
+    width: 93px;
+}
+div.rating-m .s4 {
+    background-position: 0 37px;
+    width: 74px;
+}
+div.rating-m .s3 {
+    background-position: 0 57px;
+    width: 55px;
+}
+div.rating-m .s2 {
+    background-position: 0 77px;
+    width: 36px;
+}
+div.rating-m .s1 {
+    background-position: 0 97px;
+    width: 19px;
+}
+div.rating-l {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_large.png") repeat scroll 0 0 transparent;
+    height: 21px;
+    overflow: hidden;
+    width: 113px;
+}
+div.rating-l .s5, div.rating-l .s4, div.rating-l .s3, div.rating-l .s2, div.rating-l .s1 {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_large.png") repeat scroll 0 0 transparent;
+    display: block;
+    height: 21px;
+}
+div.rating-l .s5 {
+    background-position: 0 21px;
+    width: 113px;
+}
+div.rating-l .s4 {
+    background-position: 0 46px;
+    width: 90px;
+}
+div.rating-l .s3 {
+    background-position: 0 71px;
+    width: 67px;
+}
+div.rating-l .s2 {
+    background-position: 0 96px;
+    width: 44px;
+}
+div.rating-l .s1 {
+    background-position: 0 121px;
+    width: 21px;
+}
+p.r-s, p.r-m, p.r-l {
+    display: inline-block;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+p.r-s {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_small.png") repeat scroll 0 0 transparent;
+    height: 12px;
+    overflow: hidden;
+    width: 64px;
+}
+p.r-s .s5, p.r-s .s4, p.r-s .s3, p.r-s .s2, p.r-s .s1 {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_small.png") repeat scroll 0 0 transparent;
+    display: block;
+    height: 12px;
+}
+p.r-s .s5 {
+    background-position: 0 12px;
+    width: 64px;
+}
+p.r-s .s4 {
+    background-position: 0 27px;
+    width: 51px;
+}
+p.r-s .s3 {
+    background-position: 0 42px;
+    width: 39px;
+}
+p.r-s .s2 {
+    background-position: 0 57px;
+    width: 25px;
+}
+p.r-s .s1 {
+    background-position: 0 72px;
+    width: 12px;
+}
+p.r-m {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_medium.png") repeat scroll 0 0 transparent;
+    height: 17px;
+    overflow: hidden;
+    width: 93px;
+}
+p.r-m .s5, p.r-m .s4, p.r-m .s3, p.r-m .s2, p.r-m .s1 {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_medium.png") repeat scroll 0 0 transparent;
+    display: block;
+    height: 17px;
+}
+p.r-m .s5 {
+    background-position: 0 17px;
+    width: 95px;
+}
+p.r-m .s4 {
+    background-position: 0 37px;
+    width: 74px;
+}
+p.r-m .s3 {
+    background-position: 0 57px;
+    width: 55px;
+}
+p.r-m .s2 {
+    background-position: 0 77px;
+    width: 36px;
+}
+p.r-m .s1 {
+    background-position: 0 97px;
+    width: 19px;
+}
+p.r-l {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_large.png") repeat scroll 0 0 transparent;
+    height: 21px;
+    overflow: hidden;
+    width: 113px;
+}
+p.r-l .s5, p.r-l .s4, p.r-l .s3, p.r-l .s2, p.r-l .s1 {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_large.png") repeat scroll 0 0 transparent;
+    display: block;
+    height: 21px;
+}
+p.r-l .s5 {
+    background-position: 0 21px;
+    width: 113px;
+}
+p.r-l .s4 {
+    background-position: 0 46px;
+    width: 90px;
+}
+p.r-l .s3 {
+    background-position: 0 71px;
+    width: 67px;
+}
+p.r-l .s2 {
+    background-position: 0 96px;
+    width: 44px;
+}
+p.r-l .s1 {
+    background-position: 0 121px;
+    width: 21px;
+}
+
+#trustpilot-rating a {
+    text-decoration: none; }
+
+#trustpilot-rating .wordRating {
+    font-size: 13px;
+    font-weight: bold; }
+    
+    #trustpilot-rating .wordRating span {
+        color: #625e5e; }
+        
+    #trustpilot-rating .wordRating span.average {
+        color: #fff;
+        font-size: 22px; }
+ 
+ #trustpilot-rating .starRating {
+    margin-top: 0.3em; }
+    
+ body #trustpilot-rating .stats {
+    font-size: 11px;
+    color: #3b3b3b; }
+ 
