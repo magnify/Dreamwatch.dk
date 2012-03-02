@@ -18,13 +18,23 @@
  * @ingroup views_templates
  */
 ?>
+<?php 
+foreach ($fields as $id => $field) {
+  if ( $id == 'field_soldout_value' ) {
+    if ( $field->content == 'Udsolgt' ) {
+        $fields['field_price_value']->content = null;
+    }
+  }
+}
+?>
+
 <?php foreach ($fields as $id => $field): ?>
   <?php if (!empty($field->separator)): ?>
     <?php print $field->separator; ?>
   <?php endif; ?>
-
+  
   <?php $page_map = ($field->class == 'field-image-fid-3' ? true : false); ?>
-
+  <?php $no_price = ($id == 'field_soldout_value' && $field->content == 'Udsolgt' ? true : false); ?>
   <<?php print $field->inline_html;?> class="views-field-<?php print $field->class; ?>">
     <?php if ($field->label): ?>
       <label class="views-label-<?php print $field->class; ?>">
@@ -46,6 +56,10 @@
         </PageMap>
         ]]>
       -->
+      <?php elseif( $id == 'field_soldout_value' ): ?>
+      
+      <span id="show-triggers" class="<?php print ( $no_price == false ? 'yes' : 'no' ); ?>"></span>
+      
       <?php else: ?>
 
       <<?php print $field->element_type; ?> class="field-content"><?php print $field->content; ?></<?php print $field->element_type; ?>>
