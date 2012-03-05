@@ -55,6 +55,26 @@ a:hover, a:active {
 	text-decoration: underline;
 }
 
+#content a:link, 
+#content a:visited
+{
+    text-decoration: underline;    
+}
+
+#content a:hover, 
+#content a:active
+{
+    text-decoration: none;    
+}
+
+#content .views-field-title a, 
+#content .views-field-title-1 a, 
+#content .views-field-title-2 a 
+{
+    text-decoration: none;
+}
+
+
 #cta-triggers {
     clear: left;
     margin-bottom: 15px; }
