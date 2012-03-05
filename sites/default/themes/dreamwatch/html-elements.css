@@ -269,3 +269,83 @@
     margin: 1em 0;
     padding: 0.5em;
   }
+
+fieldset, legend
+{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+    fieldset
+    {
+       margin: 1em 0;
+    }
+    
+    legend 
+    {
+        background: url('/sites/default/themes/dreamwatch/gfx/ContentLine.png') no-repeat bottom left;
+        font-size: 110%;
+        font-weight: bold;
+        float: left;
+        line-height: 110%;
+        padding: 0 0 5px 0;
+        margin: 1em 0;
+        text-transform: uppercase;
+        width: 100%;
+    }
+    
+    .webform-component label 
+    {
+        color: #625E5E;
+    }
+    
+    .webform-container-inline
+    {
+        padding: .5em 0 0 0;
+    }
+    
+    #webform-component-kontaktoplysninger .webform-container-inline label,
+    #webform-component-ur-der-oenskes-byttet .webform-container-inline label,
+    #webform-component-dit-ur .webform-container-inline label,
+    #webform-component-brugt-ur-du-oensker-at-saelge .webform-container-inline label
+    {
+        display: inline-block;
+        margin-right: 0;
+        width: 120px;
+    }
+    
+    #webform-component-kontaktoplysninger .webform-container-inline label.option,
+    #webform-component-ur-der-oenskes-byttet .webform-container-inline label.option,
+    #webform-component-dit-ur .webform-container-inline label.option,
+    #webform-component-brugt-ur-du-oensker-at-saelge .webform-container-inline label.option
+    {
+        width: auto;
+    }
+    
+    .webform-component-radios .form-item label
+    {
+        float: left;
+        line-height: 30px;
+    }
+    
+    .webform-component-radios .form-item label.option 
+    {
+        color: #fff;
+        float: none;
+        line-height: 18px;
+    }
+    
+    #webform-component-ur-der-oenskes-byttet--papirer-certifikat label, 
+    #webform-component-dit-ur--papirer-certifikat label,
+    #webform-component-brugt-ur-du-oensker-at-saelge--papirer-certifikat label 
+    {
+        color: #fff;
+    }
+    
+    #webform-client-form-814 .webform-container-inline label
+    {
+        display: inline-block;
+        margin-right: 0;
+        width: 50px;
+    }

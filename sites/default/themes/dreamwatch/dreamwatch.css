@@ -1109,14 +1109,14 @@ li a.active /* The active item in a Drupal menu */
 
 .form-item label /* The label for a form element */
 {
-	display: block;
-	font-weight: bold;
+	/*display: block;
+	font-weight: bold;*/
 }
 
 .form-item label.option /* The label for a radio button or checkbox */
 {
-	display: inline;
-	font-weight: normal;
+	/*display: inline;
+	font-weight: normal;*/
 }
 
 .form-required /* The part of the label that indicates a required field */
@@ -1141,7 +1141,7 @@ li a.active /* The active item in a Drupal menu */
 
 .container-inline div, .container-inline label /* Inline labels and form divs */
 {
-	display: inline;
+	/*display: inline;*/
 }
 
 .tips /* Tips for Drupal's input formats */
