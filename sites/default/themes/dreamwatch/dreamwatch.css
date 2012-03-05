@@ -1848,3 +1848,25 @@ p.r-l .s1 {
     width: 50%;
     float: left;
   }
+  
+  .item-list .pager {
+    line-height: 2.6em;
+  }
+  
+  .pager-current {
+    background: #333;
+    border: 1px solid #333;
+    display: inline-block;
+  }
+  
+  .item-list .pager li.pager-current {
+    padding: 0.5em 1em;
+  }
+  
+  .item-list .pager li {
+    border: 1px solid #333;
+  }
+  
+  #content .pager-item a {
+    text-decoration: none;
+  }
