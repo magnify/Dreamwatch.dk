@@ -78,7 +78,7 @@
     
     <?php if ( $node->nid == '832' ): ?>
     <div style="display: none;">
-        <div id="soegning_thumbnail"><div data-if="Vars.thumbnail" class="gs-image-box gs-web-image-box"><a class="gs-image" data-attr="{href:url, target:target}"><img class="gs-image" data-attr="{src:thumbnail.src}"/></a></div></div>
+        <div id="soegning_thumbnail"><div data-if="Vars.thumbnail" class="gs-image-box gs-web-image-box"><a class="gs-image" data-attr="{href:url, target:target}"><img class="gs-image" data-attr="{src:thumbnail.src, width:150}"/></a></div></div>
         <div id="soegning_webResult">
             <div class="gs-webResult gs-result" data-vars="{longUrl:function() { var i = unescapedUrl.indexOf(visibleUrl); return i < 1 ? visibleUrl : unescapedUrl.substring(i);}}">
                 <table>
@@ -117,6 +117,10 @@
         google.search.Csedr.addOverride("soegning_");
     }, true);
     </script>
+    <style type="text/css">
+      .gs-web-image-box img.gs-image, .gs-promotion-image-box img.gs-promotion-image { max-width: 150px; max-height: 150px; }
+      .gs-web-image-box, .gs-promotion-image-box { width: 152px; }
+    </style>
     <?php endif; ?>
     
   </div>
