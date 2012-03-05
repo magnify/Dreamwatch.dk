@@ -468,7 +468,11 @@ h1#site-name, div#site-name /* The name of the website */
 
 #webform-component-brugt-ur-du-oensker-at-saelge--stand,
 #webform-component-ur-der-oenskes-byttet--stand,
-#webform-component-dit-ur--stand {
+#webform-component-dit-ur--stand, 
+#webform-component-brugt-ur-du-oensker-at-saelge--billede-1,
+#webform-component-ur-der-oenskes-byttet--billede-1,
+#webform-component-dit-ur--billede-1 
+{
     clear: left;
 }
 
