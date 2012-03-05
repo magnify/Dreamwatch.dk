@@ -340,7 +340,7 @@ fieldset, legend
     #webform-component-dit-ur--papirer-certifikat label,
     #webform-component-brugt-ur-du-oensker-at-saelge--papirer-certifikat label 
     {
-        color: #fff;
+        /*color: #fff;*/
     }
     
     #webform-client-form-814 .webform-container-inline label
