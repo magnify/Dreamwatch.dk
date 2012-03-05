@@ -1824,3 +1824,7 @@ p.r-l .s1 {
     font-size: 11px;
     color: #3b3b3b; }
  
+ .page-referencer .node .content li {
+    width: 50%;
+    float: left;
+  }
