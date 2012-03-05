@@ -160,3 +160,50 @@ function dreamwatch_preprocess_block(&$vars, $hook) {
   $vars['sample_variable'] = t('Lorem ipsum.');
 }
 // */
+
+function dreamwatch_pager($tags = array(), $limit = 10, $element = 0, $parameters = array(), $quantity = 9) {
+  
+	global $pager_page_array, $pager_total;
+
+	// Calculate various markers within this pager piece:
+	// current is the page we are currently paged to
+	$pager_current = $pager_page_array[$element] + 1;
+	// max is the maximum page number
+	$pager_max = $pager_total[$element];
+	// End of marker calculations.
+
+	// Prepare for generation loop.
+	$i = 1;
+	$pager_last = $pager_max;
+	// End of generation loop preparation.
+
+	if ($pager_total[$element] > 1) {
+	  
+		// When there is more than one page, create the pager list.
+		if ($i != $pager_max) {
+			
+			// Now generate the actual pager piece.
+			for (; $i <= $pager_last && $i <= $pager_max; $i++) {
+				if ($i < $pager_current) {
+					$items[] = array(
+                      'class' => 'pager-item',
+                      'data' => theme('pager_previous', $i, $limit, $element, ($pager_current - $i), $parameters),
+					);
+				}
+				if ($i == $pager_current) {
+					$items[] = array(
+                      'class' => 'pager-current',
+                      'data' => $i,
+					);
+				}
+				if ($i > $pager_current) {
+					$items[] = array(
+                      'class' => 'pager-item',
+                      'data' => theme('pager_next', $i, $limit, $element, ($i - $pager_current), $parameters),
+					);
+				}
+			}
+		}
+		return theme('item_list', $items, NULL, 'ul', array('class' => 'pager'));
+	}
+}
