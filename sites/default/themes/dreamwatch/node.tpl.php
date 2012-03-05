@@ -78,7 +78,7 @@
     
     <?php if ( $node->nid == '832' ): ?>
     <div style="display: none;">
-        <div id="soegning_thumbnail"><div data-if="Vars.thumbnail" class="gs-image-box gs-web-image-box"><a class="gs-image" data-attr="{href:url, target:target}"><img class="gs-image" data-attr="{src:thumbnail.src, width:150}"/></a></div></div>
+        <div id="soegning_thumbnail"><div data-if="Vars.thumbnail" class="gs-image-box gs-web-image-box"><a class="gs-image" data-attr="{href:url, target:target}"><img class="gs-image" data-attr="{src:thumbnail.src}"/></a></div></div>
         <div id="soegning_webResult">
             <div class="gs-webResult gs-result" data-vars="{longUrl:function() { var i = unescapedUrl.indexOf(visibleUrl); return i < 1 ? visibleUrl : unescapedUrl.substring(i);}}">
                 <table>
