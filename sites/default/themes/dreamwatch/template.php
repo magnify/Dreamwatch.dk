@@ -211,7 +211,7 @@ function dreamwatch_pager($tags = array(), $limit = 10, $element = 0, $parameter
 function dreamwatch_fb_social_like_widget($url){
 	$attrs = array(
       /*'href' => $url,*/ 
-      'href' => 'http://'.$_SERVER['HTTP_HOST'].'/', 
+      'href' => 'https://www.facebook.com/pages/Dreamwatchdk-eksklusive-bruge-ure/137781919622534', 
       'layout' => variable_get('fb_social_like_layout_style', 'button_count'), 
       'show_faces' => variable_get('fb_social_like_show_faces', 0) ? 'true' : 'false', 
       'width' => variable_get('fb_social_like_width', 350), 
