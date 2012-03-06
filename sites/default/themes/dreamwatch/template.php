@@ -207,3 +207,21 @@ function dreamwatch_pager($tags = array(), $limit = 10, $element = 0, $parameter
 		return theme('item_list', $items, NULL, 'ul', array('class' => 'pager'));
 	}
 }
+
+function dreamwatch_fb_social_like_widget($url){
+	$attrs = array(
+      /*'href' => $url,*/ 
+      'href' => 'http://'.$_SERVER['HTTP_HOST'].'/', 
+      'layout' => variable_get('fb_social_like_layout_style', 'button_count'), 
+      'show_faces' => variable_get('fb_social_like_show_faces', 0) ? 'true' : 'false', 
+      'width' => variable_get('fb_social_like_width', 350), 
+      'action' => variable_get('fb_social_like_verb', 'like'), 
+      'font' => variable_get('fb_social_like_font', 'verdana'), 
+      'colorscheme' => variable_get('fb_social_like_color', 'dark') 
+	);
+
+	$attrs = drupal_attributes($attrs);
+
+	return '<div class="fb-social-like-widget"><fb:like ' . $attrs . '></fb:like></div>';
+
+}
