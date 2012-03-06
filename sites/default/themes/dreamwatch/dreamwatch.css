@@ -1854,7 +1854,7 @@ p.r-l .s1 {
   }
   
   .item-list .pager {
-    line-height: 2.6em;
+    line-height: 21px;
   }
   
   .pager-current {
@@ -1864,13 +1864,18 @@ p.r-l .s1 {
   }
   
   .item-list .pager li.pager-current {
-    padding: 0.5em 1em;
+    padding: 1px 4px;
   }
   
   .item-list .pager li {
     border: 1px solid #333;
+	padding: 1px 0px;
   }
   
   #content .pager-item a {
     text-decoration: none;
+  }
+  
+  .pager a, .pager strong.pager-current {
+  	padding: 1px 2px 1px 4px;
   }

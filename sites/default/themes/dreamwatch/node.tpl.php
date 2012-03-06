@@ -120,6 +120,11 @@
     <style type="text/css">
       .gs-web-image-box img.gs-image, .gs-promotion-image-box img.gs-promotion-image { max-width: 150px; max-height: 150px; }
       .gs-web-image-box, .gs-promotion-image-box { width: 152px; }
+	  
+	  .gsc-results .gsc-cursor-page,
+	  .gsc-results .gsc-cursor-page.gsc-cursor-current-page {
+		  padding: 1px 4px;
+	  }
     </style>
     <?php endif; ?>
     
