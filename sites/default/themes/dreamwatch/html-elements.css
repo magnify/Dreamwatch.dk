@@ -349,3 +349,25 @@ fieldset, legend
         margin-right: 0;
         width: 50px;
     }
+    
+.form-text, 
+.form-select,
+.form-file, 
+.form-textarea  
+{
+    background: #0c0c0c;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 2px;
+    
+}
+
+.form-submit {
+    background: white url('/sites/default/themes/dreamwatch/gfx/buttonBg.gif') repeat-x bottom;
+    border: 1px solid #B0B0B0;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px 10px;
+}
+
+.form-submit:hover { background: white url('/sites/default/themes/dreamwatch/gfx/buttonBg.gif') repeat-x top; }

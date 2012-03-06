@@ -1128,7 +1128,7 @@ li a.active /* The active item in a Drupal menu */
 .form-item textarea.error,
 .form-item select.error
 {
-	border: 2px solid #c00;
+	border: 1px solid #c00;
 }
 
 .form-item label /* The label for a form element */
