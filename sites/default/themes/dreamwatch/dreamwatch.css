@@ -1879,3 +1879,36 @@ p.r-l .s1 {
   .pager a, .pager strong.pager-current {
   	padding: 1px 2px 1px 4px;
   }
+
+#content #cta-triggers a {
+    background: #0a0a0b url('/sites/default/themes/dreamwatch/gfx/DarkbuttonBg.gif') repeat-x top;
+    border: 1px solid #353535;
+    display: block;
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 10px;
+    margin: 0 20px 0 0;
+    text-decoration: none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+#content #cta-triggers a:hover {
+    background: #3a3c40 url('/sites/default/themes/dreamwatch/gfx/DarkbuttonBg.gif') repeat-x bottom;
+}
+
+#content #cta-triggers a .ReadMoreArrow {
+    float: left;
+    margin: -1px 3px 0 0;
+}
+
+.node-type-product .pane-node #node-814,
+.node-type-product .pane-node #node-826
+{
+    margin-bottom: 20px; }
+
+.node-type-product .pane-node #node-814 {
+    clear: left;
+}
