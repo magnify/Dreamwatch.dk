@@ -22,7 +22,7 @@
 foreach ($fields as $id => $field) {
   if ( $id == 'field_soldout_value' ) {
     if ( $field->content == 'Udsolgt' ) {
-        $fields['field_price_value']->content = null;
+        $fields['field_price_value']->content = t('Sold');
     }
   }
 }
