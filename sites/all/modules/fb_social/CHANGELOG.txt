@@ -1,6 +1,27 @@
 
-fb_social 6.x-1.0-BETA5, 2010-11-xx
+fb_social 6.x-1.0-BETA9, 2011-09-20
+Issue #1198338 by AdamGerthel Javascript error in IE7: No comma  after the last item in the array
+Issue #1187894
+Issue #1273650 : Comments - no color option
 
+fb_social 6.x-1.0-BETA7, 2011-06-09
+
+Issue #1177776 by Roger Saner  : Add a Custom Channel URL option to FB.init
+Issue #150282 : Retrieving old FB comments with Migrated ="1"
+Added facebook send plugin (http://developers.facebook.com/docs/reference/plugins/send)
+Added "send" option to the like widget
+
+
+fb_social 6.x-1.0-BETA6, 2010-03-26
+
+Issue #1035310 : Don't display comments block on node edit pages.
+Issue #988378 : Wrong closing tag for activityfeed 
+Issue #980638 : Like box creates administrative block in Admin's sidebar
+Issue #1053718 by mrfelton: fb_share + fb_like dont display on full node view when  is false
+Issue #1020828 by mongeron, mr.j : Google Analytics integration
+Issue #1004162 by chia : Only load fb js on pages where its required by any plugin
+Issue #1102356 : Moderate Comments posted through Facebook
+Issue #1104446 by phenaproxima: "fb_social_comments: attribute url changed to href" 
 #995394 by AlexisWilke : Should comment block be hidden when node is unpublished
 #988086 : fb social views error
 changed "pageid" to "page url" (href) for likebox ; please update your settings accordingly

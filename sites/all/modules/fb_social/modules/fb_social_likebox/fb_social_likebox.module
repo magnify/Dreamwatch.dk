@@ -27,7 +27,6 @@ function fb_social_likebox_block($op = 'list', $delta = 0, $edit = array()){
     case 'list' :
       $blocks['likebox'] = array(
           'info' => t('fb like box'), 
-          'admin' => TRUE 
       );
       
       return $blocks;
@@ -54,6 +53,9 @@ function fb_social_likebox_theme() {
 
 
 function theme_fb_social_likebox_block_likebox_view(){
+  global $_fb_script_init;
+  $_fb_script_init = TRUE;
+  
   $attrs = array(
       'href' => variable_get('fb_social_likebox_href', ''), 
       'width' => variable_get('fb_social_likebox_width', 292), 
