@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /* $Id: zen.css,v 1.14.2.1 2009/02/13 07:46:04 johnalbin Exp $ */
 
 /*
@@ -1914,4 +1915,1919 @@ p.r-l .s1 {
 
 .node-type-product .pane-node #node-814 {
     clear: left;
+=======
+/* $Id: zen.css,v 1.14.2.1 2009/02/13 07:46:04 johnalbin Exp $ */
+
+/*
+* ZEN STYLES
+*
+* This is an example stylesheet. Sub-themes should NOT include the zen/zen.css
+* file, but instead copy this CSS to their own stylesheets.
+*
+* In this stylesheet, we have included all of the classes and IDs from this
+* theme's tpl.php files. We have also included many of the useful Drupal core
+* styles to make it easier for theme developers to see them.
+*
+* Many of these styles are over-riding Drupal's core stylesheets, so if you
+* remove a declaration from here, the styles may still not be what you want
+* since Drupal's core stylesheets are still styling the element. See the
+* drupal6-reference.css file for a list of all Drupal 5.x core styles.
+*
+* In addition to the style declarations in this file, other Drupal styles that
+* you might want to override or augment are those for:
+*
+*   Book Navigation  See line 74  of Zen's drupal6-reference.css file
+*   Forum            See line 197 of Zen's drupal6-reference.css file
+*   Menus            See line 667 of Zen's drupal6-reference.css file
+*   News Aggregator  See line 20  of Zen's drupal6-reference.css file
+*   Polls            See line 287 of Zen's drupal6-reference.css file
+*   Search           See line 320 of Zen's drupal6-reference.css file
+*   User Profiles    See line 945 of Zen's drupal6-reference.css file
+*/
+
+/** body **/
+
+body {
+	background: #000;
+	background: #000 url('/sites/default/themes/dreamwatch/gfx/BodyBg.jpg') no-repeat top center;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #fff;
+}
+
+legend {
+    color: #fff;
+}
+
+a:link, a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	color: #fff;
+	text-decoration: underline;
+}
+
+#content a:link, 
+#content a:visited
+{
+    text-decoration: underline;    
+}
+
+#content a:hover, 
+#content a:active
+{
+    text-decoration: none;    
+}
+
+#content .views-field-title a, 
+#content .views-field-title-1 a, 
+#content .views-field-title-2 a 
+{
+    text-decoration: none;
+}
+
+
+#cta-triggers {
+    clear: left;
+    margin-bottom: 15px; }
+
+    #cta-triggers a {
+        white-space: nowrap; }
+
+#content {
+	font-size: 85%;
+}
+
+#content p {
+	line-height: 140%;
+	margin: 0 0 10px;
+}
+
+#page
+{
+}
+
+#page-inner
+{
+}
+
+/** header **/
+#header {
+	background: url('/sites/default/themes/dreamwatch/gfx/line.png') no-repeat bottom;
+	height: 129px;
+}
+
+#header-inner
+{
+}
+
+#logo-title /* Wrapper for logo, website name, and slogan */
+{
+	float: left;
+	margin: 20px 0;
+	width: 250px;
+}
+
+#logo /* Wrapper for logo */ {
+	margin: 9px 10px 0 25px;
+	padding: 0;
+}
+
+#logo-image /* The actual logo image */
+{
+}
+
+h1#site-name, div#site-name /* The name of the website */
+{
+	margin: 0;
+	font-size: 2em;
+	line-height: 1.3em;
+}
+
+#site-name a:link,
+#site-name a:visited
+{
+	color: #000;
+	text-decoration: none;
+}
+
+#site-name a:hover
+{
+	text-decoration: underline;
+}
+
+#site-slogan /* The slogan (or tagline) of a website */
+{
+}
+
+#header-blocks /* Wrapper for any blocks placed in the header region */ {
+	clear: none;
+	float: right;
+	/*margin: 55px 0 0; */ 
+    	margin: 19px 0 0;
+	width: 625px;
+}
+
+#search_field {
+    background: #000;
+    border: 1px solid #333;
+    color: #fff;
+    font-size: 90%;
+    padding: 2px;
+    width: 180px; }
+    
+#search_button {
+    vertical-align: -6px;
+}
+
+/* Language selector */
+#header-blocks .block-locale h2.title {
+    display: none; }
+    
+    #header-blocks .block-locale {
+        clear: both;
+        font-size: 85%;
+        padding: 1em 0; }
+    
+        #header-blocks .block-locale ul, 
+        #header-blocks .block-locale ul li {
+            float: right;
+            list-style: none;
+            margin: 0; 
+            padding: 0; }  
+            
+            #header-blocks .block-locale ul li {
+                margin: 0 15px 0 0; }
+
+#header-blocks ul.menu {
+    clear: both;
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+
+#header-blocks ul.menu li {
+	float: left;
+	font-size: 85%;
+	list-style: none;
+	margin: 0 15px 0 0;
+}
+
+#header-blocks ul.menu li a {
+	color: #fff;
+}
+
+#header-blocks ul.menu li a:link, #header-blocks ul.menu li a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+
+#header-blocks ul.menu li a:hover, #header-blocks ul.menu li a:active {
+	color: #fff;
+	text-decoration: none;
+}
+
+#header-blocks ul.menu li a.active {
+	text-decoration: underline;
+}
+
+/** main (container for everything else) **/
+#main
+{
+}
+
+#main-inner {
+	margin: 20px 0 0;
+}
+
+/** content **/
+#content
+{
+}
+
+#content-inner
+{
+}
+
+#content .view-frontpage {
+	margin: 0 0 20px;
+}
+
+#content .view-frontpage .views-field-title h1,
+#content h2.pane-title, #content .view-frontpage .views-field-body {
+	width: 620px;
+}
+
+.two-sidebars #content .view-frontpage .views-field-title h1,
+.two-sidebars#content h2.pane-title, #content .view-frontpage .views-field-body {
+	width: 560px;
+}
+
+.one-sidebar #content .view-frontpage .views-field-title h1,
+.one-sidebar #content .view-frontpage .views-field-body {
+    width: 675px;
+}
+
+#content h1, #content h2 {
+	background: url('/sites/default/themes/dreamwatch/gfx/ContentLine.png') no-repeat bottom left;
+	color: #fff;
+	font-size: 150%;
+	line-height: 150%;
+	margin: 0 0 10px;
+}
+
+#content .content .field-field-sideimage {
+	float: right;
+	margin: 0 31px 0 10px;
+}
+
+#content .view-products-frontpage {
+	margin: 20px 0 0;
+}
+
+#content .view-products-frontpage .views-row {
+	float: left;
+	width: 175px;
+}
+
+#content .view-products-frontpage .views-row .views-field-title, #content .view-products-frontpage .views-row .views-field-field-price-value {
+	font-size: 75%;
+	text-align: center;
+	width: 150px;
+}
+
+#content .view-products-frontpage .views-row .views-field-title a, #content .view-products-frontpage .views-row .views-field-title a:link, #content .view-products-frontpage .views-row .views-field-title a:visited {
+	color: #fff;
+}
+
+#content .view-products-frontpage .views-row .views-field-title a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+#content .pane-content {
+}
+
+#content .view-products .views-row, #content .view-id-products_soldout .views-row {
+	background: url('/sites/default/themes/dreamwatch/gfx/ContentLine.png') no-repeat left top;
+	clear: both;
+	float: left;
+	padding: 15px 0;
+  width: 98%;
+}
+
+#content .view-products .views-row.views-row-1, #content .view-id-products_soldout .views-row.views-row-1 {
+	background: none;
+}
+
+#content .view-id-products_soldout .views-row {
+	background: url('/sites/default/themes/dreamwatch/gfx/sold.jpg') no-repeat right 20px !important;
+}
+
+#content .view-products .imagecache-product_large, 
+#content .view-id-products_soldout .imagecache-product_large {
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+#content .view-products .views-field-title-1, 
+#content .view-id-products_soldout .views-field-title, 
+#content .view-products .views-field-title 
+{
+	font-size: 125%;
+	font-weight: bold;
+	margin: 0 0 10px;
+}
+
+#content .view-products .views-field-title-1 a, 
+#content .view-id-products_soldout .views-field-title a,
+#content .view-products .views-field-title a  
+{
+	color: #fff;
+}
+
+#content .view-id-products_soldout .views-field-title {
+	margin: 0 0 5px;
+}
+
+#content .view-products .views-field-field-price-value, 
+#content .view-id-products_soldout .views-field-field-price-value,
+#content .view-products .views-field-field-price-value-1 {
+  font-size: 115%;
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.node-type-productcategory #content .view-products .views-field-field-price-value,
+.node-type-productcategory #content .view-id-products_soldout .views-field-field-price-value,
+.node-type-product-brand #content .view-products .views-field-field-price-value-1,
+.node-type-products-other #content .view-products .views-field-field-price-value-1,
+.node-type-products-new #content .view-products .views-field-field-price-value-1 {
+  font-size: 115%;
+  float: right;
+  margin: -28px 0 0;
+}
+
+#content .view-products .views-field-title-2, #content .view-id-products_soldout .views-field-title-2 {
+	background: #fff url('/sites/default/themes/dreamwatch/gfx/buttonBg.gif') repeat-x bottom;
+	border: 1px solid #b0b0b0;
+	float: right;
+	font-weight: bold;
+	margin: 10px 0;
+	padding: 1px 10px;
+}
+
+#content .view-products .views-field-title-2:hover, #content .view-id-products_soldout .views-field-title-2:hover {
+	background: #fff url('/sites/default/themes/dreamwatch/gfx/buttonBg.gif') repeat-x top;
+}
+
+#content .view-products .views-field-title-2 a, #content .view-id-products_soldout .views-field-title-2 a {
+	color: #000;
+}
+
+#content .view-products .views-field-title-2 a:hover, #content .view-id-products_soldout .views-field-title-2 a:hover {
+	text-decoration: none;
+}
+
+#content .view-products .views-field-title-2 a .ReadMoreArrow, #content .view-id-products_soldout .views-field-title-2 a .ReadMoreArrow {
+	float: left;
+	margin: -1px 3px 0 0;
+}
+
+#content .view-products .views-field-field-image-fid, #content .view-id-products_soldout .views-field-field-image-fid {
+	float: left;
+	width: 165px;
+}
+
+#content .view-products .views-field-field-image-fid {
+  height: 175px;
+}
+
+.node-type-product #content .view-products .views-field-field-image-fid {
+  height: auto;
+}
+
+#content .view-products .views-field-field-image-fid-1, #content .view-id-products_soldout .views-field-field-image-fid-1 {
+	clear: both;
+	float: left;
+	margin: 10px 0 0;
+	width: 165px;
+}
+
+#content .view-products .views-field-field-image-fid-1 .field-item, #content .view-id-products_soldout .views-field-field-image-fid-1 .field-item {
+	float: left;
+	width: 55px;
+}
+
+#content .view-products .views-field-body .field-content {
+  margin: 0 0 0 165px;
+}
+
+#content .view-products .views-row div label,
+#content .view-products-soldout .views-row div label {
+  font-weight: bold;
+}
+
+.node-type-product #content .view-products .views-field-body .field-content {
+	/* clear: both; */
+  margin: 0 185px 0 0;
+}
+
+.node-type-product #content .view-products .views-field-field-image-fid,
+.node-type-product #content .view-id-products_soldout .views-field-field-image-fid,
+.node-type-product #content .view-products .views-field-field-image-fid-1,
+.node-type-product #content .view-id-products_soldout .views-field-field-image-fid-1 {
+  float: right;
+}
+
+.node-type-product .views-field-body {
+  margin: 10px 0 0;
+}
+
+#content .view-products .views-field-field-image-fid-2, 
+#content .view-id-products_soldout .views-field-field-image-fid-2 
+{
+	/*display: none;*/
+}
+
+.node-type-product .views-field-field-image-fid-2 {
+    display: none;
+}
+
+/* Webform customs */
+#webform-component-brugt-ur-du-oensker-at-saelge--stand .form-radios .form-item,
+#webform-component-ur-der-oenskes-byttet--stand .form-radios .form-item,
+#webform-component-dit-ur--stand .form-radios .form-item {
+    margin-right: 1em;
+    float: left;
+}
+#webform-component-brugt-ur-du-oensker-at-saelge--boks-aeske,
+#webform-component-ur-der-oenskes-byttet--boks-aeske,
+#webform-component-dit-ur--boks-aeske {
+    clear: left;
+}
+
+#webform-component-brugt-ur-du-oensker-at-saelge--boks-aeske,
+#webform-component-ur-der-oenskes-byttet--boks-aeske,
+#webform-component-dit-ur--boks-aeske,
+#webform-component-brugt-ur-du-oensker-at-saelge--papirer-certifikat,
+#webform-component-ur-der-oenskes-byttet--papirer-certifikat,
+#webform-component-dit-ur--papirer-certifikat {
+    margin-right: 1em;
+    float: left;
+}
+
+#webform-component-brugt-ur-du-oensker-at-saelge--stand,
+#webform-component-ur-der-oenskes-byttet--stand,
+#webform-component-dit-ur--stand, 
+#webform-component-brugt-ur-du-oensker-at-saelge--billede-1,
+#webform-component-ur-der-oenskes-byttet--billede-1,
+#webform-component-dit-ur--billede-1 
+{
+    clear: left;
+}
+
+
+#mission /* The mission statement of the site (displayed on homepage) */
+{
+}
+
+#content-top /* Wrapper for any blocks placed in the "content top" region */
+{
+}
+
+#content-header /* Wrapper for breadcrumb, title, messages, tabs, and help */
+{
+}
+
+.breadcrumb /* The path to the current page in the form of a list of links */
+{
+	left :0;
+	padding-bottom: 0; /* Undo system.css */
+	position: absolute;
+	top: -15px;
+}
+
+h1.title, /* The title of the page */
+h2.title, /* Block title or the title of a piece of content when it is given in a list of content */
+h3.title /* Comment title */
+{
+	margin: 0;
+}
+
+div.messages /* Important messages (status, warning, and error) for the user */
+{
+}
+
+div.status /* Normal priority messages */
+{
+}
+
+div.warning, tr.warning /* Medium priority messages */
+{
+/* border: 1px solid #f0c020; */ /* Drupal core uses: 1px solid #f0c020 */
+}
+
+div.error, tr.error /* High priority messages. See also the .error declaration below. */
+{
+}
+
+div.tabs /* See also the tabs.css file. */
+{
+}
+
+.help /* Help text on a page */
+{
+	margin: 1em 0;
+}
+
+.more-help-link /* Link to more help */
+{
+	font-size: 0.85em;
+	text-align: right;
+}
+
+#content-area /* Wrapper for the actual page content */
+{
+}
+
+.pager /* A list of page numbers when more than 1 page of content is available */
+{
+	clear: both;
+	margin: 1em 0;
+	text-align: center;
+}
+
+.pager a, .pager strong.pager-current
+{
+	padding: 0.5em;
+}
+
+.feed-icons /* The links to the RSS or Atom feeds for the current list of content */
+{
+	margin: 1em 0;
+}
+
+#content-bottom /* Wrapper for any blocks placed in the "content bottom" region */
+{
+}
+
+/** navbar **/
+#navbar
+{
+}
+
+#navbar-inner
+{
+}
+
+#search-box /* Wrapper for the search form */
+{
+}
+
+#edit-search-theme-form-1-wrapper label /* Label that says "Search this site:" */
+{
+	display: none;
+}
+
+#primary /* Primary links */
+{
+}
+
+#secondary /* Secondary links */
+{
+}
+
+/** sidebar-left **/
+#sidebar-left {
+	font-size: 85%;
+}
+
+#sidebar-left-inner
+{
+}
+
+#sidebar-left ul.menu {
+	margin: 0;
+	padding: 0;
+}
+
+#sidebar-left .view-product-categories span, #sidebar-left ul.menu li {
+	background: url('/sites/default/themes/dreamwatch/gfx/GradientLineHori.png') no-repeat bottom left;
+	display: block;
+	list-style: none;
+	list-style-image: none;
+	padding: 0 0 1px;
+	width: 200px;
+}
+
+#sidebar-left ul.menu li {
+	*margin: 0 0 -3px;
+}
+
+
+#sidebar-left .view-product-categories a, #sidebar-left ul.menu li a {
+	color: #fff;
+	display: block;
+	font-size: 90%;
+	padding: 5px 0 6px 10px;
+}
+
+#sidebar-left .view-product-categories a:hover, #sidebar-left ul.menu li a:hover {
+	background: url('/sites/default/themes/dreamwatch/gfx/LeftMenuBg.png') repeat-y;
+	text-decoration: none;
+}
+
+/** sidebar-right **/
+#sidebar-right
+{
+}
+
+#sidebar-right-inner
+{
+}
+
+/** footer **/
+#footer {
+	color: #2b2b2b;
+	font-size: 75%;
+	text-align: center;	
+}
+
+#footer-inner
+{
+}
+
+#footer-message /* Wrapper for the footer message from Drupal's "Site information"
+				 and for any blocks placed in the footer region */
+{
+}
+
+#footer a {
+	color: #404040;
+}
+
+#footer a:link, #footer a:visited {
+	color: #404040;
+	text-decoration: none;
+}
+
+#footer a:hover, #footer a:active {
+	color: #9a9a9a;
+	text-decoration: none;
+}
+
+#footer #block-block-5 {
+  /*float: left;*/
+}
+
+#footer #block-block-2 {
+  /*float: right;*/
+}
+
+/** closure **/
+#closure-blocks /* Wrapper for any blocks placed in the closure region */
+{
+}
+
+/** Drupal nodes **/
+.node /* Node wrapper */
+{
+}
+
+.node-inner /* Additional wrapper for node */
+{
+}
+
+.sticky /* A sticky node (displayed before others in a list) */
+{
+}
+
+.node-unpublished /* Unpublished nodes */
+{
+/* background-color: #fff4f4; */ /* Drupal core uses a #fff4f4 background */
+}
+
+.node-unpublished div.unpublished, /* The word "Unpublished" displayed beneath the content. */
+.comment-unpublished div.unpublished
+{
+	height: 0;
+	overflow: visible;
+	color: #d8d8d8;
+	font-size: 75px;
+	line-height: 1;
+	font-family: Impact, "Arial Narrow", Helvetica, sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	word-wrap: break-word; /* A very nice CSS3 property */
+}
+
+.node-mine /* A node created by the current user */
+{
+}
+
+.node-teaser /* A node displayed as teaser */
+{
+}
+
+/* All nodes are given a node-type-FOO class that describes the type of
+* content that it is. If you create a new content type called
+* "my-custom-type", it will receive a "node-type-my-custom-type" class.
+*/
+.node-type-page /* Page content node */
+{
+}
+
+.node-type-story /* Story content node */
+{
+}
+
+.node h2.title /* Node title */ {
+	font-size: 125%;
+}
+
+.node h2.title a, .node h2.title a:hover {
+	text-decoration: none;
+}
+
+.marker /* "New" or "Updated" marker for content that is new or updated for the current user */
+{
+	color: #c00;
+}
+
+.node .picture /* The picture of the node author */
+{
+}
+
+.node.node-unpublished .picture,
+.comment.comment-unpublished .picture
+{
+	position: relative; /* Otherwise floated pictures will appear below the "Unpublished" text. */
+}
+
+.node .meta /* Wrapper for submitted and terms data */
+{
+}
+
+.node .submitted /* The "posted by" information */
+{
+}
+
+.node .terms /* Node terms (taxonomy) */
+{
+}
+
+.node .content /* Node's content wrapper */
+{
+}
+
+.node div.links /* Wrapper for node links */
+{
+	margin: 1em 0;
+}
+
+ul.links /* Taxonomy links, node links, comment links */
+{
+	margin: 0;
+	padding: 0;
+}
+
+ul.links.inline
+{
+	display: inline;
+}
+
+ul.links li
+{
+	display: inline;
+	list-style-type: none;
+	padding: 0 0.5em;
+}
+
+.preview .node /* Preview of the content before submitting new or updated content */
+{
+/* background-color: #ffffea; */ /* Drupal core uses a #ffffea background */
+}
+
+/** Drupal comments **/
+#comments /* Wrapper for the list of comments and its title */
+{
+	margin: 1em 0;
+}
+
+#comments-title /* Heading for the list of comments */
+{
+}
+
+.comment /* Wrapper for a single comment */
+{
+}
+
+.comment-inner /* Additional wrapper for a single comment */
+{
+}
+
+.comment-preview /* Preview of the comment before submitting new or updated comment */
+{
+}
+
+.comment.new /* A new comment since the user last viewed the page. */
+{
+}
+
+.comment.odd /* An odd-numbered comment in the list of comments */
+{
+}
+
+.comment.even /* An even-numbered comment in the list of comments */
+{
+}
+
+.comment.first /* The first comment in the list of comments */
+{
+}
+
+.comment.last /* The last comment in the list of comments */
+{
+}
+
+.comment-unpublished /* Unpublished comments */
+{
+/* background-color: #fff4f4; */ /* Drupal core uses a #fff4f4 background */
+}
+
+.comment-unpublished div.unpublished /* The word "Unpublished" displayed beneath the content. See also the div.unpublished declaration in the node section above. */
+{
+}
+
+.comment-published /* Published comments */
+{
+}
+
+.comment-by-anon /* A comment created by an anonymous user */
+{
+}
+
+.comment-by-author /* A comment created by the node's author */
+{
+}
+
+.comment-mine /* A comment created by the current user */
+{
+}
+
+.comment h3.title /* Comment title */
+{
+}
+
+.new /* "New" marker for comments that are new for the current user */
+{
+	color: #c00;
+}
+
+.comment .picture /* The picture of the comment author */
+{
+}
+
+.comment .submitted /* The "posted by" information */
+{
+}
+
+.comment .content /* Comment's content wrapper */
+{
+}
+
+.comment .user-signature /* The user's signature */
+{
+}
+
+.comment div.links /* Wrapper for comment links. See also the ul.links declaration in the node section above. */
+{
+	margin: 1em 0;
+}
+
+.indented /* Nested comments are indented */
+{
+/* margin-left: 25px; */ /* Drupal core uses a 25px left margin */
+}
+
+.preview .comment /* Preview of the comment before submitting new or updated comment */
+{
+/* background-color: #ffffea; */ /* Drupal core uses a #ffffea background */
+}
+
+/** Drupal blocks **/
+.block /* Block wrapper */
+{
+	margin-bottom: 1em;
+}
+
+.block.region-odd /* Zebra striping for each block in the region */
+{
+}
+
+.block.region-even /* Zebra striping for each block in the region */
+{
+}
+
+.block.odd /* Zebra striping independent of each region */
+{
+}
+
+.block.even /* Zebra striping independent of each region */
+{
+}
+
+.region-count-1 /* Incremental count for each block in the region */
+{
+}
+
+.count-1 /* Incremental count independent of each region */
+{
+}
+
+.block-inner /* Additional wrapper for block */
+{
+}
+
+.block h2.title /* Block title */ {
+	color: #fff;
+	font-size: 110%;
+}
+
+
+#sidebar-left .block h2.title /* Block title */,
+#sidebar-right .block h2.title /* Block title */ {
+	background: url('/sites/default/themes/dreamwatch/gfx/GradientLineHori.png') no-repeat bottom left;
+	text-transform: uppercase;
+	padding: 0 0 5px;
+}
+
+.block .content /* Block's content wrapper */
+{
+}
+
+#block-aggregator-category-1 /* Block for the latest news items in the first category */
+{
+}
+
+#block-aggregator-feed-1 /* Block for the latest news items in the first feed */
+{
+}
+
+#block-block-1 /* First administrator-defined block */
+{
+}
+
+#block-blog-0 /* "Recent blog posts" block */
+{
+}
+
+#block-book-0 /* "Book navigation" block for the current book's table of contents */
+{
+}
+
+#block-comments-0 /* "Recent comments" block */
+{
+}
+
+#block-forum-0 /* "Active forum topics" block */
+{
+}
+
+#block-forum-1 /* "New forum topics" block */
+{
+}
+
+#block-menu-2 /* "Primary links" block */
+{
+}
+
+#block-node-0 /* "Syndicate" block for primary RSS feed */
+{
+}
+
+#block-poll-0 /* "Most recent poll" block */
+{
+}
+
+#block-profile-0 /* "Author information" block for the profile of the page's author */
+{
+}
+
+#block-search-0 /* "Search form" block */
+{
+}
+
+#block-statistics-0 /* "Popular content" block */
+{
+}
+
+#block-user-0 /* "User login form" block */
+{
+	float: left;
+	width: 100%;
+}
+
+#block-user-1 /* "Navigation" block for Drupal navigation menu */
+{
+}
+
+#block-user-2 /* "Who's new" block for a list of the newest users */
+{
+}
+
+#block-user-3 /* "Who's online" block for a list of the online users */
+{
+}
+
+#block-views-product_categories-block_1, #sidebar-left .block-menu {
+}
+
+#sidebar-left .block-menu {
+	margin: 25px 0 0;
+}
+
+/** Drupal boxes **/
+/* Wrapper for Comment form, Comment viewing options, Menu admin, and
+* Search results.
+*/
+.box /* Wrapper for box */
+{
+}
+
+.box-inner /* Additional wrapper for box */
+{
+}
+
+.box h2.title /* Box title */
+{
+}
+
+.box .content /* Box's content wrapper */
+{
+}
+
+/** Miscellaneous Drupal styles **/
+.error /* Errors that are separate from div.messages status messages (see above.) */
+{
+/* color: #e55; */ /* Drupal core uses a #e55 background */
+}
+
+.warning /* Warnings that are separate from div.messages status messages (see above.) */
+{
+/* color: #e09010; */ /* Drupal core uses a #e09010 background */
+}
+
+.more-link /* Aggregator, blog, and forum more link */
+{
+	text-align: right;
+}
+
+#user-login-form /* Drupal's default login form */
+{
+	float: right;
+	text-align: left;
+}
+
+#navbar #user-login-form label {
+	display: none;
+}
+
+#navbar #user-login-form input {
+}
+
+#navbar #user-login-form .form-item {
+	float: left;
+	margin: 1px 0;
+}
+
+#navbar #user-login-form .item-list {
+	clear: both;
+}
+
+#navbar #user-login-form .item-list li {
+	list-style: none;
+}
+
+tr.even /* Some tables have rows marked even or odd. */
+{
+/* background-color: #eee; */ /* Drupal core uses a #eee background */
+}
+
+tr.odd
+{
+/* background-color: #eee; */ /* Drupal core uses a #eee background */
+}
+
+li a.active /* The active item in a Drupal menu */
+{
+	color: #fff;
+}
+
+
+/** Drupal forms **/
+.form-item, /* Wrapper for a form element (or group of form elements) and its label */
+.form-checkboxes,
+.form-radios
+{
+	margin: 1em 0;
+}
+
+.form-item input.error, /* Highlight the form elements that caused a form submission error */
+.form-item textarea.error,
+.form-item select.error
+{
+	border: 1px solid #c00;
+}
+
+.form-item label /* The label for a form element */
+{
+	/*display: block;
+	font-weight: bold;*/
+}
+
+.form-item label.option /* The label for a radio button or checkbox */
+{
+	/*display: inline;
+	font-weight: normal;*/
+}
+
+.form-required /* The part of the label that indicates a required field */
+{
+	color: #c00;
+}
+
+.form-item .description /* The descriptive help text (separate from the label) */
+{
+	font-size: 0.85em;
+}
+
+.form-checkboxes .form-item, /* Pack groups of checkboxes and radio buttons closer together */
+.form-radios .form-item
+{
+	margin: 0.4em 0;
+}
+
+.form-submit /* The submit button */
+{
+}
+
+.container-inline div, .container-inline label /* Inline labels and form divs */
+{
+	/*display: inline;*/
+}
+
+.tips /* Tips for Drupal's input formats */
+{
+	margin: 0;
+	padding: 0;
+	font-size: 0.9em;
+}
+
+/** OpenID **/
+/* The default styling for the OpenID login link seems to assume Garland's
+* styling of list items.
+*/
+#user-login-form ul /* OpenID creates a new ul above the login form's links. */
+{
+	margin-bottom: 0; /* Position OpenID's ul next to the rest of the links. */
+}
+
+#user-login-form li.openid-link, /* The "Log in using OpenID" links. */
+#user-login li.openid-link
+{
+	margin-top: 1em;
+	margin-left: -20px; /* Un-do some of the padding on the ul list. */
+	padding-left: 20px;
+	background-position: left center;
+}
+
+#user-login-form li.user-link, /* The "Cancel OpenID login" links. */
+#user-login li.user-link
+{
+	margin-top: 1em;
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+#user-login li.openid-link, /* The OpenID links on the /user form. */
+#user-login li.user-link
+{
+	margin-left: -2em; /* Un-do all of the padding on the ul list. */
+}
+
+/** Drupal admin tables **/
+/* We overrode these styles in html-elements.css, but restore them for the
+* forms on the site.
+*/
+form tbody
+{
+	border-top: 1px solid #ccc;
+}
+
+form th
+{
+	text-align: left;
+	padding-right: 1em;
+	border-bottom: 3px solid #ccc;
+}
+
+form tbody th
+{
+	border-bottom: 1px solid #ccc;
+}
+
+form thead th
+{
+	text-align: left;
+	padding-right: 1em;
+	border-bottom: 3px solid #ccc;
+}
+
+/* Shadowbox */
+
+#sb-loading {
+	display: none !important;
+}
+
+/* Admin */
+
+
+div.view div.views-hide,
+div.view:hover div.views-hide {
+  display: none !important;
+}
+
+/* Blog */
+
+#sidebar-right .block h2 {
+  margin: 0 0 10px;
+}
+
+#sidebar-right .block {
+  clear: both;
+  font-size: 85%;
+  margin: 0 0 10px;
+  overflow: hidden;
+}
+
+#sidebar-right .block ul {
+  margin: 0;
+  padding: 0;
+}
+
+#sidebar-right .block ul,
+#sidebar-right .block ul li {
+  list-style: none;
+}
+
+#sidebar-right .block ul li {
+  background: url('gfx/arrow.gif') no-repeat 3px 8px;
+  color: #333;
+  padding: 0 0 0 15px;
+}
+
+#sidebar-right .block ul li a,
+#sidebar-right .block ul li a:link,
+#sidebar-right .block ul li a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+#sidebar-right .block ul li a:hover,
+#sidebar-right .block ul li a:active {
+  text-decoration: underline;
+}
+
+#sidebar-right .block .more-link {
+  display: none;
+}
+
+#sidebar-right .view-id-blog ul,
+#sidebar-right .view-id-blog ul li {
+  background: none;
+  overflow: hidden;
+  padding: 0;
+}
+
+#sidebar-right .view-id-blog ul li .views-field-field-image-fid {
+  float: left;
+  margin: 0 5px 0 0;
+}
+
+.section-blog #content h1 {
+  display: none;
+}
+
+#content .node-type-blog {
+  border-bottom: 1px solid #333;
+  margin: 0 0 20px;
+  overflow: hidden;
+}
+
+#content .node-type-blog h2.title {
+  font-size: 125%;
+}
+
+.node-type-blog .meta {
+  border-bottom: 1px solid #333;
+  color: #999;
+  display: none;
+  padding: 5px 0;
+}
+
+.node-type-blog .content {
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.node-type-blog .content .field-field-image {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+.page-blog #content .feed-icons {
+  float: left;
+  margin: 2px 0 0 5px;
+}
+
+.node-type-blog ul.links {
+  border-top: 1px solid #333;
+  display: block;
+  line-height: 125%;
+  padding: 10px 0;
+}
+
+.node-type-blog ul.links li {
+  line-height: 170%;
+  overflow: hidden;
+  padding: 0 10px 10px 0;
+}
+
+.node-type-blog ul.links li {
+  display: inline;
+}
+
+.node-type-blog ul.links li.blog_usernames_blog {
+  display: none;
+}
+
+/* Blog gallery */
+
+#content .node-type-blog .field-field-images {
+  border-top: 1px solid #333;
+  clear: both;
+  margin: 10px 0 0;
+  padding: 15px 0 0;
+}
+
+#content .node-type-blog .field-field-images .field-item {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+/* Add this and Facebook */
+
+#sidebar-left #block-fb_social_like-like,
+#sidebar-left #block-addthis-0 {
+  float: left;
+}
+
+#sidebar-left #block-fb_social_like-like {
+  clear: both;
+  margin: 20px 0 0;
+}
+
+#sidebar-left #block-addthis-0 {
+  margin: 22px 0 0;
+}
+
+ul.links li.addthis,
+ul.links li.fb_social_like {
+  display: block;
+  float: left;
+  overflow: visible;
+  padding: 0;
+}
+
+ul.links li.addthis {
+  display: block;
+  padding: 2px 10px 0 0;
+}
+
+/* Add this/Facebook on products */
+
+.view-products .views-field-fb-social-like,
+.view-products .views-field-addthis-toolbox {
+  position: absolute;
+}
+
+.view-products .views-field-fb-social-like {
+    right: 25px;
+    top: 4px;
+}
+
+.view-products .views-field-addthis-toolbox {
+    right: 0px;
+    top: 6px;
+}
+
+#comments {
+  clear: both;
+  padding: 10px 0 0;
+}
+
+#comments .box {
+  clear: both;
+  margin: 20px 0 0;
+}
+
+#comments h2.title {
+  font-size: 110%;
+}
+
+.comment .submitted {
+  color: #666;
+}
+
+#comment-form textarea,
+#comment-form input[type=text] {
+  border: 0;
+  color: #aaa;
+  background-color: #333;
+  padding: 5px;
+}
+
+#comment-form .resizable-textarea textarea {
+  height: 125px !important;
+  width: 75% !important;
+}
+
+#comment-form .resizable-textarea .grippie {
+  background-color: #444;
+  border-color: #666;
+}
+
+#comment-form #edit-comment-wrapper iframe {
+  height: 300px !important;
+}
+
+#comment-form #edit-homepage-wrapper,
+#comment-form ul.tips,
+#comment-form #switch_edit-comment,
+#comment-form .textarea-identifier.description,
+#comment-form #edit-notify-type-1-wrapper,
+#comment-form #edit-notify-type-2-wrapper,
+#comment-form #edit-preview,
+#comment-form div p a,
+#comment-form .resizable-textarea .grippie {
+  display: none !important;
+}
+
+.front .pane-products-frontpage {
+  width: 700px;
+}
+
+/* Google CSE */
+.gsc-control-cse {
+    font-family: Arial, sans-serif;
+    border-color: #000000;
+    background-color: #000000;
+}
+  input.gsc-input {
+    border-color: #666666;
+}
+input.gsc-search-button {
+    border-color: #74a911;
+    background-color: #84bf2f;
+}
+.gsc-tabHeader.gsc-tabhInactive {
+    border-color: #E9E9E9;
+    background-color: #E9E9E9;
+}
+.gsc-tabHeader.gsc-tabhActive {
+    border-top-color: #FF9900;
+    border-left-color: #E9E9E9;
+    border-right-color: #E9E9E9;
+    background-color: #FFFFFF;
+}
+.gsc-tabsArea {
+    border-color: #E9E9E9;
+}
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+    border-color: #000000;
+    background-color: #000000;
+}
+.gsc-webResult.gsc-result:hover,
+.gsc-webResult.gsc-result.gsc-promotion:hover,
+.gsc-imageResult:hover {
+    border-color: #000000;
+    background-color: #000000;
+}
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b {
+    color: #fff;
+}
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b,
+.gs-imageResult a.gs-title:visited,
+.gs-imageResult a.gs-title:visited b {
+    color: #fff;
+}
+.gs-webResult.gs-result a.gs-title:hover,
+.gs-webResult.gs-result a.gs-title:hover b,
+.gs-imageResult a.gs-title:hover,
+.gs-imageResult a.gs-title:hover b {
+    color: #fff;
+}
+.gs-webResult.gs-result a.gs-title:active,
+.gs-webResult.gs-result a.gs-title:active b,
+.gs-imageResult a.gs-title:active,
+.gs-imageResult a.gs-title:active b {
+    color: #fff;
+}
+.gsc-cursor-page {
+    color: #fff;
+}
+  a.gsc-trailing-more-results:link {
+    color: #fff;
+}
+.gs-webResult .gs-snippet,
+.gs-imageResult .gs-snippet,
+.gs-fileFormatType {
+    color: #ffffff;
+}
+.gs-webResult div.gs-visibleUrl,
+.gs-imageResult div.gs-visibleUrl {
+    color: #fdc54e;
+}
+.gs-webResult div.gs-visibleUrl-short {
+    color: #fdc54e;
+}
+.gs-webResult div.gs-visibleUrl-short {
+    display: none;
+}
+.gs-webResult div.gs-visibleUrl-long {
+    display: block;
+}
+.gs-promotion div.gs-visibleUrl-short {
+    display: none;
+}
+.gs-promotion div.gs-visibleUrl-long {
+    display: block;
+}
+.gsc-cursor-box {
+    border-color: #000000;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+    border-color: #E9E9E9;
+    background-color: #000000;
+    color: #fff;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+    border-color: #FF9900;
+    background-color: #FFFFFF;
+    color: #fff;
+}
+.gsc-webResult.gsc-result.gsc-promotion {
+    border-color: #fff;
+    background-color: #000000;
+}
+.gsc-completion-title {
+    color: #fff;
+}
+.gsc-completion-snippet {
+    color: #ffffff;
+}
+.gs-promotion a.gs-title:link,
+.gs-promotion a.gs-title:link *,
+.gs-promotion .gs-snippet a:link {
+    color: #fff;
+}
+.gs-promotion a.gs-title:visited,
+.gs-promotion a.gs-title:visited *,
+.gs-promotion .gs-snippet a:visited {
+    color: #fff;
+}
+.gs-promotion a.gs-title:hover,
+.gs-promotion a.gs-title:hover *,
+.gs-promotion .gs-snippet a:hover {
+    color: #fff;
+}
+.gs-promotion a.gs-title:active,
+.gs-promotion a.gs-title:active *,
+.gs-promotion .gs-snippet a:active {
+    color: #fff;
+}
+.gs-promotion .gs-snippet,
+.gs-promotion .gs-title .gs-promotion-title-right,
+.gs-promotion .gs-title .gs-promotion-title-right *  {
+    color: #ffffff;
+}
+.gs-promotion .gs-visibleUrl,
+.gs-promotion .gs-visibleUrl-short {
+    color: #fdc54e;
+}
+
+/* TrustPilot block */
+div#trustpilot-rating {
+    clear: both;
+    padding-top: 12px;
+}
+div.rating-s, div.rating-m, div.rating-l {
+    display: inline-block;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+div.rating-s {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_small.png") repeat scroll 0 0 transparent;
+    height: 12px;
+    overflow: hidden;
+    width: 64px;
+}
+div.rating-s .s5, div.rating-s .s4, div.rating-s .s3, div.rating-s .s2, div.rating-s .s1 {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_small.png") repeat scroll 0 0 transparent;
+    display: block;
+    height: 12px;
+}
+div.rating-s .s5 {
+    background-position: 0 12px;
+    width: 64px;
+}
+div.rating-s .s4 {
+    background-position: 0 27px;
+    width: 51px;
+}
+div.rating-s .s3 {
+    background-position: 0 42px;
+    width: 39px;
+}
+div.rating-s .s2 {
+    background-position: 0 57px;
+    width: 25px;
+}
+div.rating-s .s1 {
+    background-position: 0 72px;
+    width: 12px;
+}
+div.rating-m {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_medium.png") repeat scroll 0 0 transparent;
+    height: 17px;
+    overflow: hidden;
+    width: 93px;
+}
+div.rating-m .s5, div.rating-m .s4, div.rating-m .s3, div.rating-m .s2, div.rating-m .s1 {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_medium.png") repeat scroll 0 0 transparent;
+    display: block;
+    height: 17px;
+}
+div.rating-m .s5 {
+    background-position: 0 17px;
+    width: 93px;
+}
+div.rating-m .s4 {
+    background-position: 0 37px;
+    width: 74px;
+}
+div.rating-m .s3 {
+    background-position: 0 57px;
+    width: 55px;
+}
+div.rating-m .s2 {
+    background-position: 0 77px;
+    width: 36px;
+}
+div.rating-m .s1 {
+    background-position: 0 97px;
+    width: 19px;
+}
+div.rating-l {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_large.png") repeat scroll 0 0 transparent;
+    height: 21px;
+    overflow: hidden;
+    width: 113px;
+}
+div.rating-l .s5, div.rating-l .s4, div.rating-l .s3, div.rating-l .s2, div.rating-l .s1 {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_large.png") repeat scroll 0 0 transparent;
+    display: block;
+    height: 21px;
+}
+div.rating-l .s5 {
+    background-position: 0 21px;
+    width: 113px;
+}
+div.rating-l .s4 {
+    background-position: 0 46px;
+    width: 90px;
+}
+div.rating-l .s3 {
+    background-position: 0 71px;
+    width: 67px;
+}
+div.rating-l .s2 {
+    background-position: 0 96px;
+    width: 44px;
+}
+div.rating-l .s1 {
+    background-position: 0 121px;
+    width: 21px;
+}
+p.r-s, p.r-m, p.r-l {
+    display: inline-block;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+p.r-s {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_small.png") repeat scroll 0 0 transparent;
+    height: 12px;
+    overflow: hidden;
+    width: 64px;
+}
+p.r-s .s5, p.r-s .s4, p.r-s .s3, p.r-s .s2, p.r-s .s1 {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_small.png") repeat scroll 0 0 transparent;
+    display: block;
+    height: 12px;
+}
+p.r-s .s5 {
+    background-position: 0 12px;
+    width: 64px;
+}
+p.r-s .s4 {
+    background-position: 0 27px;
+    width: 51px;
+}
+p.r-s .s3 {
+    background-position: 0 42px;
+    width: 39px;
+}
+p.r-s .s2 {
+    background-position: 0 57px;
+    width: 25px;
+}
+p.r-s .s1 {
+    background-position: 0 72px;
+    width: 12px;
+}
+p.r-m {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_medium.png") repeat scroll 0 0 transparent;
+    height: 17px;
+    overflow: hidden;
+    width: 93px;
+}
+p.r-m .s5, p.r-m .s4, p.r-m .s3, p.r-m .s2, p.r-m .s1 {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_medium.png") repeat scroll 0 0 transparent;
+    display: block;
+    height: 17px;
+}
+p.r-m .s5 {
+    background-position: 0 17px;
+    width: 95px;
+}
+p.r-m .s4 {
+    background-position: 0 37px;
+    width: 74px;
+}
+p.r-m .s3 {
+    background-position: 0 57px;
+    width: 55px;
+}
+p.r-m .s2 {
+    background-position: 0 77px;
+    width: 36px;
+}
+p.r-m .s1 {
+    background-position: 0 97px;
+    width: 19px;
+}
+p.r-l {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_large.png") repeat scroll 0 0 transparent;
+    height: 21px;
+    overflow: hidden;
+    width: 113px;
+}
+p.r-l .s5, p.r-l .s4, p.r-l .s3, p.r-l .s2, p.r-l .s1 {
+    background: url("/sites/default/themes/dreamwatch/gfx/sprite_stars_large.png") repeat scroll 0 0 transparent;
+    display: block;
+    height: 21px;
+}
+p.r-l .s5 {
+    background-position: 0 21px;
+    width: 113px;
+}
+p.r-l .s4 {
+    background-position: 0 46px;
+    width: 90px;
+}
+p.r-l .s3 {
+    background-position: 0 71px;
+    width: 67px;
+}
+p.r-l .s2 {
+    background-position: 0 96px;
+    width: 44px;
+}
+p.r-l .s1 {
+    background-position: 0 121px;
+    width: 21px;
+}
+
+#trustpilot-rating a {
+    text-decoration: none; }
+
+#trustpilot-rating .wordRating {
+    font-size: 13px;
+    font-weight: bold; }
+    
+    #trustpilot-rating .wordRating span {
+        color: #625e5e; }
+        
+    #trustpilot-rating .wordRating span.average {
+        color: #fff;
+        font-size: 22px; }
+ 
+ #trustpilot-rating .starRating {
+    margin-top: 0.3em; }
+    
+ body #trustpilot-rating .stats {
+    font-size: 11px;
+    color: #3b3b3b; }
+ 
+ .page-referencer .node .content li {
+    width: 50%;
+    float: left;
+  }
+  
+  .item-list .pager {
+    line-height: 21px;
+  }
+  
+  .pager-current {
+    background: #333;
+    border: 1px solid #333;
+    display: inline-block;
+  }
+  
+  .item-list .pager li.pager-current {
+    padding: 1px 4px;
+  }
+  
+  .item-list .pager li {
+    border: 1px solid #333;
+	padding: 1px 0px;
+  }
+  
+  #content .pager-item a {
+    text-decoration: none;
+  }
+  
+  .pager a, .pager strong.pager-current {
+  	padding: 1px 2px 1px 4px;
+  }
+
+#content #cta-triggers a {
+    background: #0a0a0b url('/sites/default/themes/dreamwatch/gfx/DarkbuttonBg.gif') repeat-x top;
+    border: 1px solid #353535;
+    display: block;
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 10px;
+    margin: 0 20px 0 0;
+    text-decoration: none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+#content #cta-triggers a:hover {
+    background: #3a3c40 url('/sites/default/themes/dreamwatch/gfx/DarkbuttonBg.gif') repeat-x bottom;
+}
+
+#content #cta-triggers a .ReadMoreArrow {
+    float: left;
+    margin: -1px 3px 0 0;
+}
+
+.node-type-product .pane-node #node-814,
+.node-type-product .pane-node #node-826
+{
+    margin-bottom: 20px; }
+
+.node-type-product .pane-node #node-814 {
+    clear: left;
+>>>>>>> Stashed changes
 }
