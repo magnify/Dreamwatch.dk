@@ -90,6 +90,13 @@
   <?php if ( $node->nid == '832' ): ?>
   <meta name="robots" content="noindex" />
   <?php endif; ?>
+  <?php if ( $language->language == 'en' ): //Hack for at skjule beskrivelsesfeltet på engelske produktsider ?>
+  
+  <style>
+    .view-products div.view-content div.views-row div.views-field-body { display: none;}
+  </style>  
+  <?php endif; ?>
+
 </head>
 <body class="<?php print $body_classes; ?>">
 
