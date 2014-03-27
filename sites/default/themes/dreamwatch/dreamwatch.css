@@ -320,7 +320,7 @@ h1#site-name, div#site-name /* The name of the website */
 }
 
 #content .view-products .views-field-title-1, 
-#content .view-id-products_soldout .views-field-title, 
+#content .view-id-products_soldout .views-field-title-1, 
 #content .view-products .views-field-title 
 {
 	font-size: 125%;
@@ -1912,4 +1912,21 @@ p.r-l .s1 {
 
 .node-type-product .pane-node #node-814 {
     clear: left;
+}
+
+#header-blocks #block-block-7 {
+    clear: both;
+    font-size: 85%;
+    padding: 1em 0;
+}
+
+#header-blocks #block-block-7 ul, #header-blocks #block-block-7 ul li {
+    float: right;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+#header-blocks #block-block-7 ul li {
+    margin: 0 15px 0 0;
 }
