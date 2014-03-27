@@ -28,3 +28,11 @@
 #sb-counter a.sb-counter-current{text-decoration:underline;}
 div.sb-message{font-size:12px;padding:10px;text-align:center;}
 div.sb-message a:link,div.sb-message a:visited{color:#fff;text-decoration:underline;}
+@media (max-width: 801px) {
+#sb-info,#sb-info-inner{height:48px;line-height:48px;font-size:24px;}
+#sb-nav{float:right;height:48px;padding:2px 0;width:45%;}
+#sb-nav a{display:block;float:right;height:48px;width:48px;margin-left:3px;cursor:pointer;background-repeat:no-repeat;}
+#sb-nav-close{background-image:url(close-large.png);}
+#sb-nav-next{background-image:url(next_large.png);}
+#sb-nav-previous{background-image:url(previous_large.png);}
+}
